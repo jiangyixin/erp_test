@@ -1,0 +1,82 @@
+<extend name="$_admin_public_layout"/>
+<block name="main">
+    <div id="main" class="col-xs-12 col-sm-10 main" style="overflow-y: scroll;">
+        <!-- 面包屑导航 -->
+        <ul class="breadcrumb">
+            <li><i class="fa fa-map-marker"></i></li>
+            <li class="text-muted">供应商管理</li><li class="text-muted">联系人列表</li>
+        </ul>
+
+        <!-- 主体内容区域 -->
+        <div class="tab-content ct-tab-content">
+
+            <div class="builder listbuilder-box panel-body">
+                <!-- Tab导航 -->
+
+                <!-- 顶部工具栏按钮 -->
+                <div class="builder-toolbar">
+                    <div class="row">
+                        <!-- 工具栏按钮 -->
+                        <div class="col-xs-12 col-sm-9 button-list clearfix">
+                            <div class="form-group">
+                                <a title="新增" class="btn btn-primary" href="">新增</a>&nbsp;
+                                <a title="删除" target-form="ids" class="btn btn-danger ajax-post confirm" model="Link" href="">删除</a>&nbsp;
+                            </div>
+                        </div>
+                        <!-- 搜索框 -->
+                        <div class="col-xs-12 col-sm-3 clearfix">
+                            <form class="form" method="get" action="">
+                                <div class="form-group">
+                                    <div class="input-group search-form">
+                                        <input type="text" name="keyword" class="search-input form-control" value="" placeholder="请输入ID/链接名称">
+                                        <span class="input-group-btn"><a class="btn btn-default search-btn"><i class="fa fa-search"></i></a></span>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!-- 数据列表 -->
+                <div class="builder-container">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="builder-table">
+                                <div class="panel panel-default table-responsive">
+                                    <table class="table table-bordered table-striped table-hover">
+                                        <thead>
+                                        <tr>
+                                            <th><input class="check-all" type="checkbox"></th>
+                                            <th>联系人</th><th>公司名</th>
+                                            <th>手机</th><th>电话</th>
+                                            <th>邮箱</th><th>QQ</th>
+                                            <th>备注</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <foreach name="linkmanList" item="vo">
+                                            <tr>
+                                                <td><input class="ids" type="checkbox" value="{$vo.id}" name="ids[]"></td>
+                                                <td>{$vo.name}</td>
+                                                <td><a href="">{$vo.supplier.name}</a></td>
+                                                <th>{$vo.mobile}</th>
+                                                <td>{$vo.tel}</td>
+                                                <td>{$vo.email}</td>
+                                                <td>{$vo.qq}</td>
+                                                <th>{$vo.note}</th>
+                                            </tr>
+                                        </foreach>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 额外功能代码 -->
+            </div>
+
+        </div>
+
+    </div>
+</block>
