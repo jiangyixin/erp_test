@@ -1,4 +1,9 @@
 <extend name="$_admin_public_layout"/>
+<block name="style">
+    <style>
+
+    </style>
+</block>
 <block name="main">
     <div id="main" class="col-xs-12 col-sm-10 main" style="overflow-y: scroll;">
         <!-- 面包屑导航 -->
@@ -53,22 +58,31 @@
                                         <!--offset="0" length='10'-->
                                         <volist name="procurementList" id="vo">
                                             <tr title="" data-id="{$vo.id}">
-                                                <td>{$vo.coding}</td>
+                                                <td>{$vo.no}</td>
                                                 <td>{$vo.title}</td>
                                                 <td>{$vo.num}</td>
                                                 <td>{$vo.total_price}</td>
                                                 <td>{$vo.create_time}</td>
                                                 <td>{$vo.partner.name}</td>
                                                 <td><switch name="vo.status">
-                                                    <case value="4">采购完成</case>
-                                                    <case value="3">校验入库</case>
+                                                    <case value="3">采购完成</case>
                                                     <case value="2">接收成功</case>
                                                     <case value="1">采购中</case>
                                                     <case value="0">计划中</case>
                                                     <case value="-1">已取消</case>
                                                 </switch></td>
                                                 <td>{$vo.note}</td>
-                                                <td><a title="详情" class="label label-primary" href="{:U('procurementDetail')}?id={$vo.id}">详情</a></td>
+                                                <td>
+                                                    <a title="详情" class="label label-primary" href="{:U('procurementDetail')}?id={$vo.id}">详情</a>
+                                                    <switch name="vo.status">
+                                                        <case value="3"><label class="label label-default">采购完成</label></case>
+                                                        <case value="2"><a class="label label-primary" href="javascript:;" data-status="3">校验入库</a></case>
+                                                        <case value="1"><a class="label label-primary" href="javascript:;" data-status="2">到货接收</a></case>
+                                                        <case value="0"><a class="label label-primary" href="javascript:;" data-status="1">执行采购</a></case>
+                                                        <case value="-1"><label class="label label-default">已取消</label></case>
+                                                    </switch>
+
+                                                </td>
                                             </tr>
                                         </volist>
                                         </tbody>
@@ -95,8 +109,8 @@
 </block>
 <block name="script">
 <script type="text/javascript">
-    var stockLogList = {:json_encode($stockLogList)};
-    console.log(stockLogList);
+    var procurementList = {:json_encode($procurementList)};
+    console.log(procurementList);
     var tableMenuData = [
         [{
             text: "修改",
@@ -129,6 +143,26 @@
         /*$("#stockList tbody tr").smartMenu(tableMenuData, {
             name: "table"
         });*/
+
+        $('#procurementList').on('click', 'a[data-status]', function() {
+            var result = confirm('确定要执行该操作？');
+            if (!result) return;
+            var procurement = new Object();
+            procurement.id = $(this).parents('tr').attr('data-id');
+            procurement.status = $(this).attr('data-status');
+            console.log(procurement);
+            $.post("{:U('Goods/updateStatus')}", { 'procurement': procurement}, function(data) {
+                console.log(data);
+                if (data.status) {
+                    $.alertMessager(data.info, 'success');
+                    window.setTimeout(function() {
+                        window.location = data.url;
+                    }, 2000);
+                } else {
+                    $.alertMessager(data.info, 'error');
+                }
+            } );
+        })
 
     });
 </script>

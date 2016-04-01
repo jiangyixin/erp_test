@@ -42,9 +42,9 @@
                                     <table id="stockLogList" class="table table-bordered table-striped table-hover">
                                         <thead>
                                         <tr>
-                                            <th>编号</th><th>主题</th>
+                                            <th>编号</th><!--<th>主题</th>-->
                                             <th>方向</th>
-                                            <th>来去地址</th><th>负责人</th>
+                                            <th>负责人</th>
                                             <th>时间</th><th>备注</th>
                                             <th>操作</th>
                                         </tr>
@@ -53,18 +53,23 @@
                                         <!--offset="0" length='10'-->
                                         <volist name="stockLogList" id="vo">
                                             <tr title="" data-id="{$vo.id}">
-                                                <td>{$vo.id}</td>
-                                                <td>{$vo.title}</td>
+                                                <td>{$vo.no}</td>
+                                                <!--<td>{$vo.title}</td>-->
                                                 <td><switch name="vo.status">
                                                     <case value="1" >入库</case>
                                                     <case value="0">转移</case>
                                                     <case value="-1">出库</case>
                                                 </switch></td>
-                                                <td>{$vo.in_transfer_out}</td>
                                                 <td>{$vo.partner.name}</td>
                                                 <td>{$vo.time}</td>
                                                 <td>{$vo.note}</td>
-                                                <td><a title="详情" class="label label-primary" href="{:U('stockLogDetail')}?id={$vo.id}">详情</a></td>
+                                                <td>
+                                                    <switch name="vo.status">
+                                                        <case value="0"><a title="详情" class="label label-primary" href="{:U('transferDetail')}?id={$vo.id}">详情</a></case>
+                                                        <default />
+                                                            <a title="详情" class="label label-primary" href="{:U('stockLogDetail')}?id={$vo.id}">详情</a>
+                                                    </switch>
+                                                </td>
                                             </tr>
                                         </volist>
                                         </tbody>

@@ -10,6 +10,8 @@ namespace Admin\Controller;
 
 
 
+use Think\Page;
+
 class GoodsController extends AdminController{
 
     /**
@@ -44,6 +46,21 @@ class GoodsController extends AdminController{
     }
 
     /**
+     * 修改订购单状态
+     */
+    public function updateStatus() {
+        $procurement = I('post.procurement');
+        if ($procurement.id && $procurement.status) {
+            $result = $this->getDgLogic()->updateStatus($procurement);
+            if ($result) {
+                $this->success('更新成功，页面即将自动刷新！', 'procurementList');
+            } else {
+                $this->error('更新失败');
+            }
+        }
+    }
+
+    /**
      * 新建采购单
      */
     public function procurement() {
@@ -73,36 +90,130 @@ class GoodsController extends AdminController{
 
     }
 
-
-    public function addGoodsCode() {
-
-        $goodsCodeList[] = array('code'=>'001', 'goods_id'=>1, 'supplier_id'=>3, 'warehouse_id'=>1);
-        $goodsCodeList[] = array('code'=>'002', 'goods_id'=>1, 'supplier_id'=>3, 'warehouse_id'=>1);
-        $goodsCodeList[] = array('code'=>'003', 'goods_id'=>1, 'supplier_id'=>3, 'warehouse_id'=>1);
-        $goodsCodeList[] = array('code'=>'004', 'goods_id'=>2, 'supplier_id'=>4, 'warehouse_id'=>1);
-        $goodsCodeList[] = array('code'=>'005', 'goods_id'=>2, 'supplier_id'=>4, 'warehouse_id'=>1);
-
-        $result = $this->dgc->addAllData($goodsCodeList);
-        dump($result);
+    /**
+     * 商品分组列表
+     */
+    public function goodsGroupList() {
+        $goodsGroupList = $this->getDgg()->getDataList();
+        $this->assign('goodsGroupList', $goodsGroupList);
+        $this->display('Goods/goodsGroupList');
     }
 
-    public function addGoods() {
-
-        $goodsList[] = array('goods_group_id'=>1, 'name'=>'乐me移动电源','norm'=>'安卓版', 'num'=>999);
-        $goodsList[] = array('goods_group_id'=>1, 'name'=>'乐me移动电源','norm'=>'苹果版', 'num'=>699);
-
-        $result = $this->dg->addAllData($goodsList);
-        dump($result);
+    /**
+     * 商品分组信息
+     */
+    public function goodsGroupInfo() {
+        $data['id'] = I('get.id');
+        if ($data['id']) {
+            $goodsGroup = $this->getDgg()->checkData($data);
+            $this->assign('goodsGroup', $goodsGroup);
+        }
+        $this->display('Goods/goodsGroupEdit');
     }
 
+    /**
+     * 删除商品分组
+     */
+    public function goodsGroupDel() {
+        $data['id'] = I('id');
+        $ids = I('request.ids');
+        $result = array();
+        if ($ids) {
+            foreach ($ids as $id) {
+                $result[] = $this->getDgg()->delData(array('id'=>$id));
+            }
+        }
+        if ($data['id']) {
+            $result[] = $this->getDgg()->delData($data);
+        }
+        if ($result && array_product($result)) {
+            $this->success('删除成功，页面即将自动刷新！', 'goodsGroupList');
+        } else {
+            $this->error('删除失败');
+        }
 
-    public function addGoodsGroup() {
-        $goodsGroup['name'] = '乐me音箱';
-        $goodsGroup['note'] = '新品上市';
-        $result = $this->getDgg()->addData($goodsGroup);
-        dump($result);
+        // $this->ajaxReturn($result, 'json');
     }
 
+    /**
+     * 编辑商品分组信息
+     */
+    public function goodsGroupEdit() {
+        $group = I('post.');
+        if ($group['id']) {
+            $result = $this->getDgg()->editDataById($group);
+        } else {
+            $result = $this->getDgg()->addData($group);
+        }
+        if ($result) {
+            $this->success('更新成功', 'goodsGroupList');
+        } else {
+            $this->error('更新失败');
+        }
+    }
+
+    /**
+     * 商品列表
+     */
+    public function goodsList() {
+        $goodsList = $this->getDgLogic()->getGoodsList();
+        $this->assign('goodsList', $goodsList);
+        $this->display('Goods/goodsList');
+    }
+
+    /**
+     * 商品信息
+     */
+    public function goodsInfo() {
+        $data['id'] = I('get.id');
+        if ($data['id']) {
+            $goods = $this->getDg()->checkData($data);
+            $this->assign('goods', $goods);
+        }
+        $groupList = $this->getDgg()->getDataList();
+        $this->assign('groupList', $groupList);
+        $this->display('Goods/goodsEdit');
+    }
+
+    /**
+     * 删除商品
+     */
+    public function goodsDel() {
+        $data['id'] = I('id');
+        $ids = I('request.ids');
+        $result = array();
+        if ($ids) {
+            foreach ($ids as $id) {
+                $result[] = $this->getDg()->delData(array('id'=>$id));
+            }
+        }
+        if ($data['id']) {
+            $result[] = $this->getDg()->delData($data);
+        }
+        if ($result && array_product($result)) {
+            $this->success('删除成功，页面即将自动刷新！', 'goodsList');
+        } else {
+            $this->error('删除失败');
+        }
+
+    }
+
+    /**
+     * 编辑商品信息
+     */
+    public function goodsEdit() {
+        $group = I('post.');
+        if ($group['id']) {
+            $result = $this->getDg()->editDataById($group);
+        } else {
+            $result = $this->getDg()->addData($group);
+        }
+        if ($result) {
+            $this->success('更新成功', 'goodsList');
+        } else {
+            $this->error('更新失败');
+        }
+    }
 
     public function getDs() {
         return D('Admin/Supplier');

@@ -11,7 +11,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="">
     <meta name="format-detection" content="telephone=no,email=no">
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <link rel="apple-touch-icon" type="image/x-icon" href="/php/erp/test/favicon.ico">
     <link rel="shortcut icon" type="image/x-icon" href="/php/erp/test/logo.png">
     <link rel="stylesheet" type="text/css" href="/php/erp/test/Public/libs/cui/css/cui.min.css">
@@ -156,7 +156,7 @@
                             <div class="col-xs-12">
                                 <div class="form-group col-xs-6">
                                     <label class="label-left">编码：</label>
-                                    <span class="form-control"><?php echo ($procurement["coding"]); ?></span>
+                                    <span class="form-control"><?php echo ($procurement["no"]); ?></span>
                                 </div>
                                 <div class="form-group col-xs-6">
                                     <label class="label-left">时间：</label>

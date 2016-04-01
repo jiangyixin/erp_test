@@ -1,0 +1,166 @@
+<extend name="$_admin_public_layout"/>
+<block name="style">
+    <style>
+
+    </style>
+</block>
+<block name="main">
+    <div id="main" class="col-xs-12 col-sm-10 main" style="overflow-y: scroll;">
+        <!-- 面包屑导航 -->
+        <ul class="breadcrumb">
+            <li><i class="fa fa-map-marker"></i></li>
+                <li class="text-muted">销售管理</li><li class="text-muted">销售记录</li>
+        </ul>
+        <!-- 主体内容区域 -->
+        <div class="tab-content ct-tab-content">
+
+            <div class="builder listbuilder-box panel-body">
+                <!-- Tab导航 -->
+
+                <!-- 顶部工具栏按钮 -->
+                <div class="builder-toolbar">
+                    <div class="row">
+                        <!-- 工具栏按钮 -->
+                        <div class="col-xs-12 col-sm-9 button-list clearfix">
+
+                        </div>
+                        <!-- 搜索框 -->
+                        <div class="col-xs-12 col-sm-3 clearfix">
+                            <form class="form" method="get" action="">
+                                <div class="form-group">
+                                    <div class="input-group search-form">
+                                        <input type="text" name="keyword" class="search-input form-control" value="" placeholder="请输入ID/链接名称">
+                                        <span class="input-group-btn"><a class="btn btn-default search-btn"><i class="fa fa-search"></i></a></span>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!-- 数据列表 -->
+                <div class="builder-container">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="builder-table">
+                                <div class="panel panel-default table-responsive">
+                                    <table id="sellList" class="table table-bordered table-striped table-hover">
+                                        <thead>
+                                        <tr>
+                                            <th>编号</th><th>主题</th>
+                                            <th>金额</th>
+                                            <th>时间</th>
+                                            <th>负责人</th><th>状态</th>
+                                            <th>备注</th><th>操作</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <!--offset="0" length='10'-->
+                                        <volist name="sellList" id="vo">
+                                            <tr title="" data-id="{$vo.id}">
+                                                <td>{$vo.no}</td>
+                                                <td>{$vo.title}</td>
+                                                <td>{$vo.total_price}</td>
+                                                <td>{$vo.create_time}</td>
+                                                <td>{$vo.partner.name}</td>
+                                                <td><switch name="vo.status">
+                                                    <case value="3">交易完成</case>
+                                                    <case value="2">配送中</case>
+                                                    <case value="1">出仓中</case>
+                                                    <case value="0">计划中</case>
+                                                    <case value="-1">已取消</case>
+                                                </switch></td>
+                                                <td>{$vo.note}</td>
+                                                <td>
+                                                    <a title="详情" class="label label-primary" href="{:U('sellDetail')}?id={$vo.id}">详情</a>
+                                                    <switch name="vo.status">
+                                                        <case value="3"><label class="label label-default">销售完成</label></case>
+                                                        <case value="2"><a class="label label-primary" href="javascript:;" data-status="3">收货</a></case>
+                                                        <case value="1"><a class="label label-primary" href="javascript:;" data-status="2">配送</a></case>
+                                                        <case value="0"><a class="label label-primary" href="javascript:;" data-status="1">出仓</a></case>
+                                                        <case value="-1"><label class="label label-default">已取消</label></case>
+                                                    </switch>
+                                                </td>
+                                            </tr>
+                                        </volist>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div style="text-align: right;">
+                                {$page}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 额外功能代码 -->
+            </div>
+
+        </div>
+
+    </div>
+</block>
+<block name="script">
+<script type="text/javascript">
+    var sellList = {:json_encode($sellList)};
+    console.log(sellList);
+    var tableMenuData = [
+        [{
+            text: "修改",
+            func: function() {
+                var id = $(this).attr('data-id');
+                window.location = "{:U('Stock/stockInfo')}?id=" + id;
+            }
+        }, {
+            text: "删除",
+            func: function() {
+                var result = confirm('确定要执行该操作？');
+                if (!result) return;
+                var id = $(this).attr('data-id');
+                $.post("{:U('Stock/stockDel')}", { id: id}, function(data) {
+                    if (data.status) {
+                        $.alertMessager(data.info, 'success');
+                        window.setTimeout(function() {
+                            window.location = data.url;
+                        }, 2000);
+                    } else {
+                        $.alertMessager(data.info, 'danger');
+                    }
+                } );
+            }
+        }]
+    ];
+
+    $(window).ready(function(e) {
+
+        /*$("#stockList tbody tr").smartMenu(tableMenuData, {
+            name: "table"
+        });*/
+
+        $('#sellList').on('click', 'a[data-status]', function() {
+            var result = confirm('确定要执行该操作？');
+            if (!result) return;
+            var sell = new Object();
+            sell.id = $(this).parents('tr').attr('data-id');
+            sell.status = $(this).attr('data-status');
+            console.log(sell);
+            $.post("{:U('Sell/updateSellStatus')}", { 'sell': sell}, function(data) {
+                console.log(data);
+                if (data.status) {
+                    $.alertMessager(data.info, 'success');
+                    window.setTimeout(function() {
+                        window.location = data.url;
+                    }, 2000);
+                } else {
+                    $.alertMessager(data.info, 'danger');
+                }
+            } );
+        })
+
+    });
+</script>
+</block>

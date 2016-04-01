@@ -11,7 +11,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="">
     <meta name="format-detection" content="telephone=no,email=no">
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <link rel="apple-touch-icon" type="image/x-icon" href="/php/erp/test/favicon.ico">
     <link rel="shortcut icon" type="image/x-icon" href="/php/erp/test/logo.png">
     <link rel="stylesheet" type="text/css" href="/php/erp/test/Public/libs/cui/css/cui.min.css">
@@ -155,9 +155,16 @@
                         <div class="row">
                             <div class="col-xs-12">
                                 <div class="form-group col-xs-6">
+                                    <label class="label-left">负责人：</label>
+                                    <select name="stockLog.partner_id" class="form-control">
+                                        <option value="0">请选择：</option>
+                                        <?php if(is_array($partnerList)): foreach($partnerList as $key=>$vo): ?><option value="<?php echo ($vo["id"]); ?>"><?php echo ($vo["name"]); ?></option><?php endforeach; endif; ?>
+                                    </select>
+                                </div>
+                                <!--<div class="form-group col-xs-6">
                                     <label class="label-left">主题：</label>
                                     <input type="text" class="form-control" name="stockLog.title" value="">
-                                </div>
+                                </div>-->
                                 <div class="form-group col-xs-6">
                                     <label class="label-left">时间：</label>
                                     <input type="date" class="form-control" name="stockLog.time" value="">
@@ -167,15 +174,8 @@
                         <div class="row" style="margin-top: 10px;">
                             <div class="col-xs-12">
                                 <div class="form-group col-xs-6">
-                                    <label class="label-left">去处：</label>
+                                    <label class="label-left">客户：</label>
                                     <input type="text" class="form-control" name="stockLog.in_transfer_out" value="">
-                                </div>
-                                <div class="form-group col-xs-6">
-                                    <label class="label-left">负责人：</label>
-                                    <select name="stockLog.partner_id" class="form-control">
-                                        <option value="0">请选择：</option>
-                                        <?php if(is_array($partnerList)): foreach($partnerList as $key=>$vo): ?><option value="<?php echo ($vo["id"]); ?>"><?php echo ($vo["name"]); ?></option><?php endforeach; endif; ?>
-                                    </select>
                                 </div>
                             </div>
                         </div>
@@ -189,7 +189,7 @@
                                         <thead>
                                         <tr>
                                             <th>商品</th>
-                                            <th>仓库</th><th>数量</th>
+                                            <th>出货仓库</th><th>数量</th>
                                             <th>总量</th><th>条形码列表</th>
                                             <!--<th>备注</th>-->
                                             <th>操作</th>
@@ -356,15 +356,11 @@
                 $('body').find('[name*="stockLog."]').each(function () {
                     var key = $(this).attr('name');
                     var value = $(this).val();
-                    if (key == 'stockLog.title' && !value) {
+                    /*if (key == 'stockLog.title' && !value) {
                         checkStr = '主题不能为空！';
                         return false;
-                    }
-                    if (key == 'stockLog.warehouse_id' && !value) {
-                        checkStr = '请选择仓库！';
-                        return false;
-                    }
-                    if (key == 'stockLog.partner_id' && !value) {
+                    }*/
+                    if (key == 'stockLog.partner_id' && (!value || value == 0)) {
                         checkStr = '请选择负责人！';
                         return false;
                     }
@@ -392,7 +388,7 @@
                     detailList.push(detail);
                 });
                 if (detailList.length == 0) {
-                    $.alertMessager('请添加采购的商品', 'danger');
+                    $.alertMessager('请添加出库的商品', 'danger');
                 }
                 return detailList;
             }
@@ -400,7 +396,7 @@
 
             function getFormData() {
                 var stockLog = new Object();
-                stockLog.title = $('[name="stockLog.title"]').val();
+                // stockLog.title = $('[name="stockLog.title"]').val();
                 // stockLog.warehouse_id = $('[name="stockLog.warehouse_id"]').val();
                 stockLog.time = $('[name="stockLog.time"]').val();
                 stockLog.partner_id = $('[name="stockLog.partner_id"]').val();
@@ -434,7 +430,7 @@
                     } else {
                         $.alertMessager('修改成功', 'success');
                         window.setTimeout(function() {
-                            window.location = "<?php echo U('Stock/stockLogList');?>";
+                            window.location = "<?php echo U('Stock/salesList');?>";
                         }, 2000);
                     }
                 });

@@ -10,6 +10,7 @@ namespace Common\Behavior;
 
 
 use Think\Behavior;
+use Think\Log;
 
 class InitConfigBehavior extends Behavior{
 
@@ -20,6 +21,7 @@ class InitConfigBehavior extends Behavior{
      * @return void
      */
     public function run(&$params) {
+        Log::record('------------------------------InitConfig-----start------------------------------------');
 
     }
 }

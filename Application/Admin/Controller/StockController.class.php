@@ -8,6 +8,7 @@
 
 namespace Admin\Controller;
 
+use Think\Log;
 use Think\Page;
 
 class StockController extends AdminController{
@@ -108,7 +109,7 @@ class StockController extends AdminController{
             $result = $this->getDsLogic()->purchase($stockLog, $detailList);
 
             if ($result) {
-                $this->success('操作成功！', 'stockLogList');
+                $this->success('操作成功！', 'purchaseList');
             } else {
                 $this->error('操作失败！');
             }
@@ -116,6 +117,8 @@ class StockController extends AdminController{
             $partnerList = $this->getDp()->getDataList();
             $goodsList = $this->getDg()->getDataList();
             $warehouseList = $this->getDw()->getDataList();
+            $supplierList = $this->getDsupplier()->getDataList();
+            $this->assign('supplierList', $supplierList);
             $this->assign('partnerList', $partnerList);
             $this->assign('goodsList', $goodsList);
             $this->assign('warehouseList', $warehouseList);
@@ -127,7 +130,6 @@ class StockController extends AdminController{
      * 入库记录
      */
     public function purchaseList() {
-
         $page = I('get.p');
         if (!$page) {
             $page = 1;
@@ -138,10 +140,54 @@ class StockController extends AdminController{
         $Page = new \Think\Page($count, $limit);
         $show = $Page->show();
         $stockLogList = $this->getDsLogic()->getStockLogList($data, $page, $limit);
-
         $this->assign('stockLogList', $stockLogList);
         $this->assign('page', $show);
         $this->display('Stock/purchaseList');
+    }
+
+    /**
+     * 调拨
+     */
+    public function transfer() {
+        if (IS_POST) {
+            $stockLog = I('post.stockLog');
+            $detailList = I('post.detailList');
+
+            $result = $this->getDsLogic()->transfer($stockLog, $detailList);
+            if ($result) {
+                $this->success('操作成功！', 'transferList');
+            } else {
+                $this->error('操作失败！');
+            }
+        } else {
+            $partnerList = $this->getDp()->getDataList();
+            $goodsList = $this->getDsLogic()->getGoodsStockList();
+            $warehouseList = $this->getDw()->getDataList();
+            $this->assign('partnerList', $partnerList);
+            $this->assign('goodsList', $goodsList);
+            $this->assign('warehouseList', $warehouseList);
+            $this->display('Stock/transfer');
+        }
+    }
+
+    /**
+     * 调拨列表
+     */
+    public function transferList() {
+        $page = I('get.p');
+        if (!$page) {
+            $page = 1;
+        }
+        $limit = 10;
+        $data['status'] = 0;
+        $count = $this->getDst()->where($data)->count();
+        $Page = new \Think\Page($count, $limit);
+        $show = $Page->show();
+        $stockLogList = $this->getDsLogic()->getStockLogList($data, $page, $limit);
+
+        $this->assign('stockLogList', $stockLogList);
+        $this->assign('page', $show);
+        $this->display('Stock/transferList');
     }
 
     /**
@@ -209,11 +255,22 @@ class StockController extends AdminController{
     }
 
     /**
+     * 库存调拨详情
+     */
+    public function transferDetail() {
+        $data['id'] = I('id');
+        $stockLog = $this->getDsLogic()->getStockLogDetail($data);
+        $this->assign('stockLog', $stockLog);
+        $this->display('Stock/transferDetail');
+    }
+
+    /**
      * 库存操作记录详情
      */
     public function stockLogDetail() {
         $data['id'] = I('id');
         $stockLog = $this->getDsLogic()->getStockLogDetail($data);
+        Log::record('--stockLog: ' . json_encode($stockLog));
         $this->assign('stockLog', $stockLog);
         $this->display('Stock/stockLogDetail');
     }
@@ -248,4 +305,19 @@ class StockController extends AdminController{
         return D('Admin/Partner');
     }
 
+    public function getDsp() {
+        return D('Admin/StockPurchase');
+    }
+
+    public function getDss() {
+        return D('Admin/StockSales');
+    }
+
+    public function getDst() {
+        return D('Admin/StockTransfer');
+    }
+
+    public function getDsupplier() {
+        return D('Admin/Supplier');
+    }
 }

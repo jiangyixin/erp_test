@@ -44,7 +44,7 @@
                 <!-- 数据列表 -->
                 <div class="builder-container">
                     <form id="stockLog" action="" method="post" class="form-inline" >
-                        <div class="row">
+                        <!--<div class="row">
                             <div class="col-xs-12">
                                 <div class="form-group col-xs-6">
                                     <label class="label-left">主题：</label>
@@ -55,13 +55,9 @@
                                     <input type="date" class="form-control" name="stockLog.time" value="">
                                 </div>
                             </div>
-                        </div>
+                        </div>-->
                         <div class="row" style="margin-top: 10px;">
                             <div class="col-xs-12">
-                                <div class="form-group col-xs-6">
-                                    <label class="label-left">来源：</label>
-                                    <input type="text" class="form-control" name="stockLog.in_transfer_out" value="">
-                                </div>
                                 <div class="form-group col-xs-6">
                                     <label class="label-left">负责人：</label>
                                     <select name="stockLog.partner_id" class="form-control">
@@ -70,6 +66,10 @@
                                             <option value="{$vo.id}">{$vo.name}</option>
                                         </foreach>
                                     </select>
+                                </div>
+                                <div class="form-group col-xs-6">
+                                    <label class="label-left">时间：</label>
+                                    <input type="date" class="form-control" name="stockLog.time" value="">
                                 </div>
                             </div>
                         </div>
@@ -83,7 +83,9 @@
                                         <thead>
                                         <tr>
                                             <th>商品</th>
-                                            <th>仓库</th><th>入库数量</th>
+                                            <th>供应商</th>
+                                            <th>进货仓库</th>
+                                            <th>入库数量</th>
                                             <th>条形码列表</th>
                                             <!--<th>备注</th>-->
                                             <th>操作</th>
@@ -140,6 +142,7 @@
 
         var warehouseList = {:json_encode($warehouseList)};
         var goodsList = {:json_encode($goodsList)};
+        var supplierList = {:json_encode($supplierList)};
 
         $(window).ready(function (e) {
             // 添加*行
@@ -152,6 +155,13 @@
                             '<option value="">请选择：</option>';
                     for (var i in goodsList) {
                         html += '<option value="'+ goodsList[i].id +'">'+ goodsList[i].name + '·' + goodsList[i].norm +'</option>';
+                    }
+                    html += '</select></td>' +
+                            '<td class="td-select">' +
+                            '<select name="supplier_id" class="form-control">' +
+                            '<option value="">请选择：</option>';
+                    for (var i in supplierList) {
+                        html += '<option value="'+ supplierList[i].id +'">'+ supplierList[i].name +'</option>';
                     }
                     html += '</select></td>' +
                             '<td class="td-select">' +
@@ -203,15 +213,11 @@
                 $('body').find('[name*="stockLog."]').each(function () {
                     var key = $(this).attr('name');
                     var value = $(this).val();
-                    if (key == 'stockLog.title' && !value) {
+                    /*if (key == 'stockLog.title' && !value) {
                         checkStr = '主题不能为空！';
                         return false;
-                    }
-                    if (key == 'stockLog.warehouse_id' && !value) {
-                        checkStr = '请选择仓库！';
-                        return false;
-                    }
-                    if (key == 'stockLog.partner_id' && !value) {
+                    }*/
+                    if (key == 'stockLog.partner_id' && (!value || value == 0)) {
                         checkStr = '请选择负责人！';
                         return false;
                     }
@@ -226,6 +232,7 @@
                     detail = new Object();
                     detail.goods_id = $(this).find('[name="goods_id"]').val();
                     detail.num = $(this).find('[name="num"]').html();
+                    detail.supplier_id = $(this).find('[name="supplier_id"]').val();
                     detail.warehouse_id = $(this).find('[name="warehouse_id"]').val();
                     detail.code_list = $(this).find('[name="code_list"]').html();
                     detail.note = $(this).find('[name="note"]').html();
@@ -233,14 +240,14 @@
                     if (!detail.goods_id && !detail.num) {
                         return;
                     }
-                    if (!detail.goods_id || !detail.num || !detail.warehouse_id) {
-                        $.alertMessager('商品、仓库、数量为必填参数', 'danger');
+                    if (!detail.goods_id || !detail.supplier_id || !detail.num || !detail.warehouse_id) {
+                        $.alertMessager('商品、供应商、仓库、数量为必填参数', 'danger');
                         return false;
                     }
                     detailList.push(detail);
                 });
                 if (detailList.length == 0) {
-                    $.alertMessager('请添加采购的商品', 'danger');
+                    $.alertMessager('请添加入库的商品', 'danger');
                 }
                 return detailList;
             }
@@ -248,12 +255,12 @@
 
             function getFormData() {
                 var stockLog = new Object();
-                stockLog.title = $('[name="stockLog.title"]').val();
+                // stockLog.title = $('[name="stockLog.title"]').val();
                 // stockLog.warehouse_id = $('[name="stockLog.warehouse_id"]').val();
                 stockLog.time = $('[name="stockLog.time"]').val();
                 stockLog.partner_id = $('[name="stockLog.partner_id"]').val();
                 stockLog.note = $('[name="stockLog.note"]').val();
-                stockLog.in_transfer_out = $('[name="stockLog.in_transfer_out"]').val();
+                // stockLog.in_transfer_out = $('[name="stockLog.in_transfer_out"]').val();
                 if (!stockLog.time) {
                     delete stockLog.time;
                 }
@@ -281,7 +288,7 @@
                     } else {
                         $.alertMessager('修改成功', 'success');
                         window.setTimeout(function() {
-                            window.location = "{:U('Stock/stockLogList')}";
+                            window.location = "{:U('Stock/purchaseList')}";
                         }, 2000);
                     }
                 });

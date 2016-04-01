@@ -11,7 +11,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="">
     <meta name="format-detection" content="telephone=no,email=no">
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <link rel="apple-touch-icon" type="image/x-icon" href="/php/erp/test/favicon.ico">
     <link rel="shortcut icon" type="image/x-icon" href="/php/erp/test/logo.png">
     <link rel="stylesheet" type="text/css" href="/php/erp/test/Public/libs/cui/css/cui.min.css">
@@ -155,8 +155,8 @@
                         <div class="row">
                             <div class="col-xs-12">
                                 <div class="form-group col-xs-6">
-                                    <label class="label-left">主题：</label>
-                                    <span class="form-control"><?php echo ($stockLog["title"]); ?></span>
+                                    <label class="label-left">编号：</label>
+                                    <span class="form-control"><?php echo ($stockLog["no"]); ?></span>
                                 </div>
                                 <div class="form-group col-xs-6">
                                     <label class="label-left">时间：</label>
@@ -166,10 +166,10 @@
                         </div>
                         <div class="row" style="margin-top: 10px;">
                             <div class="col-xs-12">
-                                <div class="form-group col-xs-6">
-                                    <label class="label-left">来源：</label>
-                                    <span class="form-control"><?php echo ($stockLog["in_transfer_out"]); ?></span>
-                                </div>
+                                <!--<div class="form-group col-xs-6">
+                                    <label class="label-left">主题：</label>
+                                    <span class="form-control"><?php echo ($stockLog["title"]); ?></span>
+                                </div>-->
                                 <div class="form-group col-xs-6">
                                     <label class="label-left">负责人：</label>
                                     <span class="form-control"><?php echo ($stockLog["partner"]["name"]); ?></span>
@@ -180,6 +180,7 @@
                     <div class="row" style="margin-top: 10px;">
                         <div class="col-xs-12 col-lg-12">
                             <h4><?php switch($stockLog["status"]): case "1": ?>入库<?php break;?>
+                                <?php case "0": ?>调拨<?php break;?>
                                 <?php case "-1": ?>出库<?php break; endswitch;?>商品列表：</h4>
                             <div class="builder-table">
                                 <div class="panel panel-default table-responsive">

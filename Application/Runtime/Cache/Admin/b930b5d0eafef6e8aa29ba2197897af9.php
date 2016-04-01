@@ -11,7 +11,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="">
     <meta name="format-detection" content="telephone=no,email=no">
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <link rel="apple-touch-icon" type="image/x-icon" href="/php/erp/test/favicon.ico">
     <link rel="shortcut icon" type="image/x-icon" href="/php/erp/test/logo.png">
     <link rel="stylesheet" type="text/css" href="/php/erp/test/Public/libs/cui/css/cui.min.css">
@@ -151,9 +151,9 @@
                                     <table id="stockLogList" class="table table-bordered table-striped table-hover">
                                         <thead>
                                         <tr>
-                                            <th>编号</th><th>主题</th>
+                                            <th>编号</th><!--<th>主题</th>-->
                                             <th>方向</th>
-                                            <th>来去地址</th><th>负责人</th>
+                                            <th>负责人</th>
                                             <th>时间</th><th>备注</th>
                                             <th>操作</th>
                                         </tr>
@@ -161,16 +161,19 @@
                                         <tbody>
                                         <!--offset="0" length='10'-->
                                         <?php if(is_array($stockLogList)): $i = 0; $__LIST__ = $stockLogList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr title="" data-id="<?php echo ($vo["id"]); ?>">
-                                                <td><?php echo ($vo["id"]); ?></td>
-                                                <td><?php echo ($vo["title"]); ?></td>
+                                                <td><?php echo ($vo["no"]); ?></td>
+                                                <!--<td><?php echo ($vo["title"]); ?></td>-->
                                                 <td><?php switch($vo["status"]): case "1": ?>入库<?php break;?>
                                                     <?php case "0": ?>转移<?php break;?>
                                                     <?php case "-1": ?>出库<?php break; endswitch;?></td>
-                                                <td><?php echo ($vo["in_transfer_out"]); ?></td>
                                                 <td><?php echo ($vo["partner"]["name"]); ?></td>
                                                 <td><?php echo ($vo["time"]); ?></td>
                                                 <td><?php echo ($vo["note"]); ?></td>
-                                                <td><a title="详情" class="label label-primary" href="<?php echo U('stockLogDetail');?>?id=<?php echo ($vo["id"]); ?>">详情</a></td>
+                                                <td>
+                                                    <?php switch($vo["status"]): case "0": ?><a title="详情" class="label label-primary" href="<?php echo U('transferDetail');?>?id=<?php echo ($vo["id"]); ?>">详情</a><?php break;?>
+                                                        <?php default: ?>
+                                                            <a title="详情" class="label label-primary" href="<?php echo U('stockLogDetail');?>?id=<?php echo ($vo["id"]); ?>">详情</a><?php endswitch;?>
+                                                </td>
                                             </tr><?php endforeach; endif; else: echo "" ;endif; ?>
                                         </tbody>
                                     </table>

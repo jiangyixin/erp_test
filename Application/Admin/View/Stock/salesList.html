@@ -45,8 +45,8 @@
                                     <table id="stockLogList" class="table table-bordered table-striped table-hover">
                                         <thead>
                                         <tr>
-                                            <th>编号</th><th>主题</th>
-                                            <th>来源</th><th>负责人</th>
+                                            <th>编号</th><!--<th>主题</th>-->
+                                            <th>负责人</th>
                                             <th>时间</th><th>备注</th>
                                             <th>操作</th>
                                         </tr>
@@ -55,9 +55,8 @@
                                         <!--offset="0" length='10'-->
                                         <volist name="stockLogList" id="vo">
                                             <tr title="" data-id="{$vo.id}">
-                                                <td>{$vo.id}</td>
-                                                <td>{$vo.title}</td>
-                                                <td>{$vo.in_transfer_out}</td>
+                                                <td>{$vo.no}</td>
+                                                <!--<td>{$vo.title}</td>-->
                                                 <td>{$vo.partner.name}</td>
                                                 <td>{$vo.time}</td>
                                                 <td>{$vo.note}</td>

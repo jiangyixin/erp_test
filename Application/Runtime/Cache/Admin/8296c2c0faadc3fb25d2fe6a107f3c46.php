@@ -11,7 +11,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="">
     <meta name="format-detection" content="telephone=no,email=no">
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <link rel="apple-touch-icon" type="image/x-icon" href="/php/erp/test/favicon.ico">
     <link rel="shortcut icon" type="image/x-icon" href="/php/erp/test/logo.png">
     <link rel="stylesheet" type="text/css" href="/php/erp/test/Public/libs/cui/css/cui.min.css">
@@ -20,6 +20,10 @@
     <link rel="stylesheet" type="text/css" href="/php/erp/test/Public/libs/animate/animate.min.css">
     <link rel="stylesheet" href="/php/erp/test/Public/libs/jquery_smartmenu/css/smartMenu.css">
     
+    <style>
+
+    </style>
+
     <!--[if lt IE 9]>
     <script src="http://cdn.bootcss.com/html5shiv/r29/html5.min.js"></script>
     <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
@@ -161,20 +165,27 @@
                                         <tbody>
                                         <!--offset="0" length='10'-->
                                         <?php if(is_array($procurementList)): $i = 0; $__LIST__ = $procurementList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr title="" data-id="<?php echo ($vo["id"]); ?>">
-                                                <td><?php echo ($vo["coding"]); ?></td>
+                                                <td><?php echo ($vo["no"]); ?></td>
                                                 <td><?php echo ($vo["title"]); ?></td>
                                                 <td><?php echo ($vo["num"]); ?></td>
                                                 <td><?php echo ($vo["total_price"]); ?></td>
                                                 <td><?php echo ($vo["create_time"]); ?></td>
                                                 <td><?php echo ($vo["partner"]["name"]); ?></td>
-                                                <td><?php switch($vo["status"]): case "4": ?>采购完成<?php break;?>
-                                                    <?php case "3": ?>校验入库<?php break;?>
+                                                <td><?php switch($vo["status"]): case "3": ?>采购完成<?php break;?>
                                                     <?php case "2": ?>接收成功<?php break;?>
                                                     <?php case "1": ?>采购中<?php break;?>
                                                     <?php case "0": ?>计划中<?php break;?>
                                                     <?php case "-1": ?>已取消<?php break; endswitch;?></td>
                                                 <td><?php echo ($vo["note"]); ?></td>
-                                                <td><a title="详情" class="label label-primary" href="<?php echo U('procurementDetail');?>?id=<?php echo ($vo["id"]); ?>">详情</a></td>
+                                                <td>
+                                                    <a title="详情" class="label label-primary" href="<?php echo U('procurementDetail');?>?id=<?php echo ($vo["id"]); ?>">详情</a>
+                                                    <?php switch($vo["status"]): case "3": ?><label class="label label-default">采购完成</label><?php break;?>
+                                                        <?php case "2": ?><a class="label label-primary" href="javascript:;" data-status="3">校验入库</a><?php break;?>
+                                                        <?php case "1": ?><a class="label label-primary" href="javascript:;" data-status="2">到货接收</a><?php break;?>
+                                                        <?php case "0": ?><a class="label label-primary" href="javascript:;" data-status="1">执行采购</a><?php break;?>
+                                                        <?php case "-1": ?><label class="label label-default">已取消</label><?php break; endswitch;?>
+
+                                                </td>
                                             </tr><?php endforeach; endif; else: echo "" ;endif; ?>
                                         </tbody>
                                     </table>
@@ -244,8 +255,8 @@
         </script>
         
 <script type="text/javascript">
-    var stockLogList = <?php echo json_encode($stockLogList);?>;
-    console.log(stockLogList);
+    var procurementList = <?php echo json_encode($procurementList);?>;
+    console.log(procurementList);
     var tableMenuData = [
         [{
             text: "修改",
@@ -278,6 +289,26 @@
         /*$("#stockList tbody tr").smartMenu(tableMenuData, {
             name: "table"
         });*/
+
+        $('#procurementList').on('click', 'a[data-status]', function() {
+            var result = confirm('确定要执行该操作？');
+            if (!result) return;
+            var procurement = new Object();
+            procurement.id = $(this).parents('tr').attr('data-id');
+            procurement.status = $(this).attr('data-status');
+            console.log(procurement);
+            $.post("<?php echo U('Goods/updateStatus');?>", { 'procurement': procurement}, function(data) {
+                console.log(data);
+                if (data.status) {
+                    $.alertMessager(data.info, 'success');
+                    window.setTimeout(function() {
+                        window.location = data.url;
+                    }, 2000);
+                } else {
+                    $.alertMessager(data.info, 'error');
+                }
+            } );
+        })
 
     });
 </script>

@@ -83,7 +83,7 @@ class CommonModel extends Model{
      * @return bool(false SQL出错)|int(影响的行数)
      */
     public function editData($wdata, $data) {
-        return $this->where($wdata)->save($data);
+        return $this->where($wdata)->lock(true)->save($data);
     }
 
     /**
@@ -92,7 +92,7 @@ class CommonModel extends Model{
      * @return bool(false SQL出错)|int(影响的行数)
      */
     public function editDataById($data) {
-        return $this->where('id='.$data['id'])->save($data);
+        return $this->where('id='.$data['id'])->lock(true)->save($data);
     }
 
     /**
@@ -101,7 +101,7 @@ class CommonModel extends Model{
      * @return bool(false SQL出错)|int(删除的行数)
      */
     public function delData($data) {
-        return $this->where($data)->delete();
+        return $this->where($data)->lock(true)->delete();
     }
 
 }
