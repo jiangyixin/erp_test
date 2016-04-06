@@ -63,9 +63,7 @@
                                                 <td>{$vo.create_time}</td>
                                                 <td>{$vo.partner.name}</td>
                                                 <td><switch name="vo.status">
-                                                    <case value="3">交易完成</case>
-                                                    <case value="2">配送中</case>
-                                                    <case value="1">出仓中</case>
+                                                    <case value="1">交易完成</case>
                                                     <case value="0">计划中</case>
                                                     <case value="-1">已取消</case>
                                                 </switch></td>
@@ -73,10 +71,15 @@
                                                 <td>
                                                     <a title="详情" class="label label-primary" href="{:U('sellDetail')}?id={$vo.id}">详情</a>
                                                     <switch name="vo.status">
-                                                        <case value="3"><label class="label label-default">销售完成</label></case>
-                                                        <case value="2"><a class="label label-primary" href="javascript:;" data-status="3">收货</a></case>
-                                                        <case value="1"><a class="label label-primary" href="javascript:;" data-status="2">配送</a></case>
-                                                        <case value="0"><a class="label label-primary" href="javascript:;" data-status="1">出仓</a></case>
+                                                        <case value="1">
+                                                            <label class="label label-default">编辑</label>
+                                                        </case>
+                                                        <default/>
+                                                        <a title="编辑" class="label label-primary" href="{:U('sellEdit')}?id={$vo.id}">编辑</a>
+                                                    </switch>
+                                                    <switch name="vo.status">
+                                                        <case value="1"><label class="label label-default">销售完成</label></case>
+                                                        <case value="0"><a class="label label-primary" href="javascript:;" data-status="1">完成交易</a></case>
                                                         <case value="-1"><label class="label label-default">已取消</label></case>
                                                     </switch>
                                                 </td>

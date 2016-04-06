@@ -9,7 +9,7 @@
 namespace Admin\Controller;
 
 
-
+use Think\Log;
 class SellController extends AdminController{
 
     public function sellStatistical() {
@@ -42,6 +42,39 @@ class SellController extends AdminController{
             $this->assign('goodsList', $goodsList);
             $this->assign('warehouseList', $warehouseList);
             $this->display('Sell/sell');
+        }
+    }
+
+    /**
+     * 编辑销售订单
+     */
+    public function sellEdit() {
+        if (IS_POST) {
+            $sell = I('post.sell');
+            $detailList = I('post.detailList');
+            if (!$sell || !$detailList) {
+                return;
+            }
+            $result = $this->getDgLogic()->sellEdit($sell, $detailList);
+            Log::record('---------' . json_encode($result));
+            if ($result) {
+                $this->success('操作成功！', '');
+            } else {
+                $this->error('操作失败！');
+            }
+        } else {
+            $data['id'] = I('id');
+            if ($data['id']) {
+                $sell = $this->getDgLogic()->getSellDetail($data);
+                $goodsList = D('Admin/Stock', 'Logic')->getGoodsStockList();
+                $warehouseList = $this->getDw()->getDataList();
+                $partnerList = $this->getDPartner()->getDataList();
+                $this->assign('sell', $sell);
+                $this->assign('partnerList', $partnerList);
+                $this->assign('goodsList', $goodsList);
+                $this->assign('warehouseList', $warehouseList);
+                $this->display('Sell/sellEdit');
+            }
         }
     }
 

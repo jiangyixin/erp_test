@@ -9,7 +9,7 @@
 namespace Admin\Controller;
 
 
-
+use Think\Log;
 use Think\Page;
 
 class GoodsController extends AdminController{
@@ -24,6 +24,55 @@ class GoodsController extends AdminController{
             $this->assign('procurement', $procurement);
             $this->display('Goods/procurementDetail');
         }
+    }
+
+    /**
+     * 编辑
+     */
+    public function procurementEdit() {
+        if (IS_POST) {
+            $procurement = I('post.procurement');
+            $detailList = I('post.detailList');
+            if (!$procurement || !$detailList) {
+                return;
+            }
+            $result = $this->getDgLogic()->procurementEdit($procurement, $detailList);
+            Log::record('---------' . json_encode($result));
+            if ($result) {
+                $this->success('操作成功！', '');
+            } else {
+                $this->error('操作失败！');
+            }
+        } else {
+            $data['id'] = I('id');
+            if ($data['id']) {
+                $procurement = $this->getDgLogic()->getProcurementDetail($data);
+                $goodsList = $this->getDg()->getDataList();
+                $supplierList = $this->getDs()->getDataList();
+                $partnerList = $this->getDPartner()->getDataList();
+                $this->assign('partnerList', $partnerList);
+                $this->assign('goodsList', $goodsList);
+                $this->assign('supplierList', $supplierList);
+                $this->assign('procurement', $procurement);
+                $this->display('Goods/procurementEdit');
+            }
+        }
+    }
+
+    /**
+     * 删除采购详情-商品列表
+     */
+    public function procurementDetailDel() {
+        $data['id'] = I('id');
+        if ($data['id']) {
+            $result['status'] = $this->getDpd()->delData($data);
+        }
+        if ($result) {
+            $this->success('删除成功');
+        } else {
+            $this->error('删除失败');
+        }
+        // $this->ajaxReturn($result , 'json');
     }
 
     /**

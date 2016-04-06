@@ -52,6 +52,7 @@ class GoodsLogic extends CommonModel{
                 $sell['detailList'][$key]['warehouse'] = $this->getDw()->checkData(array('id'=>$item['warehouse_id']));
                 $sell['count_num'] += $item['num'];
                 $sell['count_price'] += $item['num'] * $item['per_price'];
+                $sell['detailList'][$key]['total'] = D('Admin/Stock')->where(array('goods_id'=>$sell['detailList'][$key]['goods_id'], 'warehouse_id'=>$sell['detailList'][$key]['warehouse_id']))->getField('num');
             }
         }
         return $sell;
@@ -68,6 +69,7 @@ class GoodsLogic extends CommonModel{
         $procurementList = $this->getDp()->where($data)->page($page.", $limit")->select();
         foreach ($procurementList as $key=>$item) {
             $procurementList[$key]['partner'] = D('Admin/Partner')->checkData(array('id'=>$item['partner_id']));
+            $procurementList[$key]['num'] = $this->getDpd()->where(array('procurement_id'=>$item['id']))->count('id');
         }
         return $procurementList;
     }
@@ -88,7 +90,7 @@ class GoodsLogic extends CommonModel{
     }
 
     /**
-     * 插入采购单和采购详情
+     * 插入和采购单和采购详情
      * @param $procurement
      * @param $detailList
      * @return bool|string
@@ -101,19 +103,62 @@ class GoodsLogic extends CommonModel{
         $procurement['status'] = 0;
         $procurement_id = $this->getDp()->addData($procurement);
         if (!$procurement_id) {
-            M()-$this->rollback();
+            M()->rollback();
             return false;
         }
         foreach ($detailList as $key=>$item) {
             $detailList[$key]['procurement_id'] = $procurement_id;
         }
         $result = $this->getDpd()->addAll($detailList);
-        if ($result) {
-            M()->commit();
+        if ($result === false) {
+            M()->rollback();
+            return false;
         } else {
-            M()-$this->rollback();
+            M()->commit();
+            return true;
         }
-        return $result;
+    }
+
+    /**
+     * 编辑采购订单   不可修改状态码为3(已入库)
+     * @param $procurement
+     * @param $detailList
+     * @return bool
+     */
+    public function procurementEdit($procurement, $detailList) {
+        $dbProcurement = $this->getDp()->checkData(array('id'=>$procurement['id']));
+        if (!$dbProcurement || $dbProcurement['status'] == 3) { // 已入库或不存在的订单号
+            return false;
+        }
+        if ($procurement['status'] == 3) {
+            return false;
+        }
+        M()->startTrans();
+        $result = $this->getDp()->editDataById($procurement);
+        if ($result === false) {
+            M()->rollback();
+            return false;
+        }
+        foreach ($detailList as $key => $item) {
+            if ($item['id']) {
+                $result = $this->getDpd()->editDataById($item);
+            } else {
+                $item['procurement_id'] = $procurement['id'];
+                $result = $this->getDpd()->addData($item);
+            }
+            if ($result === false) {
+                M()->rollback();
+                return false;
+            }
+        }
+        if ($result === false) {
+            M()->rollback();
+            return false;
+        } else {
+            M()->commit();
+            return true;
+        }
+
     }
 
     /**
@@ -126,11 +171,11 @@ class GoodsLogic extends CommonModel{
         M()->startTrans();
         // 随机码：当前时间 加上 6位随机数字
         $sell['no'] = time() . rand(100000,999999);
-        // 状态码  -1：取消销售单、 0：生成销售单、 1：出仓中、 2：物流配送、 3：确认收货
+        // 状态码  -1：取消销售单、 0：生成销售单、 1：出仓完成销售
         $sell['status'] = 0;
         $sell_id = $this->getDsell()->addData($sell);
         if (!$sell_id) {
-            M()-$this->rollback();
+            M()->rollback();
             return false;
         }
         foreach ($detailList as $key => $item) {
@@ -143,6 +188,47 @@ class GoodsLogic extends CommonModel{
             M()->rollback();
         }
         return $result;
+    }
+
+    /**
+     * 编辑销售单和销售详情
+     * @param $sell
+     * @param $detailList
+     * @return bool
+     */
+    public function sellEdit($sell, $detailList) {
+        $dbSell = $this->getDsell()->checkData(array('id' => $sell['id']));
+        if (!$dbSell || $dbSell['status'] == 1) { // 已出库库或不存在的订单号
+            return false;
+        }
+        if ($sell['status'] == 1) {
+            return false;
+        }
+        M()->startTrans();
+        $result = $this->getDsell()->editDataById($sell);
+        if ($result === false) {
+            M()->rollback();
+            return false;
+        }
+        foreach ($detailList as $key => $item) {
+            if ($item['id']) {
+                $result = $this->getDsellDetail()->editDataById($item);
+            } else {
+                $item['sell_id'] = $sell['id'];
+                $result = $this->getDsellDetail()->addData($item);
+            }
+            if ($result === false) {
+                M()->rollback();
+                return false;
+            }
+        }
+        if ($result === false) {
+            M()->rollback();
+            return false;
+        } else {
+            M()->commit();
+            return true;
+        }
     }
 
     /**
@@ -171,8 +257,12 @@ class GoodsLogic extends CommonModel{
         return $result;
     }
 
+    /**
+     *
+     * @param $sell
+     * @return mixed
+     */
     public function updateSellStatus($sell) {
-        Log::record('log_sell: ' . json_encode($sell));
         $paramSell = $sell;
         if ($sell['status'] == 1) {
             $sell = $this->getDsell()->checkData(array('id' => $sell['id']));
@@ -182,18 +272,13 @@ class GoodsLogic extends CommonModel{
             foreach ($sDetailList as $key => $item) {
                 $detailList[] = array('goods_id' => $item['goods_id'], 'num' => $item['num'], 'warehouse_id' => $item['warehouse_id'], 'note' => $item['note']);
             }
-            Log::record('log_stockLog: ' . json_encode($stockLog));
-            Log::record('log_detailList: ' . json_encode($detailList));
             $result = $this->getDsLogic()->sales($stockLog, $detailList);
-            Log::record('log_result: ' . json_encode($result));
             if ($result) {
                 $result = $this->getDsell()->editDataById($paramSell);
             }
-            Log::record('log_result: ' . json_encode($result));
         } else {
             $result = $this->getDsell()->editDataById($sell);
         }
-        Log::record('log_result: ' . json_encode($result));
         return $result;
     }
 

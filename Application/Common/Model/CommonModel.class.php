@@ -70,7 +70,7 @@ class CommonModel extends Model{
     /**
      * 添加多条数据
      * @param $dataList 二位数组
-     * @return bool|string
+     * @return bool|int
      */
     public function addAllData($dataList) {
         return $this->addAll($dataList);

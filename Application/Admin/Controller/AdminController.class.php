@@ -41,4 +41,8 @@ class AdminController extends CommonController{
 
     }
 
+    public function log() {
+
+    }
+
 }
