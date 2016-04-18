@@ -1,0 +1,92 @@
+<extend name="$_admin_public_layout"/>
+<block name="style">
+    <style>
+
+    </style>
+</block>
+<block name="main">
+    <div id="main" class="col-xs-12 col-sm-10 main" style="overflow-y: scroll;">
+        <!-- 面包屑导航 -->
+        <ul class="breadcrumb">
+            <li><i class="fa fa-map-marker"></i></li>
+                <li class="text-muted">日志管理</li><li class="text-muted">用户操作日志</li>
+        </ul>
+        <!-- 主体内容区域 -->
+        <div class="tab-content ct-tab-content">
+
+            <div class="builder listbuilder-box panel-body">
+                <!-- Tab导航 -->
+
+                <!-- 顶部工具栏按钮 -->
+                <div class="builder-toolbar">
+                    <div class="row">
+                        <!-- 工具栏按钮 -->
+                        <div class="col-xs-12 col-sm-9 button-list clearfix">
+
+                        </div>
+                        <!-- 搜索框 -->
+                        <div class="col-xs-12 col-sm-3 clearfix">
+                            <form class="form" method="get" action="">
+                                <div class="form-group">
+                                    <div class="input-group search-form">
+                                        <input type="text" name="keyword" class="search-input form-control" value="" placeholder="请输入ID/链接名称">
+                                        <span class="input-group-btn"><a class="btn btn-default search-btn"><i class="fa fa-search"></i></a></span>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!-- 数据列表 -->
+                <div class="builder-container">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="builder-table">
+                                <div class="panel panel-default table-responsive">
+                                    <table id="logList" class="table table-bordered table-striped table-hover">
+                                        <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>操作者</th>
+                                            <th>事件</th>
+                                            <th>时间</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                            <foreach name="userLogList.rows" item="vo">
+                                                <tr>
+                                                    <td>{$vo.id}</td>
+                                                    <td>{$vo.who}</td>
+                                                    <td>{$vo.event}</td>
+                                                    <td>{$vo.create_time}</td>
+                                                </tr>
+                                            </foreach>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div style="text-align: right;">
+                                {$page}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 额外功能代码 -->
+            </div>
+
+        </div>
+
+    </div>
+</block>
+<block name="script">
+<script type="text/javascript">
+    $(window).ready(function(e) {
+
+    });
+</script>
+</block>

@@ -12,7 +12,6 @@
 
             <div class="builder listbuilder-box panel-body">
                 <!-- Tab导航 -->
-
                 <!-- 顶部工具栏按钮 -->
                 <div class="builder-toolbar">
                     <div class="row">
@@ -20,7 +19,6 @@
                         <div class="col-xs-12 col-sm-9 button-list clearfix">
                             <div class="form-group">
                                 <a title="新增" class="btn btn-primary" href="{:U('Supplier/supplierInfo')}?way=edit">新增</a>&nbsp;
-                                <a title="删除" target-form="ids" class="btn btn-danger ajax-post confirm" model="Link" href="{:U('Supplier/supplierDel')}">删除</a>&nbsp;
                             </div>
                         </div>
                         <!-- 搜索框 -->
@@ -28,7 +26,7 @@
                             <form class="form" method="get" action="">
                                 <div class="form-group">
                                     <div class="input-group search-form">
-                                        <input type="text" name="keyword" class="search-input form-control" value="" placeholder="请输入ID/链接名称">
+                                        <input type="text" name="keyword" class="search-input form-control" value="" placeholder="请输入ID/名称">
                                         <span class="input-group-btn"><a class="btn btn-default search-btn"><i class="fa fa-search"></i></a></span>
                                     </div>
                                 </div>
@@ -43,28 +41,31 @@
                             <div class="builder-table">
                                 <div class="panel panel-default table-responsive">
                                     <table  id="supplierList" class="table table-bordered table-striped table-hover">
+                                        <caption>供应商列表</caption>
                                         <thead>
                                         <tr>
-                                            <th><input class="check-all" type="checkbox"></th>
+                                            <th>ID</th>
                                             <th>名称</th>
-                                            <th>分组</th><th>负责人</th>
-                                            <th>电话</th><th>地址</th>
-                                            <th>联系人</th><th>备注</th>
+                                            <th>电话</th>
+                                            <th>分组</th>
+                                            <th>联系人</th>
+                                            <th>操作</th>
                                         </tr>
                                         </thead>
                                         <tbody>
                                         <foreach name="supplierList" item="vo">
                                             <tr title="" data-id="{$vo.id}">
-                                                <td><input class="ids" type="checkbox" value="{$vo.id}" name="ids[]"></td>
-                                                <td><a title="查看供应商详情" href="{:U('Supplier/supplierInfo')}?id={$vo.id}&way=show">{$vo.name}</a></td>
-                                                <td>{$vo.supplier_group.name}</td>
-                                                <td><foreach name="vo.partner" item="v">{$v.name}&nbsp;&nbsp;</foreach>
-                                                </td>
+                                                <td>{$vo.id}</td>
+                                                <td>{$vo.name}</td>
                                                 <td>{$vo.tel}</td>
-                                                <td>{$vo.address}</td>
-                                                <td><foreach name="vo.linkman" item="v"><a title="查看联系人信息" href="{:U('Supplier/linkmanList')}?keyword={$v.id}">{$v.name}</a>&nbsp;&nbsp;</foreach>
+                                                <td>{$vo.supplier_group.name}</td>
+                                                <td><foreach name="vo.linkman" item="v">{$v.name}&nbsp;&nbsp;</foreach></td>
+                                                <td>
+                                                    <a class="label label-primary" title="采购信息" href="{:U('Supplier/supplierProcurement')}?id={$vo.id}">采购信息</a>
+                                                    <a class="label label-primary" title="供应商详细信息" href="{:U('Supplier/supplierInfo')}?id={$vo.id}&way=show">详情</a>
+                                                    <a class="label label-warning btn-edit" title="编辑" href="{:U('Supplier/supplierInfo')}?id={$vo.id}&way=edit" >编辑</a>
+                                                    <a class="label label-danger btn-del" title="删除" href="{:U('Supplier/supplierDel')}" >删除</a>
                                                 </td>
-                                                <th>{$vo.note}</th>
                                             </tr>
                                         </foreach>
                                         </tbody>
@@ -84,49 +85,7 @@
 </block>
 <block name="script">
 <script type="text/javascript">
-
-    var tableMenuData = [
-        [{
-            text: "查看详情",
-            func: function() {
-                var id = $(this).attr('data-id');
-                window.location = "{:U('Supplier/supplierInfo')}?id=" + id + '&way=show';
-            }
-        }, {
-            text: "修改",
-            func: function() {
-                var id = $(this).attr('data-id');
-                window.location = "{:U('Supplier/supplierInfo')}?id=" + id + '&way=edit';
-            }
-        }, {
-            text: "删除",
-            func: function() {
-                var result = confirm('确定要执行该操作？');
-                if (!result) return;
-                var id = $(this).attr('data-id');
-                $.post("{:U('Supplier/supplierDel')}", { id: id}, function(data) {
-                    if (data.status) {
-                        $.alertMessager(data.info, 'success');
-                        window.setTimeout(function() {
-                            window.location = data.url;
-                        }, 2000);
-                    } else {
-                        $.alertMessager(data.info, 'error');
-                    }
-                } );
-            }
-        }]
-    ];
-
     $(window).ready(function(e) {
-        /*$('#supplierList').on('dblclick', 'tr', function() {
-            var id = $(this).attr('data-id');
-            alert(id);
-        })*/
-
-        $("#supplierList tbody tr").smartMenu(tableMenuData, {
-            name: "table"
-        });
 
     });
 </script>

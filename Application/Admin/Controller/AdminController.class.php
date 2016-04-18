@@ -10,6 +10,7 @@ namespace Admin\Controller;
 
 
 use Common\Controller\CommonController;
+use MongoDB\BSON\Timestamp;
 
 class AdminController extends CommonController{
 
@@ -34,11 +35,11 @@ class AdminController extends CommonController{
                 $curMenuList['list'][] = $item;
             }
         }
-
+        $curTime = date('Y-m-d H:i:s');
         $this->assign('navList', $navList);
         $this->assign('menuList', $curMenuList);
         $this->assign('_admin_public_layout', C('ADMIN_PUBLIC_LAYOUT'));  // 页面公共继承模版
-
+        $this->assign('curTime', $curTime);
     }
 
     public function log() {

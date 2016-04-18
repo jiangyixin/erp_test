@@ -10,7 +10,7 @@ namespace Admin\Logic;
 
 
 use Common\Model\CommonModel;
-use Think\Model;
+use Think\Log;
 
 class SupplierLogic extends CommonModel{
 
@@ -27,6 +27,24 @@ class SupplierLogic extends CommonModel{
         $this->dp = D('Admin/Partner');
         $this->drsp = D('Admin/SupplierPartner');
 
+    }
+
+    /**
+     * 获取当前供应商采购信息
+     * @param $data
+     * @return mixed
+     */
+    public function getSupplierProcurement($data) {
+        if ($data) {
+            $supplier = D('Admin/Supplier')->checkData($data);
+            $procurementList = D('Admin/Procurement')->getDataList(array('supplier_id'=>$supplier['id']));
+            foreach ($procurementList as $key => $item) {
+                $procurementList[$key]['detailList'] = D('Admin/ProcurementDetail')->getDataList(array('procurement_id'=>$item['id']));
+
+            }
+            $supplier['procurementList'] = $procurementList;
+            return $supplier;
+        }
     }
 
     /**
@@ -116,28 +134,34 @@ class SupplierLogic extends CommonModel{
      * @return bool
      */
     public function editSupplierAndLinkmanList($supplier, $linkmanList) {
-        $result = array();
+        M()->startTrans();
         if ($supplier['id']) {
-            $result[] = $this->ds->editDataById($supplier);
+            $result = $this->ds->editDataById($supplier);
         } else {
-            $result[] = $supplier_id = $this->ds->addData($supplier);
-            foreach ($linkmanList as $key=>$item) {
-                $linkmanList[$key]['supplier_id'] = $supplier_id;
-            }
+            $result = $supplier['id'] = $this->ds->addData($supplier);
         }
-
+        if ($result === false) {
+            M()->rollback();
+            return false;
+        }
         foreach ($linkmanList as $item) {
             if ($item['id']) {
-                $result[] = $this->dsl->editDataById($item);
+                if (!$item['supplier_id']) {
+                    $item['supplier_id'] = $supplier['id'];
+                }
+                $result = $this->dsl->editDataById($item);
             } else {
-                $result[] = $this->dsl->addData($item);
+                $item['supplier_id'] = $supplier['id'];
+                $result = $this->dsl->addData($item);
+            }
+            if ($result === false) {
+                M()->rollback();
+                return false;
             }
         }
-        \Think\Log::record('result' . json_encode($result));
-        if ($result) {
-            return ture;
-        } else {
-            return false;
+        if ($result !== false) {
+            M()->commit();
+            return true;
         }
     }
 

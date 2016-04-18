@@ -52,7 +52,7 @@
                                 </div>
                                 <div class="form-group col-xs-6">
                                     <label class="label-left">时间：</label>
-                                    <span class="form-control">{$procurement.create_time}</span>
+                                    <span class="form-control">{$procurement.update_time}</span>
                                 </div>
                             </div>
                         </div>
@@ -77,22 +77,25 @@
                                 </div>
                             </div>
                         </div>
-
+                        <div class="row" style="margin-top: 10px;">
+                            <div class="col-xs-12">
+                                <div class="form-group col-xs-6">
+                                    <label class="label-left">供应商：</label>
+                                    <span class="form-control">{$procurement.supplier.name}</span>
+                                </div>
+                            </div>
+                        </div>
                     </form>
                     <div class="row" style="margin-top: 10px;">
                         <div class="col-xs-12 col-lg-12">
-                            <h4><switch name="stockLog.status">
-                                <case value="1">入库</case>
-                                <case value="-1">出库</case>
-                            </switch>商品列表：</h4>
                             <div class="builder-table">
                                 <div class="panel panel-default table-responsive">
                                     <table id="detailList" class="table table-bordered table-striped table-hover">
+                                        <caption>采购商品表</caption>
                                         <thead>
                                         <tr>
                                             <th>商品</th><th>数量</th>
-                                            <th>单价</th><th>小计</th><th>供应商</th>
-                                            <!--<th>备注</th>-->
+                                            <th>单价</th><th>小计</th>
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -102,8 +105,6 @@
                                                 <td>{$vo.num}</td>
                                                 <td>{$vo.per_price}</td>
                                                 <td>{$vo[num] * $vo[per_price]}</td>
-                                                <td>{$vo.supplier.name}</td>
-                                                <!--<td>{$vo.note}</td>-->
                                             </tr>
                                         </foreach>
                                         <tr>
@@ -111,7 +112,6 @@
                                             <td>{$procurement.count_num}</td>
                                             <td></td>
                                             <td>{$procurement.count_price}</td>
-                                            <td></td>
                                         </tr>
                                         </tbody>
                                     </table>
@@ -154,7 +154,7 @@
                         <!-- 工具栏按钮 -->
                         <div class="col-xs-12 col-sm-9 button-list clearfix">
                             <div class="form-group">
-                                <div class="col-sm-offset-2 col-lg-offset-1 col-sm-10">
+                                <div class="col-sm-10">
                                     <button type="button" class="btn btn-danger" onclick="history.back();">返回</button>
                                 </div>
                             </div>

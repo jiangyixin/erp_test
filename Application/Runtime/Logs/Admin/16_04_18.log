@@ -1,0 +1,2596 @@
+[ 2016-04-18T11:10:19+08:00 ] 192.168.2.233 /php/erp/test/index.php/Admin/Stock/stockList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+ERR: ------------------------------InitConfig-----start------------------------------------
+INFO: Run Common\Behavior\InitConfigBehavior [ RunTime:0.002001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004001s ]
+INFO: [ action_begin ] --START--
+ERR: ------------------------------LogBehavior-----start------------------------------------
+ERR: ACTION: Admin/Stock/stockList
+ERR: get param: []
+INFO: Run Admin\Behavior\LogBehavior [ RunTime:0.001000s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `erp_stock_log` [ RunTime:0.0020s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `erp_stock_log` LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `erp_stock` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_goods` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_warehouse` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_goods_code` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_log_detail` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_purchase` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_sales` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_transfer` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `erp_stock` WHERE `warehouse_id` = 0 ORDER BY id desc LIMIT 0,10   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.002000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.053003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.053003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-04-18T11:11:28+08:00 ] 192.168.2.233 /php/erp/test/index.php/Admin/Stock/stockList.html?id-1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+ERR: ------------------------------InitConfig-----start------------------------------------
+INFO: Run Common\Behavior\InitConfigBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+INFO: [ action_begin ] --START--
+ERR: ------------------------------LogBehavior-----start------------------------------------
+ERR: ACTION: Admin/Stock/stockList
+ERR: get param: {"id-1":""}
+INFO: Run Admin\Behavior\LogBehavior [ RunTime:0.002000s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `erp_stock_log` [ RunTime:0.0020s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `erp_stock_log` LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `erp_stock` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_goods` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_warehouse` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_goods_code` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_log_detail` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_purchase` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_sales` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_transfer` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `erp_stock` WHERE `warehouse_id` = 0 ORDER BY id desc LIMIT 0,10   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.052003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.053003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-04-18T11:11:31+08:00 ] 192.168.2.233 /php/erp/test/index.php/Admin/Stock/stockList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+ERR: ------------------------------InitConfig-----start------------------------------------
+INFO: Run Common\Behavior\InitConfigBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+INFO: [ action_begin ] --START--
+ERR: ------------------------------LogBehavior-----start------------------------------------
+ERR: ACTION: Admin/Stock/stockList
+ERR: get param: []
+INFO: Run Admin\Behavior\LogBehavior [ RunTime:0.001000s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `erp_stock_log` [ RunTime:0.0020s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `erp_stock_log` LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `erp_stock` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `erp_goods` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_warehouse` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_goods_code` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_log_detail` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_purchase` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `erp_stock_sales` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_transfer` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `erp_stock` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `erp_stock` WHERE `warehouse_id` = 0 ORDER BY id desc LIMIT 0,10   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.052003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.053003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-04-18T11:11:36+08:00 ] 192.168.2.233 /php/erp/test/index.php/Admin/Stock/stockList.html?id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+ERR: ------------------------------InitConfig-----start------------------------------------
+INFO: Run Common\Behavior\InitConfigBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+INFO: [ action_begin ] --START--
+ERR: ------------------------------LogBehavior-----start------------------------------------
+ERR: ACTION: Admin/Stock/stockList
+ERR: get param: {"id":"1"}
+INFO: Run Admin\Behavior\LogBehavior [ RunTime:0.002000s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `erp_stock_log` [ RunTime:0.0020s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `erp_stock_log` LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `erp_stock` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_goods` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_warehouse` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_goods_code` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_log_detail` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_purchase` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_sales` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_transfer` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `erp_stock` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `erp_stock` WHERE `warehouse_id` = 1 ORDER BY id desc LIMIT 0,10   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_goods` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_warehouse` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `erp_stock` WHERE `goods_id` = 5 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_goods` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_warehouse` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `erp_stock` WHERE `goods_id` = 4 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_goods` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_warehouse` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `erp_stock` WHERE `goods_id` = 2 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_goods` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_warehouse` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `erp_stock` WHERE `goods_id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.052003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.053003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-04-18T11:13:01+08:00 ] 192.168.2.233 /php/erp/test/index.php/Admin/Stock/stockList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+ERR: ------------------------------InitConfig-----start------------------------------------
+INFO: Run Common\Behavior\InitConfigBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+INFO: [ action_begin ] --START--
+ERR: ------------------------------LogBehavior-----start------------------------------------
+ERR: ACTION: Admin/Stock/stockList
+ERR: get param: []
+INFO: Run Admin\Behavior\LogBehavior [ RunTime:0.002000s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `erp_stock_log` [ RunTime:0.0020s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `erp_stock_log` LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `erp_stock` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_goods` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_warehouse` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_goods_code` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_log_detail` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_purchase` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_sales` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_transfer` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `erp_stock` ORDER BY id desc LIMIT 0,10   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_goods` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_warehouse` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `erp_stock` WHERE `goods_id` = 5 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `erp_goods` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_warehouse` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `erp_stock` WHERE `goods_id` = 4 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `erp_goods` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_warehouse` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `erp_stock` WHERE `goods_id` = 2 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_goods` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_warehouse` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `erp_stock` WHERE `goods_id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_goods` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_warehouse` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `erp_stock` WHERE `goods_id` = 5 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_goods` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_warehouse` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `erp_stock` WHERE `goods_id` = 5 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_goods` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `erp_warehouse` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `erp_stock` WHERE `goods_id` = 4 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_goods` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `erp_warehouse` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `erp_stock` WHERE `goods_id` = 2 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_goods` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_warehouse` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `erp_stock` WHERE `goods_id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_goods` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_warehouse` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `erp_stock` WHERE `goods_id` = 2 LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.053003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.054003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-04-18T11:13:51+08:00 ] 192.168.2.233 /php/erp/test/index.php/Admin/Stock/stockList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+ERR: ------------------------------InitConfig-----start------------------------------------
+INFO: Run Common\Behavior\InitConfigBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+INFO: [ action_begin ] --START--
+ERR: ------------------------------LogBehavior-----start------------------------------------
+ERR: ACTION: Admin/Stock/stockList
+ERR: get param: []
+INFO: Run Admin\Behavior\LogBehavior [ RunTime:0.002000s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `erp_stock_log` [ RunTime:0.0020s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `erp_stock_log` LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `erp_stock` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_goods` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_warehouse` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_goods_code` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_log_detail` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_purchase` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_sales` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_transfer` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `erp_stock` ORDER BY id desc LIMIT 0,10   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_goods` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_warehouse` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `erp_stock` WHERE `goods_id` = 5 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_goods` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_warehouse` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `erp_stock` WHERE `goods_id` = 4 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_goods` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `erp_warehouse` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `erp_stock` WHERE `goods_id` = 2 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_goods` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_warehouse` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `erp_stock` WHERE `goods_id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `erp_goods` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_warehouse` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `erp_stock` WHERE `goods_id` = 5 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_goods` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_warehouse` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `erp_stock` WHERE `goods_id` = 5 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_goods` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `erp_warehouse` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `erp_stock` WHERE `goods_id` = 4 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_goods` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `erp_warehouse` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `erp_stock` WHERE `goods_id` = 2 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_goods` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_warehouse` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `erp_stock` WHERE `goods_id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `erp_goods` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_warehouse` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `erp_stock` WHERE `goods_id` = 2 LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.054003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.056003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-04-18T11:14:29+08:00 ] 192.168.2.233 /php/erp/test/index.php/Admin/Stock/stockList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+ERR: ------------------------------InitConfig-----start------------------------------------
+INFO: Run Common\Behavior\InitConfigBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+INFO: [ action_begin ] --START--
+ERR: ------------------------------LogBehavior-----start------------------------------------
+ERR: ACTION: Admin/Stock/stockList
+ERR: get param: []
+INFO: Run Admin\Behavior\LogBehavior [ RunTime:0.001000s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `erp_stock_log` [ RunTime:0.0020s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `erp_stock_log` LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `erp_stock` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_goods` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `erp_warehouse` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_goods_code` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_log_detail` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_purchase` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_sales` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_transfer` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `erp_stock` ORDER BY id desc LIMIT 0,10   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `erp_goods` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_warehouse` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `erp_stock` WHERE `goods_id` = 5 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `erp_goods` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_warehouse` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `erp_stock` WHERE `goods_id` = 4 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `erp_goods` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_warehouse` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `erp_stock` WHERE `goods_id` = 2 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_goods` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_warehouse` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `erp_stock` WHERE `goods_id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_goods` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `erp_warehouse` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `erp_stock` WHERE `goods_id` = 5 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_goods` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_warehouse` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `erp_stock` WHERE `goods_id` = 5 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `erp_goods` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_warehouse` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `erp_stock` WHERE `goods_id` = 4 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_goods` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_warehouse` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `erp_stock` WHERE `goods_id` = 2 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_goods` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `erp_warehouse` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `erp_stock` WHERE `goods_id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_goods` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_warehouse` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `erp_stock` WHERE `goods_id` = 2 LIMIT 1   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.052003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.053003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-04-18T11:14:55+08:00 ] 192.168.2.233 /php/erp/test/index.php/Admin/Stock/stockList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+ERR: ------------------------------InitConfig-----start------------------------------------
+INFO: Run Common\Behavior\InitConfigBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+INFO: [ action_begin ] --START--
+ERR: ------------------------------LogBehavior-----start------------------------------------
+ERR: ACTION: Admin/Stock/stockList
+ERR: get param: []
+INFO: Run Admin\Behavior\LogBehavior [ RunTime:0.002000s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `erp_stock_log` [ RunTime:0.0020s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `erp_stock_log` LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `erp_stock` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `erp_goods` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_warehouse` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_goods_code` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_log_detail` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_purchase` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_sales` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_transfer` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `erp_stock` ORDER BY id desc LIMIT 0,10   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_goods` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_warehouse` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `erp_stock` WHERE `goods_id` = 5 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_goods` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_warehouse` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `erp_stock` WHERE `goods_id` = 4 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_goods` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `erp_warehouse` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `erp_stock` WHERE `goods_id` = 2 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_goods` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `erp_warehouse` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `erp_stock` WHERE `goods_id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_goods` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_warehouse` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `erp_stock` WHERE `goods_id` = 5 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `erp_goods` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_warehouse` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `erp_stock` WHERE `goods_id` = 5 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_goods` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_warehouse` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `erp_stock` WHERE `goods_id` = 4 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_goods` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `erp_warehouse` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `erp_stock` WHERE `goods_id` = 2 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_goods` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_warehouse` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `erp_stock` WHERE `goods_id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_goods` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_warehouse` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `erp_stock` WHERE `goods_id` = 2 LIMIT 1   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.054003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.054003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002001s ]
+
+[ 2016-04-18T11:15:43+08:00 ] 192.168.2.233 /php/erp/test/index.php/Admin/Stock/stockList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+ERR: ------------------------------InitConfig-----start------------------------------------
+INFO: Run Common\Behavior\InitConfigBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+INFO: [ action_begin ] --START--
+ERR: ------------------------------LogBehavior-----start------------------------------------
+ERR: ACTION: Admin/Stock/stockList
+ERR: get param: []
+INFO: Run Admin\Behavior\LogBehavior [ RunTime:0.002000s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `erp_stock_log` [ RunTime:0.0020s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `erp_stock_log` LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `erp_stock` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_goods` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_warehouse` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_goods_code` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_log_detail` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_purchase` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_sales` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_transfer` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `erp_stock` ORDER BY id desc LIMIT 0,10   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_goods` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_warehouse` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `erp_stock` WHERE `goods_id` = 5 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `erp_goods` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_warehouse` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `erp_stock` WHERE `goods_id` = 4 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_goods` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_warehouse` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `erp_stock` WHERE `goods_id` = 2 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `erp_goods` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_warehouse` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `erp_stock` WHERE `goods_id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_goods` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_warehouse` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `erp_stock` WHERE `goods_id` = 5 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `erp_goods` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_warehouse` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `erp_stock` WHERE `goods_id` = 5 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_goods` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_warehouse` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `erp_stock` WHERE `goods_id` = 4 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `erp_goods` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_warehouse` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `erp_stock` WHERE `goods_id` = 2 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_goods` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_warehouse` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `erp_stock` WHERE `goods_id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_goods` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `erp_warehouse` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `erp_stock` WHERE `goods_id` = 2 LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.054003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.054003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-04-18T11:18:08+08:00 ] 192.168.2.233 /php/erp/test/index.php/Admin/Stock/stockList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+ERR: ------------------------------InitConfig-----start------------------------------------
+INFO: Run Common\Behavior\InitConfigBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+INFO: [ action_begin ] --START--
+ERR: ------------------------------LogBehavior-----start------------------------------------
+ERR: ACTION: Admin/Stock/stockList
+ERR: get param: []
+INFO: Run Admin\Behavior\LogBehavior [ RunTime:0.002000s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `erp_stock_log` [ RunTime:0.0020s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `erp_stock_log` LIMIT 1   [ RunTime:0.0000s ]
+ERR: -----------------count----------"4"
+SQL: SHOW COLUMNS FROM `erp_stock` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_goods` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_warehouse` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_goods_code` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_log_detail` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_purchase` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_sales` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_transfer` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `erp_stock` ORDER BY id desc LIMIT 0,10   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_goods` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_warehouse` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `erp_stock` WHERE `goods_id` = 5 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `erp_goods` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_warehouse` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `erp_stock` WHERE `goods_id` = 4 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `erp_goods` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_warehouse` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `erp_stock` WHERE `goods_id` = 2 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_goods` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `erp_warehouse` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `erp_stock` WHERE `goods_id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_goods` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_warehouse` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `erp_stock` WHERE `goods_id` = 5 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `erp_goods` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_warehouse` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `erp_stock` WHERE `goods_id` = 5 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_goods` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `erp_warehouse` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `erp_stock` WHERE `goods_id` = 4 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_goods` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_warehouse` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `erp_stock` WHERE `goods_id` = 2 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_goods` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_warehouse` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `erp_stock` WHERE `goods_id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_goods` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_warehouse` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `erp_stock` WHERE `goods_id` = 2 LIMIT 1   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.053003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.054003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-04-18T11:18:53+08:00 ] 192.168.2.233 /php/erp/test/index.php/Admin/Stock/stockList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+ERR: ------------------------------InitConfig-----start------------------------------------
+INFO: Run Common\Behavior\InitConfigBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004001s ]
+INFO: [ action_begin ] --START--
+ERR: ------------------------------LogBehavior-----start------------------------------------
+ERR: ACTION: Admin/Stock/stockList
+ERR: get param: []
+INFO: Run Admin\Behavior\LogBehavior [ RunTime:0.001000s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `erp_stock` [ RunTime:0.0020s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `erp_stock` LIMIT 1   [ RunTime:0.0000s ]
+ERR: -----------------count----------"11"
+SQL: SHOW COLUMNS FROM `erp_goods` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_warehouse` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_goods_code` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_log` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_log_detail` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_purchase` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_sales` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_transfer` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `erp_stock` ORDER BY id desc LIMIT 0,10   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_goods` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_warehouse` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `erp_stock` WHERE `goods_id` = 5 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_goods` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_warehouse` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `erp_stock` WHERE `goods_id` = 4 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_goods` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `erp_warehouse` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `erp_stock` WHERE `goods_id` = 2 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_goods` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_warehouse` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `erp_stock` WHERE `goods_id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `erp_goods` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_warehouse` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `erp_stock` WHERE `goods_id` = 5 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `erp_goods` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_warehouse` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `erp_stock` WHERE `goods_id` = 5 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_goods` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_warehouse` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `erp_stock` WHERE `goods_id` = 4 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_goods` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `erp_warehouse` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `erp_stock` WHERE `goods_id` = 2 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_goods` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_warehouse` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `erp_stock` WHERE `goods_id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `erp_goods` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_warehouse` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `erp_stock` WHERE `goods_id` = 2 LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.002000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.053003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.054003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-04-18T11:18:55+08:00 ] 192.168.2.233 /php/erp/test/index.php/Admin/Stock/stockList/p/2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+ERR: ------------------------------InitConfig-----start------------------------------------
+INFO: Run Common\Behavior\InitConfigBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004001s ]
+INFO: [ action_begin ] --START--
+ERR: ------------------------------LogBehavior-----start------------------------------------
+ERR: ACTION: Admin/Stock/stockList
+ERR: get param: {"p":"2"}
+INFO: Run Admin\Behavior\LogBehavior [ RunTime:0.001000s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `erp_stock` [ RunTime:0.0020s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `erp_stock` LIMIT 1   [ RunTime:0.0010s ]
+ERR: -----------------count----------"11"
+SQL: SHOW COLUMNS FROM `erp_goods` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_warehouse` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_goods_code` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_log` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_log_detail` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_purchase` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `erp_stock_sales` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_transfer` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `erp_stock` ORDER BY id desc LIMIT 10,10   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `erp_goods` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_warehouse` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `erp_stock` WHERE `goods_id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.053003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.054003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-04-18T11:18:57+08:00 ] 192.168.2.233 /php/erp/test/index.php/Admin/Stock/stockList/p/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+ERR: ------------------------------InitConfig-----start------------------------------------
+INFO: Run Common\Behavior\InitConfigBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+INFO: [ action_begin ] --START--
+ERR: ------------------------------LogBehavior-----start------------------------------------
+ERR: ACTION: Admin/Stock/stockList
+ERR: get param: {"p":"1"}
+INFO: Run Admin\Behavior\LogBehavior [ RunTime:0.001000s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `erp_stock` [ RunTime:0.0020s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `erp_stock` LIMIT 1   [ RunTime:0.0000s ]
+ERR: -----------------count----------"11"
+SQL: SHOW COLUMNS FROM `erp_goods` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_warehouse` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `erp_goods_code` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_log` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_log_detail` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_purchase` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `erp_stock_sales` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_transfer` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `erp_stock` ORDER BY id desc LIMIT 0,10   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_goods` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_warehouse` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `erp_stock` WHERE `goods_id` = 5 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_goods` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_warehouse` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `erp_stock` WHERE `goods_id` = 4 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `erp_goods` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_warehouse` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `erp_stock` WHERE `goods_id` = 2 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_goods` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `erp_warehouse` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `erp_stock` WHERE `goods_id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_goods` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `erp_warehouse` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `erp_stock` WHERE `goods_id` = 5 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_goods` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_warehouse` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `erp_stock` WHERE `goods_id` = 5 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_goods` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_warehouse` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `erp_stock` WHERE `goods_id` = 4 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `erp_goods` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_warehouse` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `erp_stock` WHERE `goods_id` = 2 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_goods` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `erp_warehouse` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `erp_stock` WHERE `goods_id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_goods` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_warehouse` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `erp_stock` WHERE `goods_id` = 2 LIMIT 1   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.054003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.054003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-04-18T11:19:12+08:00 ] 192.168.2.233 /php/erp/test/index.php/Admin/Stock/stockList/p/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+ERR: ------------------------------InitConfig-----start------------------------------------
+INFO: Run Common\Behavior\InitConfigBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+INFO: [ action_begin ] --START--
+ERR: ------------------------------LogBehavior-----start------------------------------------
+ERR: ACTION: Admin/Stock/stockList
+ERR: get param: {"p":"1"}
+INFO: Run Admin\Behavior\LogBehavior [ RunTime:0.001001s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.003001s ]
+SQL: SHOW COLUMNS FROM `erp_stock` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `erp_stock` LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `erp_goods` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_warehouse` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_goods_code` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_log` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `erp_stock_log_detail` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `erp_stock_purchase` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_sales` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_transfer` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `erp_stock` ORDER BY id desc LIMIT 0,10   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `erp_goods` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_warehouse` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `erp_stock` WHERE `goods_id` = 5 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `erp_goods` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `erp_warehouse` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `erp_stock` WHERE `goods_id` = 4 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_goods` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_warehouse` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `erp_stock` WHERE `goods_id` = 2 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_goods` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_warehouse` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `erp_stock` WHERE `goods_id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `erp_goods` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_warehouse` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `erp_stock` WHERE `goods_id` = 5 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_goods` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `erp_warehouse` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `erp_stock` WHERE `goods_id` = 5 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_goods` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_warehouse` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `erp_stock` WHERE `goods_id` = 4 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_goods` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_warehouse` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `erp_stock` WHERE `goods_id` = 2 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `erp_goods` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_warehouse` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `erp_stock` WHERE `goods_id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `erp_goods` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_warehouse` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `erp_stock` WHERE `goods_id` = 2 LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.002000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.053003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.053003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002001s ]
+
+[ 2016-04-18T11:25:20+08:00 ] 192.168.2.233 /php/erp/test/index.php/Admin/Stock/stockList/p/2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+ERR: ------------------------------InitConfig-----start------------------------------------
+INFO: Run Common\Behavior\InitConfigBehavior [ RunTime:0.002001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003001s ]
+INFO: [ action_begin ] --START--
+ERR: ------------------------------LogBehavior-----start------------------------------------
+ERR: ACTION: Admin/Stock/stockList
+ERR: get param: {"p":"2"}
+INFO: Run Admin\Behavior\LogBehavior [ RunTime:0.002000s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `erp_stock` [ RunTime:0.0020s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `erp_stock` LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `erp_goods` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_warehouse` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_goods_code` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_log` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_log_detail` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_purchase` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_sales` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_transfer` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `erp_stock` ORDER BY id desc LIMIT 10,10   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `erp_goods` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_warehouse` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `erp_stock` WHERE `goods_id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.052003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.053003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003000s ]
+
+[ 2016-04-18T11:25:39+08:00 ] 192.168.2.233 /php/erp/test/index.php/Admin/Stock/stockList/p/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+ERR: ------------------------------InitConfig-----start------------------------------------
+INFO: Run Common\Behavior\InitConfigBehavior [ RunTime:0.002001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003001s ]
+INFO: [ action_begin ] --START--
+ERR: ------------------------------LogBehavior-----start------------------------------------
+ERR: ACTION: Admin/Stock/stockList
+ERR: get param: {"p":"1"}
+INFO: Run Admin\Behavior\LogBehavior [ RunTime:0.001000s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `erp_stock` [ RunTime:0.0020s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `erp_stock` LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `erp_goods` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_warehouse` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_goods_code` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_log` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_log_detail` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_purchase` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_sales` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_transfer` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `erp_stock` ORDER BY id desc LIMIT 0,10   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_goods` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_warehouse` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `erp_stock` WHERE `goods_id` = 5 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_goods` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_warehouse` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `erp_stock` WHERE `goods_id` = 4 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_goods` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `erp_warehouse` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `erp_stock` WHERE `goods_id` = 2 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_goods` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_warehouse` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `erp_stock` WHERE `goods_id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_goods` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_warehouse` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `erp_stock` WHERE `goods_id` = 5 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `erp_goods` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_warehouse` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `erp_stock` WHERE `goods_id` = 5 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_goods` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_warehouse` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `erp_stock` WHERE `goods_id` = 4 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_goods` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `erp_warehouse` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `erp_stock` WHERE `goods_id` = 2 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_goods` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_warehouse` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `erp_stock` WHERE `goods_id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `erp_goods` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_warehouse` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT SUM(num) AS tp_sum FROM `erp_stock` WHERE `goods_id` = 2 LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.052003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.054003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-04-18T11:45:41+08:00 ] 192.168.2.233 /php/erp/test/index.php/Admin/Stock/transferList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+ERR: ------------------------------InitConfig-----start------------------------------------
+INFO: Run Common\Behavior\InitConfigBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+INFO: [ action_begin ] --START--
+ERR: ------------------------------LogBehavior-----start------------------------------------
+ERR: ACTION: Admin/Stock/transferList
+ERR: get param: []
+INFO: Run Admin\Behavior\LogBehavior [ RunTime:0.001000s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `erp_stock_transfer` [ RunTime:0.0020s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `erp_stock_transfer` LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `erp_stock` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_goods` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_warehouse` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_goods_code` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_log` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_log_detail` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_purchase` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_sales` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `erp_stock_log` WHERE `status` = 0 ORDER BY id desc LIMIT 0,10   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `erp_partner` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `erp_partner` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_partner` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_partner` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `erp_partner` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.059004s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.059004s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-04-18T11:45:43+08:00 ] 192.168.2.233 /php/erp/test/index.php/Admin/Stock/transfer.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+ERR: ------------------------------InitConfig-----start------------------------------------
+INFO: Run Common\Behavior\InitConfigBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+INFO: [ action_begin ] --START--
+ERR: ------------------------------LogBehavior-----start------------------------------------
+ERR: ACTION: Admin/Stock/transfer
+ERR: get param: []
+INFO: Run Admin\Behavior\LogBehavior [ RunTime:0.001000s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `erp_partner` [ RunTime:0.0020s ]
+NOTIC: [2] Missing argument 1 for Common\Model\CommonModel::getDataList(), called in D:\xampp\htdocs\php\erp\test\Application\Admin\Controller\StockController.class.php on line 166 and defined D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 38 行.
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 39 行.
+SQL: SELECT * FROM `erp_partner`  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `erp_stock` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_goods` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_warehouse` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_goods_code` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_log` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `erp_stock_log_detail` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_purchase` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_sales` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_transfer` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock` [ RunTime:0.0020s ]
+NOTIC: [2] Missing argument 1 for Admin\Logic\StockLogic::getGoodsStockList(), called in D:\xampp\htdocs\php\erp\test\Application\Admin\Controller\StockController.class.php on line 167 and defined D:\xampp\htdocs\php\erp\test\Application\Admin\Logic\StockLogic.class.php 第 44 行.
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\php\erp\test\Application\Admin\Logic\StockLogic.class.php 第 45 行.
+SQL: SELECT * FROM `erp_goods`  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `erp_stock` WHERE `goods_id` = 1  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_stock` WHERE `goods_id` = 2  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_stock` WHERE `goods_id` = 4  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `erp_stock` WHERE `goods_id` = 5  [ RunTime:0.0000s ]
+NOTIC: [2] Missing argument 1 for Common\Model\CommonModel::getDataList(), called in D:\xampp\htdocs\php\erp\test\Application\Admin\Controller\StockController.class.php on line 168 and defined D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 38 行.
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 39 行.
+SQL: SELECT * FROM `erp_warehouse`  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.002001s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.073004s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.074004s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003000s ]
+
+[ 2016-04-18T11:46:00+08:00 ] 192.168.2.233 /php/erp/test/index.php/Admin/Supplier/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+ERR: ------------------------------InitConfig-----start------------------------------------
+INFO: Run Common\Behavior\InitConfigBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+INFO: [ action_begin ] --START--
+ERR: ------------------------------LogBehavior-----start------------------------------------
+ERR: ACTION: Admin/Supplier/index
+ERR: get param: []
+INFO: Run Admin\Behavior\LogBehavior [ RunTime:0.002000s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `erp_supplier` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_supplier_linkman` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `erp_supplier_group` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_partner` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_supplier_partner` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_supplier` [ RunTime:0.0020s ]
+NOTIC: [2] Missing argument 1 for Admin\Logic\SupplierLogic::getSupplierListAndLinkmanList(), called in D:\xampp\htdocs\php\erp\test\Application\Admin\Controller\SupplierController.class.php on line 21 and defined D:\xampp\htdocs\php\erp\test\Application\Admin\Logic\SupplierLogic.class.php 第 73 行.
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\php\erp\test\Application\Admin\Logic\SupplierLogic.class.php 第 74 行.
+SQL: SELECT * FROM `erp_supplier`  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_supplier_partner` WHERE `supplier_id` = 4  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `erp_partner` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_partner` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_supplier_group` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `erp_supplier_linkman` WHERE `supplier_id` = 4  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_supplier_partner` WHERE `supplier_id` = 7  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_supplier_group` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_supplier_linkman` WHERE `supplier_id` = 7  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_supplier_partner` WHERE `supplier_id` = 8  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_supplier_group` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_supplier_linkman` WHERE `supplier_id` = 8  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_supplier_partner` WHERE `supplier_id` = 13  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_supplier_group` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_supplier_linkman` WHERE `supplier_id` = 13  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.002000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.075004s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.076004s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-04-18T11:46:01+08:00 ] 192.168.2.233 /php/erp/test/index.php/Admin/Supplier/groupList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+ERR: ------------------------------InitConfig-----start------------------------------------
+INFO: Run Common\Behavior\InitConfigBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004001s ]
+INFO: [ action_begin ] --START--
+ERR: ------------------------------LogBehavior-----start------------------------------------
+ERR: ACTION: Admin/Supplier/groupList
+ERR: get param: []
+INFO: Run Admin\Behavior\LogBehavior [ RunTime:0.002000s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `erp_supplier_group` [ RunTime:0.0030s ]
+NOTIC: [2] Missing argument 1 for Common\Model\CommonModel::getDataList(), called in D:\xampp\htdocs\php\erp\test\Application\Admin\Controller\SupplierController.class.php on line 130 and defined D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 38 行.
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 39 行.
+SQL: SELECT * FROM `erp_supplier_group`  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.060004s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.061004s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-04-18T11:46:02+08:00 ] 192.168.2.233 /php/erp/test/index.php/Admin/Supplier/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+ERR: ------------------------------InitConfig-----start------------------------------------
+INFO: Run Common\Behavior\InitConfigBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+INFO: [ action_begin ] --START--
+ERR: ------------------------------LogBehavior-----start------------------------------------
+ERR: ACTION: Admin/Supplier/index
+ERR: get param: []
+INFO: Run Admin\Behavior\LogBehavior [ RunTime:0.001000s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `erp_supplier` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_supplier_linkman` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_supplier_group` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_partner` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `erp_supplier_partner` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_supplier` [ RunTime:0.0010s ]
+NOTIC: [2] Missing argument 1 for Admin\Logic\SupplierLogic::getSupplierListAndLinkmanList(), called in D:\xampp\htdocs\php\erp\test\Application\Admin\Controller\SupplierController.class.php on line 21 and defined D:\xampp\htdocs\php\erp\test\Application\Admin\Logic\SupplierLogic.class.php 第 73 行.
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\php\erp\test\Application\Admin\Logic\SupplierLogic.class.php 第 74 行.
+SQL: SELECT * FROM `erp_supplier`  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `erp_supplier_partner` WHERE `supplier_id` = 4  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_partner` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_partner` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `erp_supplier_group` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_supplier_linkman` WHERE `supplier_id` = 4  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `erp_supplier_partner` WHERE `supplier_id` = 7  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_supplier_group` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `erp_supplier_linkman` WHERE `supplier_id` = 7  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_supplier_partner` WHERE `supplier_id` = 8  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_supplier_group` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_supplier_linkman` WHERE `supplier_id` = 8  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `erp_supplier_partner` WHERE `supplier_id` = 13  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_supplier_group` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `erp_supplier_linkman` WHERE `supplier_id` = 13  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.076005s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.076005s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-04-18T11:46:03+08:00 ] 192.168.2.233 /php/erp/test/index.php/Admin/Stock/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+ERR: ------------------------------InitConfig-----start------------------------------------
+INFO: Run Common\Behavior\InitConfigBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+INFO: [ action_begin ] --START--
+ERR: ------------------------------LogBehavior-----start------------------------------------
+ERR: ACTION: Admin/Stock/index
+ERR: get param: []
+INFO: Run Admin\Behavior\LogBehavior [ RunTime:0.001000s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `erp_warehouse` [ RunTime:0.0020s ]
+NOTIC: [2] Missing argument 1 for Common\Model\CommonModel::getDataList(), called in D:\xampp\htdocs\php\erp\test\Application\Admin\Controller\StockController.class.php on line 21 and defined D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 38 行.
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 39 行.
+SQL: SELECT * FROM `erp_warehouse`  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `erp_partner` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `erp_partner` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_partner` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_partner` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.065003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.065003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-04-18T11:46:03+08:00 ] 192.168.2.233 /php/erp/test/index.php/Admin/Goods/procurement.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+ERR: ------------------------------InitConfig-----start------------------------------------
+INFO: Run Common\Behavior\InitConfigBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004001s ]
+INFO: [ action_begin ] --START--
+ERR: ------------------------------LogBehavior-----start------------------------------------
+ERR: ACTION: Admin/Goods/procurement
+ERR: get param: []
+INFO: Run Admin\Behavior\LogBehavior [ RunTime:0.002000s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `erp_goods` [ RunTime:0.0020s ]
+NOTIC: [2] Missing argument 1 for Common\Model\CommonModel::getDataList(), called in D:\xampp\htdocs\php\erp\test\Application\Admin\Controller\GoodsController.class.php on line 131 and defined D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 38 行.
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 39 行.
+SQL: SELECT * FROM `erp_goods`  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `erp_supplier` [ RunTime:0.0020s ]
+NOTIC: [2] Missing argument 1 for Common\Model\CommonModel::getDataList(), called in D:\xampp\htdocs\php\erp\test\Application\Admin\Controller\GoodsController.class.php on line 132 and defined D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 38 行.
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 39 行.
+SQL: SELECT * FROM `erp_supplier`  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `erp_partner` [ RunTime:0.0020s ]
+NOTIC: [2] Missing argument 1 for Common\Model\CommonModel::getDataList(), called in D:\xampp\htdocs\php\erp\test\Application\Admin\Controller\GoodsController.class.php on line 133 and defined D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 38 行.
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 39 行.
+SQL: SELECT * FROM `erp_partner`  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.057003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.058003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-04-18T11:46:09+08:00 ] 192.168.2.233 /php/erp/test/index.php/Admin/Sell/sell.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+ERR: ------------------------------InitConfig-----start------------------------------------
+INFO: Run Common\Behavior\InitConfigBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+INFO: [ action_begin ] --START--
+ERR: ------------------------------LogBehavior-----start------------------------------------
+ERR: ACTION: Admin/Sell/sell
+ERR: get param: []
+INFO: Run Admin\Behavior\LogBehavior [ RunTime:0.002000s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `erp_stock` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_goods` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_warehouse` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_goods_code` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_log` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_log_detail` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_purchase` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_sales` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_transfer` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock` [ RunTime:0.0020s ]
+NOTIC: [2] Missing argument 1 for Admin\Logic\StockLogic::getGoodsStockList(), called in D:\xampp\htdocs\php\erp\test\Application\Admin\Controller\SellController.class.php on line 54 and defined D:\xampp\htdocs\php\erp\test\Application\Admin\Logic\StockLogic.class.php 第 44 行.
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\php\erp\test\Application\Admin\Logic\StockLogic.class.php 第 45 行.
+SQL: SELECT * FROM `erp_goods`  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_stock` WHERE `goods_id` = 1  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `erp_stock` WHERE `goods_id` = 2  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_stock` WHERE `goods_id` = 4  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_stock` WHERE `goods_id` = 5  [ RunTime:0.0010s ]
+NOTIC: [2] Missing argument 1 for Common\Model\CommonModel::getDataList(), called in D:\xampp\htdocs\php\erp\test\Application\Admin\Controller\SellController.class.php on line 55 and defined D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 38 行.
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 39 行.
+SQL: SELECT * FROM `erp_warehouse`  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `erp_partner` [ RunTime:0.0020s ]
+NOTIC: [2] Missing argument 1 for Common\Model\CommonModel::getDataList(), called in D:\xampp\htdocs\php\erp\test\Application\Admin\Controller\SellController.class.php on line 56 and defined D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 38 行.
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 39 行.
+SQL: SELECT * FROM `erp_partner`  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.056003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.058003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-04-18T11:46:14+08:00 ] 192.168.2.233 /php/erp/test/index.php/Admin/Stock/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+ERR: ------------------------------InitConfig-----start------------------------------------
+INFO: Run Common\Behavior\InitConfigBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004001s ]
+INFO: [ action_begin ] --START--
+ERR: ------------------------------LogBehavior-----start------------------------------------
+ERR: ACTION: Admin/Stock/index
+ERR: get param: []
+INFO: Run Admin\Behavior\LogBehavior [ RunTime:0.001000s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `erp_warehouse` [ RunTime:0.0020s ]
+NOTIC: [2] Missing argument 1 for Common\Model\CommonModel::getDataList(), called in D:\xampp\htdocs\php\erp\test\Application\Admin\Controller\StockController.class.php on line 21 and defined D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 38 行.
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 39 行.
+SQL: SELECT * FROM `erp_warehouse`  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `erp_partner` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `erp_partner` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `erp_partner` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_partner` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.064003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.066004s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002001s ]
+
+[ 2016-04-18T11:46:16+08:00 ] 192.168.2.233 /php/erp/test/index.php/Admin/Stock/transferList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+ERR: ------------------------------InitConfig-----start------------------------------------
+INFO: Run Common\Behavior\InitConfigBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+INFO: [ action_begin ] --START--
+ERR: ------------------------------LogBehavior-----start------------------------------------
+ERR: ACTION: Admin/Stock/transferList
+ERR: get param: []
+INFO: Run Admin\Behavior\LogBehavior [ RunTime:0.002000s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `erp_stock_transfer` [ RunTime:0.0020s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `erp_stock_transfer` LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `erp_stock` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `erp_goods` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_warehouse` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_goods_code` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_log` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_log_detail` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_purchase` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_sales` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `erp_stock_log` WHERE `status` = 0 ORDER BY id desc LIMIT 0,10   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `erp_partner` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `erp_partner` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_partner` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_partner` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_partner` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.002000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.059003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.060003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-04-18T11:46:18+08:00 ] 192.168.2.233 /php/erp/test/index.php/Admin/Stock/transfer.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+ERR: ------------------------------InitConfig-----start------------------------------------
+INFO: Run Common\Behavior\InitConfigBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+INFO: [ action_begin ] --START--
+ERR: ------------------------------LogBehavior-----start------------------------------------
+ERR: ACTION: Admin/Stock/transfer
+ERR: get param: []
+INFO: Run Admin\Behavior\LogBehavior [ RunTime:0.001000s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `erp_partner` [ RunTime:0.0020s ]
+NOTIC: [2] Missing argument 1 for Common\Model\CommonModel::getDataList(), called in D:\xampp\htdocs\php\erp\test\Application\Admin\Controller\StockController.class.php on line 166 and defined D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 38 行.
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 39 行.
+SQL: SELECT * FROM `erp_partner`  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `erp_stock` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_goods` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_warehouse` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_goods_code` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_log` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_log_detail` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_purchase` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_sales` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_transfer` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock` [ RunTime:0.0020s ]
+NOTIC: [2] Missing argument 1 for Admin\Logic\StockLogic::getGoodsStockList(), called in D:\xampp\htdocs\php\erp\test\Application\Admin\Controller\StockController.class.php on line 167 and defined D:\xampp\htdocs\php\erp\test\Application\Admin\Logic\StockLogic.class.php 第 44 行.
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\php\erp\test\Application\Admin\Logic\StockLogic.class.php 第 45 行.
+SQL: SELECT * FROM `erp_goods`  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_stock` WHERE `goods_id` = 1  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `erp_stock` WHERE `goods_id` = 2  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_stock` WHERE `goods_id` = 4  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_stock` WHERE `goods_id` = 5  [ RunTime:0.0010s ]
+NOTIC: [2] Missing argument 1 for Common\Model\CommonModel::getDataList(), called in D:\xampp\htdocs\php\erp\test\Application\Admin\Controller\StockController.class.php on line 168 and defined D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 38 行.
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 39 行.
+SQL: SELECT * FROM `erp_warehouse`  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.002000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.062003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.062003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-04-18T11:47:43+08:00 ] 192.168.2.233 /php/erp/test/index.php/Admin/Stock/transfer.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+ERR: ------------------------------InitConfig-----start------------------------------------
+INFO: Run Common\Behavior\InitConfigBehavior [ RunTime:0.003000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006000s ]
+INFO: [ action_begin ] --START--
+ERR: ------------------------------LogBehavior-----start------------------------------------
+ERR: ACTION: Admin/Stock/transfer
+ERR: get param: []
+INFO: Run Admin\Behavior\LogBehavior [ RunTime:0.002000s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `erp_partner` [ RunTime:0.0030s ]
+NOTIC: [2] Missing argument 1 for Common\Model\CommonModel::getDataList(), called in D:\xampp\htdocs\php\erp\test\Application\Admin\Controller\StockController.class.php on line 166 and defined D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 38 行.
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 39 行.
+SQL: SELECT * FROM `erp_partner`  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `erp_stock` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `erp_goods` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `erp_warehouse` [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `erp_goods_code` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `erp_stock_log` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `erp_stock_log_detail` [ RunTime:0.0090s ]
+SQL: SHOW COLUMNS FROM `erp_stock_purchase` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `erp_stock_sales` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_transfer` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `erp_stock` [ RunTime:0.0020s ]
+NOTIC: [2] Missing argument 1 for Admin\Logic\StockLogic::getGoodsStockList(), called in D:\xampp\htdocs\php\erp\test\Application\Admin\Controller\StockController.class.php on line 167 and defined D:\xampp\htdocs\php\erp\test\Application\Admin\Logic\StockLogic.class.php 第 44 行.
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\php\erp\test\Application\Admin\Logic\StockLogic.class.php 第 45 行.
+SQL: SELECT * FROM `erp_goods`  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `erp_stock` WHERE `goods_id` = 1  [ RunTime:0.0110s ]
+SQL: SELECT * FROM `erp_stock` WHERE `goods_id` = 2  [ RunTime:0.0300s ]
+SQL: SELECT * FROM `erp_stock` WHERE `goods_id` = 4  [ RunTime:0.0300s ]
+SQL: SELECT * FROM `erp_stock` WHERE `goods_id` = 5  [ RunTime:0.0010s ]
+NOTIC: [2] Missing argument 1 for Common\Model\CommonModel::getDataList(), called in D:\xampp\htdocs\php\erp\test\Application\Admin\Controller\StockController.class.php on line 168 and defined D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 38 行.
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 39 行.
+SQL: SELECT * FROM `erp_warehouse`  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.075004s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.075004s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.136007s ]
+
+[ 2016-04-18T11:49:02+08:00 ] 192.168.2.233 /php/erp/test/index.php/Admin/Stock/transfer.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+ERR: ------------------------------InitConfig-----start------------------------------------
+INFO: Run Common\Behavior\InitConfigBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+INFO: [ action_begin ] --START--
+ERR: ------------------------------LogBehavior-----start------------------------------------
+ERR: ACTION: Admin/Stock/transfer
+ERR: get param: []
+INFO: Run Admin\Behavior\LogBehavior [ RunTime:0.002000s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `erp_partner` [ RunTime:0.0020s ]
+NOTIC: [2] Missing argument 1 for Common\Model\CommonModel::getDataList(), called in D:\xampp\htdocs\php\erp\test\Application\Admin\Controller\StockController.class.php on line 166 and defined D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 38 行.
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 39 行.
+SQL: SELECT * FROM `erp_partner`  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `erp_stock` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_goods` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_warehouse` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_goods_code` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_log` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_log_detail` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_purchase` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_sales` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_transfer` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock` [ RunTime:0.0020s ]
+NOTIC: [2] Missing argument 1 for Admin\Logic\StockLogic::getGoodsStockList(), called in D:\xampp\htdocs\php\erp\test\Application\Admin\Controller\StockController.class.php on line 167 and defined D:\xampp\htdocs\php\erp\test\Application\Admin\Logic\StockLogic.class.php 第 44 行.
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\php\erp\test\Application\Admin\Logic\StockLogic.class.php 第 45 行.
+SQL: SELECT * FROM `erp_goods`  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_stock` WHERE `goods_id` = 1  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_stock` WHERE `goods_id` = 2  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_stock` WHERE `goods_id` = 4  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `erp_stock` WHERE `goods_id` = 5  [ RunTime:0.0000s ]
+NOTIC: [2] Missing argument 1 for Common\Model\CommonModel::getDataList(), called in D:\xampp\htdocs\php\erp\test\Application\Admin\Controller\StockController.class.php on line 168 and defined D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 38 行.
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 39 行.
+SQL: SELECT * FROM `erp_warehouse`  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.002000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.061003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.062003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002001s ]
+
+[ 2016-04-18T11:49:55+08:00 ] 192.168.2.233 /php/erp/test/index.php/Admin/Stock/transfer.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+ERR: ------------------------------InitConfig-----start------------------------------------
+INFO: Run Common\Behavior\InitConfigBehavior [ RunTime:0.002001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005001s ]
+INFO: [ action_begin ] --START--
+ERR: ------------------------------LogBehavior-----start------------------------------------
+ERR: ACTION: Admin/Stock/transfer
+ERR: get param: []
+INFO: Run Admin\Behavior\LogBehavior [ RunTime:0.002000s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `erp_partner` [ RunTime:0.0020s ]
+NOTIC: [2] Missing argument 1 for Common\Model\CommonModel::getDataList(), called in D:\xampp\htdocs\php\erp\test\Application\Admin\Controller\StockController.class.php on line 166 and defined D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 38 行.
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 39 行.
+SQL: SELECT * FROM `erp_partner`  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `erp_stock` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_goods` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_warehouse` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_goods_code` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_log` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `erp_stock_log_detail` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `erp_stock_purchase` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `erp_stock_sales` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_transfer` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `erp_stock` [ RunTime:0.0030s ]
+NOTIC: [2] Missing argument 1 for Admin\Logic\StockLogic::getGoodsStockList(), called in D:\xampp\htdocs\php\erp\test\Application\Admin\Controller\StockController.class.php on line 167 and defined D:\xampp\htdocs\php\erp\test\Application\Admin\Logic\StockLogic.class.php 第 44 行.
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\php\erp\test\Application\Admin\Logic\StockLogic.class.php 第 45 行.
+SQL: SELECT * FROM `erp_goods`  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_stock` WHERE `goods_id` = 1  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `erp_stock` WHERE `goods_id` = 2  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_stock` WHERE `goods_id` = 4  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_stock` WHERE `goods_id` = 5  [ RunTime:0.0000s ]
+NOTIC: [2] Missing argument 1 for Common\Model\CommonModel::getDataList(), called in D:\xampp\htdocs\php\erp\test\Application\Admin\Controller\StockController.class.php on line 168 and defined D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 38 行.
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 39 行.
+SQL: SELECT * FROM `erp_warehouse`  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.063003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.064003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.005000s ]
+
+[ 2016-04-18T11:50:03+08:00 ] 192.168.2.233 /php/erp/test/index.php/Admin/Stock/transfer.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+ERR: ------------------------------InitConfig-----start------------------------------------
+INFO: Run Common\Behavior\InitConfigBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+INFO: [ action_begin ] --START--
+ERR: ------------------------------LogBehavior-----start------------------------------------
+ERR: ACTION: Admin/Stock/transfer
+ERR: get param: []
+INFO: Run Admin\Behavior\LogBehavior [ RunTime:0.001000s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `erp_partner` [ RunTime:0.0020s ]
+NOTIC: [2] Missing argument 1 for Common\Model\CommonModel::getDataList(), called in D:\xampp\htdocs\php\erp\test\Application\Admin\Controller\StockController.class.php on line 166 and defined D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 38 行.
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 39 行.
+SQL: SELECT * FROM `erp_partner`  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `erp_stock` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_goods` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_warehouse` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_goods_code` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_log` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_log_detail` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_purchase` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_sales` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_transfer` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock` [ RunTime:0.0020s ]
+NOTIC: [2] Missing argument 1 for Admin\Logic\StockLogic::getGoodsStockList(), called in D:\xampp\htdocs\php\erp\test\Application\Admin\Controller\StockController.class.php on line 167 and defined D:\xampp\htdocs\php\erp\test\Application\Admin\Logic\StockLogic.class.php 第 44 行.
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\php\erp\test\Application\Admin\Logic\StockLogic.class.php 第 45 行.
+SQL: SELECT * FROM `erp_goods`  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_stock` WHERE `goods_id` = 1  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `erp_stock` WHERE `goods_id` = 2  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `erp_stock` WHERE `goods_id` = 4  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_stock` WHERE `goods_id` = 5  [ RunTime:0.0010s ]
+NOTIC: [2] Missing argument 1 for Common\Model\CommonModel::getDataList(), called in D:\xampp\htdocs\php\erp\test\Application\Admin\Controller\StockController.class.php on line 168 and defined D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 38 行.
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 39 行.
+SQL: SELECT * FROM `erp_warehouse`  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.002001s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.062004s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.062004s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-04-18T11:50:52+08:00 ] 192.168.2.233 /php/erp/test/index.php/Admin/Stock/transfer.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+ERR: ------------------------------InitConfig-----start------------------------------------
+INFO: Run Common\Behavior\InitConfigBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+INFO: [ action_begin ] --START--
+ERR: ------------------------------LogBehavior-----start------------------------------------
+ERR: ACTION: Admin/Stock/transfer
+ERR: get param: []
+INFO: Run Admin\Behavior\LogBehavior [ RunTime:0.001000s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `erp_partner` [ RunTime:0.0020s ]
+NOTIC: [2] Missing argument 1 for Common\Model\CommonModel::getDataList(), called in D:\xampp\htdocs\php\erp\test\Application\Admin\Controller\StockController.class.php on line 166 and defined D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 38 行.
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 39 行.
+SQL: SELECT * FROM `erp_partner`  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `erp_stock` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `erp_goods` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_warehouse` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_goods_code` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_log` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_log_detail` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_purchase` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_sales` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `erp_stock_transfer` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock` [ RunTime:0.0020s ]
+NOTIC: [2] Missing argument 1 for Admin\Logic\StockLogic::getGoodsStockList(), called in D:\xampp\htdocs\php\erp\test\Application\Admin\Controller\StockController.class.php on line 167 and defined D:\xampp\htdocs\php\erp\test\Application\Admin\Logic\StockLogic.class.php 第 44 行.
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\php\erp\test\Application\Admin\Logic\StockLogic.class.php 第 45 行.
+SQL: SELECT * FROM `erp_goods`  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_stock` WHERE `goods_id` = 1  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `erp_stock` WHERE `goods_id` = 2  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `erp_stock` WHERE `goods_id` = 4  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `erp_stock` WHERE `goods_id` = 5  [ RunTime:0.0010s ]
+NOTIC: [2] Missing argument 1 for Common\Model\CommonModel::getDataList(), called in D:\xampp\htdocs\php\erp\test\Application\Admin\Controller\StockController.class.php on line 168 and defined D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 38 行.
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 39 行.
+SQL: SELECT * FROM `erp_warehouse`  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.002000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.072005s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.072005s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003000s ]
+
+[ 2016-04-18T11:52:37+08:00 ] 192.168.2.233 /php/erp/test/index.php/Admin/Goods/procurement.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+ERR: ------------------------------InitConfig-----start------------------------------------
+INFO: Run Common\Behavior\InitConfigBehavior [ RunTime:0.003000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005000s ]
+INFO: [ action_begin ] --START--
+ERR: ------------------------------LogBehavior-----start------------------------------------
+ERR: ACTION: Admin/Goods/procurement
+ERR: get param: []
+INFO: Run Admin\Behavior\LogBehavior [ RunTime:0.002000s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `erp_goods` [ RunTime:0.0030s ]
+NOTIC: [2] Missing argument 1 for Common\Model\CommonModel::getDataList(), called in D:\xampp\htdocs\php\erp\test\Application\Admin\Controller\GoodsController.class.php on line 131 and defined D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 38 行.
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 39 行.
+SQL: SELECT * FROM `erp_goods`  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `erp_supplier` [ RunTime:0.0020s ]
+NOTIC: [2] Missing argument 1 for Common\Model\CommonModel::getDataList(), called in D:\xampp\htdocs\php\erp\test\Application\Admin\Controller\GoodsController.class.php on line 132 and defined D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 38 行.
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 39 行.
+SQL: SELECT * FROM `erp_supplier`  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `erp_partner` [ RunTime:0.0030s ]
+NOTIC: [2] Missing argument 1 for Common\Model\CommonModel::getDataList(), called in D:\xampp\htdocs\php\erp\test\Application\Admin\Controller\GoodsController.class.php on line 133 and defined D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 38 行.
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 39 行.
+SQL: SELECT * FROM `erp_partner`  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.002000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.058004s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.059004s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-04-18T11:53:25+08:00 ] 192.168.2.233 /php/erp/test/index.php/Admin/Goods/procurement.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+ERR: ------------------------------InitConfig-----start------------------------------------
+INFO: Run Common\Behavior\InitConfigBehavior [ RunTime:0.002001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006001s ]
+INFO: [ action_begin ] --START--
+ERR: ------------------------------LogBehavior-----start------------------------------------
+ERR: ACTION: Admin/Goods/procurement
+ERR: get param: []
+INFO: Run Admin\Behavior\LogBehavior [ RunTime:0.002000s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `erp_goods` [ RunTime:0.0030s ]
+NOTIC: [2] Missing argument 1 for Common\Model\CommonModel::getDataList(), called in D:\xampp\htdocs\php\erp\test\Application\Admin\Controller\GoodsController.class.php on line 131 and defined D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 38 行.
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 39 行.
+SQL: SELECT * FROM `erp_goods`  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `erp_supplier` [ RunTime:0.0020s ]
+NOTIC: [2] Missing argument 1 for Common\Model\CommonModel::getDataList(), called in D:\xampp\htdocs\php\erp\test\Application\Admin\Controller\GoodsController.class.php on line 132 and defined D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 38 行.
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 39 行.
+SQL: SELECT * FROM `erp_supplier`  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `erp_partner` [ RunTime:0.0020s ]
+NOTIC: [2] Missing argument 1 for Common\Model\CommonModel::getDataList(), called in D:\xampp\htdocs\php\erp\test\Application\Admin\Controller\GoodsController.class.php on line 133 and defined D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 38 行.
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 39 行.
+SQL: SELECT * FROM `erp_partner`  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.002000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.059004s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.060004s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003000s ]
+
+[ 2016-04-18T11:53:32+08:00 ] 192.168.2.233 /php/erp/test/index.php/Admin/Sell/sell.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+ERR: ------------------------------InitConfig-----start------------------------------------
+INFO: Run Common\Behavior\InitConfigBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+INFO: [ action_begin ] --START--
+ERR: ------------------------------LogBehavior-----start------------------------------------
+ERR: ACTION: Admin/Sell/sell
+ERR: get param: []
+INFO: Run Admin\Behavior\LogBehavior [ RunTime:0.002000s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `erp_stock` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_goods` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_warehouse` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_goods_code` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_log` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_log_detail` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_purchase` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `erp_stock_sales` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_transfer` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock` [ RunTime:0.0020s ]
+NOTIC: [2] Missing argument 1 for Admin\Logic\StockLogic::getGoodsStockList(), called in D:\xampp\htdocs\php\erp\test\Application\Admin\Controller\SellController.class.php on line 54 and defined D:\xampp\htdocs\php\erp\test\Application\Admin\Logic\StockLogic.class.php 第 44 行.
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\php\erp\test\Application\Admin\Logic\StockLogic.class.php 第 45 行.
+SQL: SELECT * FROM `erp_goods`  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `erp_stock` WHERE `goods_id` = 1  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_stock` WHERE `goods_id` = 2  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_stock` WHERE `goods_id` = 4  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `erp_stock` WHERE `goods_id` = 5  [ RunTime:0.0000s ]
+NOTIC: [2] Missing argument 1 for Common\Model\CommonModel::getDataList(), called in D:\xampp\htdocs\php\erp\test\Application\Admin\Controller\SellController.class.php on line 55 and defined D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 38 行.
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 39 行.
+SQL: SELECT * FROM `erp_warehouse`  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `erp_partner` [ RunTime:0.0020s ]
+NOTIC: [2] Missing argument 1 for Common\Model\CommonModel::getDataList(), called in D:\xampp\htdocs\php\erp\test\Application\Admin\Controller\SellController.class.php on line 56 and defined D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 38 行.
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 39 行.
+SQL: SELECT * FROM `erp_partner`  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.058003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.059003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002001s ]
+
+[ 2016-04-18T11:53:35+08:00 ] 192.168.2.233 /php/erp/test/index.php/Admin/Stock/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+ERR: ------------------------------InitConfig-----start------------------------------------
+INFO: Run Common\Behavior\InitConfigBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+INFO: [ action_begin ] --START--
+ERR: ------------------------------LogBehavior-----start------------------------------------
+ERR: ACTION: Admin/Stock/index
+ERR: get param: []
+INFO: Run Admin\Behavior\LogBehavior [ RunTime:0.002000s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `erp_warehouse` [ RunTime:0.0020s ]
+NOTIC: [2] Missing argument 1 for Common\Model\CommonModel::getDataList(), called in D:\xampp\htdocs\php\erp\test\Application\Admin\Controller\StockController.class.php on line 21 and defined D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 38 行.
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 39 行.
+SQL: SELECT * FROM `erp_warehouse`  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `erp_partner` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `erp_partner` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `erp_partner` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `erp_partner` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.066004s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.067004s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-04-18T11:53:36+08:00 ] 192.168.2.233 /php/erp/test/index.php/Admin/Stock/transferList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+ERR: ------------------------------InitConfig-----start------------------------------------
+INFO: Run Common\Behavior\InitConfigBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+INFO: [ action_begin ] --START--
+ERR: ------------------------------LogBehavior-----start------------------------------------
+ERR: ACTION: Admin/Stock/transferList
+ERR: get param: []
+INFO: Run Admin\Behavior\LogBehavior [ RunTime:0.002000s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `erp_stock_transfer` [ RunTime:0.0020s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `erp_stock_transfer` LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `erp_stock` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_goods` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_warehouse` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `erp_goods_code` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_log` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_log_detail` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `erp_stock_purchase` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_sales` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `erp_stock_log` WHERE `status` = 0 ORDER BY id desc LIMIT 0,10   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `erp_partner` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `erp_partner` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_partner` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_partner` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `erp_partner` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.002000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.059003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.060004s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-04-18T11:53:39+08:00 ] 192.168.2.233 /php/erp/test/index.php/Admin/Stock/transfer.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+ERR: ------------------------------InitConfig-----start------------------------------------
+INFO: Run Common\Behavior\InitConfigBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004001s ]
+INFO: [ action_begin ] --START--
+ERR: ------------------------------LogBehavior-----start------------------------------------
+ERR: ACTION: Admin/Stock/transfer
+ERR: get param: []
+INFO: Run Admin\Behavior\LogBehavior [ RunTime:0.002000s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `erp_partner` [ RunTime:0.0020s ]
+NOTIC: [2] Missing argument 1 for Common\Model\CommonModel::getDataList(), called in D:\xampp\htdocs\php\erp\test\Application\Admin\Controller\StockController.class.php on line 166 and defined D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 38 行.
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 39 行.
+SQL: SELECT * FROM `erp_partner`  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `erp_stock` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_goods` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_warehouse` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_goods_code` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_log` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `erp_stock_log_detail` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_purchase` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_sales` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_transfer` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock` [ RunTime:0.0020s ]
+NOTIC: [2] Missing argument 1 for Admin\Logic\StockLogic::getGoodsStockList(), called in D:\xampp\htdocs\php\erp\test\Application\Admin\Controller\StockController.class.php on line 167 and defined D:\xampp\htdocs\php\erp\test\Application\Admin\Logic\StockLogic.class.php 第 44 行.
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\php\erp\test\Application\Admin\Logic\StockLogic.class.php 第 45 行.
+SQL: SELECT * FROM `erp_goods`  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_stock` WHERE `goods_id` = 1  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_stock` WHERE `goods_id` = 2  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `erp_stock` WHERE `goods_id` = 4  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_stock` WHERE `goods_id` = 5  [ RunTime:0.0000s ]
+NOTIC: [2] Missing argument 1 for Common\Model\CommonModel::getDataList(), called in D:\xampp\htdocs\php\erp\test\Application\Admin\Controller\StockController.class.php on line 168 and defined D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 38 行.
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 39 行.
+SQL: SELECT * FROM `erp_warehouse`  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.002000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.062004s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.062004s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-04-18T11:54:42+08:00 ] 192.168.2.233 /php/erp/test/index.php/Admin/Stock/transfer.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+ERR: ------------------------------InitConfig-----start------------------------------------
+INFO: Run Common\Behavior\InitConfigBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+INFO: [ action_begin ] --START--
+ERR: ------------------------------LogBehavior-----start------------------------------------
+ERR: ACTION: Admin/Stock/transfer
+ERR: get param: []
+INFO: Run Admin\Behavior\LogBehavior [ RunTime:0.002000s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `erp_partner` [ RunTime:0.0020s ]
+NOTIC: [2] Missing argument 1 for Common\Model\CommonModel::getDataList(), called in D:\xampp\htdocs\php\erp\test\Application\Admin\Controller\StockController.class.php on line 166 and defined D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 38 行.
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 39 行.
+SQL: SELECT * FROM `erp_partner`  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `erp_stock` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_goods` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_warehouse` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_goods_code` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `erp_stock_log` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_log_detail` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `erp_stock_purchase` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_sales` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_transfer` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock` [ RunTime:0.0020s ]
+NOTIC: [2] Missing argument 1 for Admin\Logic\StockLogic::getGoodsStockList(), called in D:\xampp\htdocs\php\erp\test\Application\Admin\Controller\StockController.class.php on line 167 and defined D:\xampp\htdocs\php\erp\test\Application\Admin\Logic\StockLogic.class.php 第 44 行.
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\php\erp\test\Application\Admin\Logic\StockLogic.class.php 第 45 行.
+SQL: SELECT * FROM `erp_goods`  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_stock` WHERE `goods_id` = 1  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_stock` WHERE `goods_id` = 2  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_stock` WHERE `goods_id` = 4  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `erp_stock` WHERE `goods_id` = 5  [ RunTime:0.0000s ]
+NOTIC: [2] Missing argument 1 for Common\Model\CommonModel::getDataList(), called in D:\xampp\htdocs\php\erp\test\Application\Admin\Controller\StockController.class.php on line 168 and defined D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 38 行.
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 39 行.
+SQL: SELECT * FROM `erp_warehouse`  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.002000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.064004s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.065004s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.004001s ]
+
+[ 2016-04-18T11:54:57+08:00 ] 192.168.2.233 /php/erp/test/index.php/Admin/Stock/transfer.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+ERR: ------------------------------InitConfig-----start------------------------------------
+INFO: Run Common\Behavior\InitConfigBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+INFO: [ action_begin ] --START--
+ERR: ------------------------------LogBehavior-----start------------------------------------
+ERR: ACTION: Admin/Stock/transfer
+ERR: get param: []
+INFO: Run Admin\Behavior\LogBehavior [ RunTime:0.002001s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.002001s ]
+SQL: SHOW COLUMNS FROM `erp_partner` [ RunTime:0.0020s ]
+NOTIC: [2] Missing argument 1 for Common\Model\CommonModel::getDataList(), called in D:\xampp\htdocs\php\erp\test\Application\Admin\Controller\StockController.class.php on line 166 and defined D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 38 行.
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 39 行.
+SQL: SELECT * FROM `erp_partner`  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `erp_stock` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_goods` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_warehouse` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_goods_code` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_log` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_log_detail` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_purchase` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_sales` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_transfer` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock` [ RunTime:0.0010s ]
+NOTIC: [2] Missing argument 1 for Admin\Logic\StockLogic::getGoodsStockList(), called in D:\xampp\htdocs\php\erp\test\Application\Admin\Controller\StockController.class.php on line 167 and defined D:\xampp\htdocs\php\erp\test\Application\Admin\Logic\StockLogic.class.php 第 44 行.
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\php\erp\test\Application\Admin\Logic\StockLogic.class.php 第 45 行.
+SQL: SELECT * FROM `erp_goods`  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `erp_stock` WHERE `goods_id` = 1  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `erp_stock` WHERE `goods_id` = 2  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_stock` WHERE `goods_id` = 4  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `erp_stock` WHERE `goods_id` = 5  [ RunTime:0.0000s ]
+NOTIC: [2] Missing argument 1 for Common\Model\CommonModel::getDataList(), called in D:\xampp\htdocs\php\erp\test\Application\Admin\Controller\StockController.class.php on line 168 and defined D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 38 行.
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 39 行.
+SQL: SELECT * FROM `erp_warehouse`  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.062004s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.062004s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-04-18T11:56:23+08:00 ] 192.168.2.233 /php/erp/test/index.php/Admin/Stock/transfer.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+ERR: ------------------------------InitConfig-----start------------------------------------
+INFO: Run Common\Behavior\InitConfigBehavior [ RunTime:0.002001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004001s ]
+INFO: [ action_begin ] --START--
+ERR: ------------------------------LogBehavior-----start------------------------------------
+ERR: ACTION: Admin/Stock/transfer
+ERR: get param: []
+INFO: Run Admin\Behavior\LogBehavior [ RunTime:0.001000s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `erp_partner` [ RunTime:0.0020s ]
+NOTIC: [2] Missing argument 1 for Common\Model\CommonModel::getDataList(), called in D:\xampp\htdocs\php\erp\test\Application\Admin\Controller\StockController.class.php on line 166 and defined D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 38 行.
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 39 行.
+SQL: SELECT * FROM `erp_partner`  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `erp_stock` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_goods` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_warehouse` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_goods_code` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `erp_stock_log` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_log_detail` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_purchase` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_sales` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_transfer` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock` [ RunTime:0.0020s ]
+NOTIC: [2] Missing argument 1 for Admin\Logic\StockLogic::getGoodsStockList(), called in D:\xampp\htdocs\php\erp\test\Application\Admin\Controller\StockController.class.php on line 167 and defined D:\xampp\htdocs\php\erp\test\Application\Admin\Logic\StockLogic.class.php 第 44 行.
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\php\erp\test\Application\Admin\Logic\StockLogic.class.php 第 45 行.
+SQL: SELECT * FROM `erp_goods`  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_stock` WHERE `goods_id` = 1  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_stock` WHERE `goods_id` = 2  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `erp_stock` WHERE `goods_id` = 4  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `erp_stock` WHERE `goods_id` = 5  [ RunTime:0.0000s ]
+NOTIC: [2] Missing argument 1 for Common\Model\CommonModel::getDataList(), called in D:\xampp\htdocs\php\erp\test\Application\Admin\Controller\StockController.class.php on line 168 and defined D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 38 行.
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 39 行.
+SQL: SELECT * FROM `erp_warehouse`  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.002000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.063004s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.063004s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-04-18T11:57:13+08:00 ] 192.168.2.233 /php/erp/test/index.php/Admin/Stock/transferList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+ERR: ------------------------------InitConfig-----start------------------------------------
+INFO: Run Common\Behavior\InitConfigBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+INFO: [ action_begin ] --START--
+ERR: ------------------------------LogBehavior-----start------------------------------------
+ERR: ACTION: Admin/Stock/transferList
+ERR: get param: []
+INFO: Run Admin\Behavior\LogBehavior [ RunTime:0.002000s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `erp_stock_transfer` [ RunTime:0.0020s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `erp_stock_transfer` LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `erp_stock` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_goods` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_warehouse` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_goods_code` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_log` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_log_detail` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_purchase` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `erp_stock_sales` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `erp_stock_log` WHERE `status` = 0 ORDER BY id desc LIMIT 0,10   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `erp_partner` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `erp_partner` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `erp_partner` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_partner` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_partner` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.059004s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.059004s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-04-18T11:57:15+08:00 ] 192.168.2.233 /php/erp/test/index.php/Admin/Stock/transfer.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+ERR: ------------------------------InitConfig-----start------------------------------------
+INFO: Run Common\Behavior\InitConfigBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+INFO: [ action_begin ] --START--
+ERR: ------------------------------LogBehavior-----start------------------------------------
+ERR: ACTION: Admin/Stock/transfer
+ERR: get param: []
+INFO: Run Admin\Behavior\LogBehavior [ RunTime:0.001000s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `erp_partner` [ RunTime:0.0030s ]
+NOTIC: [2] Missing argument 1 for Common\Model\CommonModel::getDataList(), called in D:\xampp\htdocs\php\erp\test\Application\Admin\Controller\StockController.class.php on line 166 and defined D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 38 行.
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 39 行.
+SQL: SELECT * FROM `erp_partner`  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `erp_stock` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_goods` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_warehouse` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_goods_code` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_log` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_log_detail` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_purchase` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `erp_stock_sales` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_transfer` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock` [ RunTime:0.0020s ]
+NOTIC: [2] Missing argument 1 for Admin\Logic\StockLogic::getGoodsStockList(), called in D:\xampp\htdocs\php\erp\test\Application\Admin\Controller\StockController.class.php on line 167 and defined D:\xampp\htdocs\php\erp\test\Application\Admin\Logic\StockLogic.class.php 第 44 行.
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\php\erp\test\Application\Admin\Logic\StockLogic.class.php 第 45 行.
+SQL: SELECT * FROM `erp_goods`  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `erp_stock` WHERE `goods_id` = 1  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_stock` WHERE `goods_id` = 2  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_stock` WHERE `goods_id` = 4  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `erp_stock` WHERE `goods_id` = 5  [ RunTime:0.0000s ]
+NOTIC: [2] Missing argument 1 for Common\Model\CommonModel::getDataList(), called in D:\xampp\htdocs\php\erp\test\Application\Admin\Controller\StockController.class.php on line 168 and defined D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 38 行.
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 39 行.
+SQL: SELECT * FROM `erp_warehouse`  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.061003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.062003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-04-18T11:58:38+08:00 ] 192.168.2.233 /php/erp/test/index.php/Admin/Stock/transfer.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+ERR: ------------------------------InitConfig-----start------------------------------------
+INFO: Run Common\Behavior\InitConfigBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005000s ]
+INFO: [ action_begin ] --START--
+ERR: ------------------------------LogBehavior-----start------------------------------------
+ERR: ACTION: Admin/Stock/transfer
+ERR: get param: []
+INFO: Run Admin\Behavior\LogBehavior [ RunTime:0.002000s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `erp_partner` [ RunTime:0.0020s ]
+NOTIC: [2] Missing argument 1 for Common\Model\CommonModel::getDataList(), called in D:\xampp\htdocs\php\erp\test\Application\Admin\Controller\StockController.class.php on line 166 and defined D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 38 行.
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 39 行.
+SQL: SELECT * FROM `erp_partner`  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `erp_stock` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_goods` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_warehouse` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_goods_code` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `erp_stock_log` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_log_detail` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_purchase` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_sales` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `erp_stock_transfer` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock` [ RunTime:0.0020s ]
+NOTIC: [2] Missing argument 1 for Admin\Logic\StockLogic::getGoodsStockList(), called in D:\xampp\htdocs\php\erp\test\Application\Admin\Controller\StockController.class.php on line 167 and defined D:\xampp\htdocs\php\erp\test\Application\Admin\Logic\StockLogic.class.php 第 44 行.
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\php\erp\test\Application\Admin\Logic\StockLogic.class.php 第 45 行.
+SQL: SELECT * FROM `erp_goods`  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `erp_stock` WHERE `goods_id` = 1  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `erp_stock` WHERE `goods_id` = 2  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_stock` WHERE `goods_id` = 4  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `erp_stock` WHERE `goods_id` = 5  [ RunTime:0.0000s ]
+NOTIC: [2] Missing argument 1 for Common\Model\CommonModel::getDataList(), called in D:\xampp\htdocs\php\erp\test\Application\Admin\Controller\StockController.class.php on line 168 and defined D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 38 行.
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 39 行.
+SQL: SELECT * FROM `erp_warehouse`  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.061003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.062003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-04-18T11:58:57+08:00 ] 192.168.2.233 /php/erp/test/index.php/Admin/Stock/transfer.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+ERR: ------------------------------InitConfig-----start------------------------------------
+INFO: Run Common\Behavior\InitConfigBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+INFO: [ action_begin ] --START--
+ERR: ------------------------------LogBehavior-----start------------------------------------
+ERR: ACTION: Admin/Stock/transfer
+ERR: get param: []
+INFO: Run Admin\Behavior\LogBehavior [ RunTime:0.002000s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `erp_partner` [ RunTime:0.0020s ]
+NOTIC: [2] Missing argument 1 for Common\Model\CommonModel::getDataList(), called in D:\xampp\htdocs\php\erp\test\Application\Admin\Controller\StockController.class.php on line 166 and defined D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 38 行.
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 39 行.
+SQL: SELECT * FROM `erp_partner`  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `erp_stock` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_goods` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_warehouse` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_goods_code` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_log` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_log_detail` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_purchase` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_sales` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_transfer` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock` [ RunTime:0.0030s ]
+NOTIC: [2] Missing argument 1 for Admin\Logic\StockLogic::getGoodsStockList(), called in D:\xampp\htdocs\php\erp\test\Application\Admin\Controller\StockController.class.php on line 167 and defined D:\xampp\htdocs\php\erp\test\Application\Admin\Logic\StockLogic.class.php 第 44 行.
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\php\erp\test\Application\Admin\Logic\StockLogic.class.php 第 45 行.
+SQL: SELECT * FROM `erp_goods`  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_stock` WHERE `goods_id` = 1  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `erp_stock` WHERE `goods_id` = 2  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_stock` WHERE `goods_id` = 4  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_stock` WHERE `goods_id` = 5  [ RunTime:0.0010s ]
+NOTIC: [2] Missing argument 1 for Common\Model\CommonModel::getDataList(), called in D:\xampp\htdocs\php\erp\test\Application\Admin\Controller\StockController.class.php on line 168 and defined D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 38 行.
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 39 行.
+SQL: SELECT * FROM `erp_warehouse`  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.062004s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.062004s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-04-18T11:59:18+08:00 ] 192.168.2.233 /php/erp/test/index.php/Admin/Stock/transfer.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+ERR: ------------------------------InitConfig-----start------------------------------------
+INFO: Run Common\Behavior\InitConfigBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+INFO: [ action_begin ] --START--
+ERR: ------------------------------LogBehavior-----start------------------------------------
+ERR: ACTION: Admin/Stock/transfer
+ERR: get param: []
+INFO: Run Admin\Behavior\LogBehavior [ RunTime:0.002001s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.002001s ]
+SQL: SHOW COLUMNS FROM `erp_partner` [ RunTime:0.0020s ]
+NOTIC: [2] Missing argument 1 for Common\Model\CommonModel::getDataList(), called in D:\xampp\htdocs\php\erp\test\Application\Admin\Controller\StockController.class.php on line 166 and defined D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 38 行.
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 39 行.
+SQL: SELECT * FROM `erp_partner`  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `erp_stock` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_goods` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `erp_warehouse` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_goods_code` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_log` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `erp_stock_log_detail` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_purchase` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_sales` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_transfer` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock` [ RunTime:0.0020s ]
+NOTIC: [2] Missing argument 1 for Admin\Logic\StockLogic::getGoodsStockList(), called in D:\xampp\htdocs\php\erp\test\Application\Admin\Controller\StockController.class.php on line 167 and defined D:\xampp\htdocs\php\erp\test\Application\Admin\Logic\StockLogic.class.php 第 44 行.
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\php\erp\test\Application\Admin\Logic\StockLogic.class.php 第 45 行.
+SQL: SELECT * FROM `erp_goods`  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_stock` WHERE `goods_id` = 1  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_stock` WHERE `goods_id` = 2  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_stock` WHERE `goods_id` = 4  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_stock` WHERE `goods_id` = 5  [ RunTime:0.0000s ]
+NOTIC: [2] Missing argument 1 for Common\Model\CommonModel::getDataList(), called in D:\xampp\htdocs\php\erp\test\Application\Admin\Controller\StockController.class.php on line 168 and defined D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 38 行.
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 39 行.
+SQL: SELECT * FROM `erp_warehouse`  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.062003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.064004s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-04-18T12:02:20+08:00 ] 192.168.2.233 /php/erp/test/index.php/Admin/Stock/transfer.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+ERR: ------------------------------InitConfig-----start------------------------------------
+INFO: Run Common\Behavior\InitConfigBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+INFO: [ action_begin ] --START--
+ERR: ------------------------------LogBehavior-----start------------------------------------
+ERR: ACTION: Admin/Stock/transfer
+ERR: get param: []
+INFO: Run Admin\Behavior\LogBehavior [ RunTime:0.002000s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `erp_partner` [ RunTime:0.0020s ]
+NOTIC: [2] Missing argument 1 for Common\Model\CommonModel::getDataList(), called in D:\xampp\htdocs\php\erp\test\Application\Admin\Controller\StockController.class.php on line 166 and defined D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 38 行.
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 39 行.
+SQL: SELECT * FROM `erp_partner`  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `erp_stock` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_goods` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_warehouse` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_goods_code` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_log` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_log_detail` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_purchase` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `erp_stock_sales` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_transfer` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock` [ RunTime:0.0020s ]
+NOTIC: [2] Missing argument 1 for Admin\Logic\StockLogic::getGoodsStockList(), called in D:\xampp\htdocs\php\erp\test\Application\Admin\Controller\StockController.class.php on line 167 and defined D:\xampp\htdocs\php\erp\test\Application\Admin\Logic\StockLogic.class.php 第 44 行.
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\php\erp\test\Application\Admin\Logic\StockLogic.class.php 第 45 行.
+SQL: SELECT * FROM `erp_goods`  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `erp_stock` WHERE `goods_id` = 1  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_stock` WHERE `goods_id` = 2  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_stock` WHERE `goods_id` = 4  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_stock` WHERE `goods_id` = 5  [ RunTime:0.0010s ]
+NOTIC: [2] Missing argument 1 for Common\Model\CommonModel::getDataList(), called in D:\xampp\htdocs\php\erp\test\Application\Admin\Controller\StockController.class.php on line 168 and defined D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 38 行.
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 39 行.
+SQL: SELECT * FROM `erp_warehouse`  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.062003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.062003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-04-18T12:02:33+08:00 ] 192.168.2.233 /php/erp/test/index.php/Admin/Stock/transfer.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+ERR: ------------------------------InitConfig-----start------------------------------------
+INFO: Run Common\Behavior\InitConfigBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004001s ]
+INFO: [ action_begin ] --START--
+ERR: ------------------------------LogBehavior-----start------------------------------------
+ERR: ACTION: Admin/Stock/transfer
+ERR: get param: []
+INFO: Run Admin\Behavior\LogBehavior [ RunTime:0.002000s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `erp_partner` [ RunTime:0.0020s ]
+NOTIC: [2] Missing argument 1 for Common\Model\CommonModel::getDataList(), called in D:\xampp\htdocs\php\erp\test\Application\Admin\Controller\StockController.class.php on line 166 and defined D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 38 行.
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 39 行.
+SQL: SELECT * FROM `erp_partner`  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `erp_stock` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_goods` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `erp_warehouse` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_goods_code` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_log` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_log_detail` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_purchase` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_sales` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_transfer` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `erp_stock` [ RunTime:0.0020s ]
+NOTIC: [2] Missing argument 1 for Admin\Logic\StockLogic::getGoodsStockList(), called in D:\xampp\htdocs\php\erp\test\Application\Admin\Controller\StockController.class.php on line 167 and defined D:\xampp\htdocs\php\erp\test\Application\Admin\Logic\StockLogic.class.php 第 44 行.
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\php\erp\test\Application\Admin\Logic\StockLogic.class.php 第 45 行.
+SQL: SELECT * FROM `erp_goods`  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_stock` WHERE `goods_id` = 1  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_stock` WHERE `goods_id` = 2  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_stock` WHERE `goods_id` = 4  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `erp_stock` WHERE `goods_id` = 5  [ RunTime:0.0010s ]
+NOTIC: [2] Missing argument 1 for Common\Model\CommonModel::getDataList(), called in D:\xampp\htdocs\php\erp\test\Application\Admin\Controller\StockController.class.php on line 168 and defined D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 38 行.
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 39 行.
+SQL: SELECT * FROM `erp_warehouse`  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.062003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.063003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002001s ]
+
+[ 2016-04-18T12:02:41+08:00 ] 192.168.2.233 /php/erp/test/index.php/Admin/Stock/transfer.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+ERR: ------------------------------InitConfig-----start------------------------------------
+INFO: Run Common\Behavior\InitConfigBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+INFO: [ action_begin ] --START--
+ERR: ------------------------------LogBehavior-----start------------------------------------
+ERR: ACTION: Admin/Stock/transfer
+ERR: get param: []
+INFO: Run Admin\Behavior\LogBehavior [ RunTime:0.002000s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `erp_partner` [ RunTime:0.0020s ]
+NOTIC: [2] Missing argument 1 for Common\Model\CommonModel::getDataList(), called in D:\xampp\htdocs\php\erp\test\Application\Admin\Controller\StockController.class.php on line 166 and defined D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 38 行.
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 39 行.
+SQL: SELECT * FROM `erp_partner`  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `erp_stock` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_goods` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_warehouse` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_goods_code` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_log` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_log_detail` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_purchase` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_sales` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_transfer` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock` [ RunTime:0.0020s ]
+NOTIC: [2] Missing argument 1 for Admin\Logic\StockLogic::getGoodsStockList(), called in D:\xampp\htdocs\php\erp\test\Application\Admin\Controller\StockController.class.php on line 167 and defined D:\xampp\htdocs\php\erp\test\Application\Admin\Logic\StockLogic.class.php 第 44 行.
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\php\erp\test\Application\Admin\Logic\StockLogic.class.php 第 45 行.
+SQL: SELECT * FROM `erp_goods`  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_stock` WHERE `goods_id` = 1  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `erp_stock` WHERE `goods_id` = 2  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `erp_stock` WHERE `goods_id` = 4  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `erp_stock` WHERE `goods_id` = 5  [ RunTime:0.0000s ]
+NOTIC: [2] Missing argument 1 for Common\Model\CommonModel::getDataList(), called in D:\xampp\htdocs\php\erp\test\Application\Admin\Controller\StockController.class.php on line 168 and defined D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 38 行.
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 39 行.
+SQL: SELECT * FROM `erp_warehouse`  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.002000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.062003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.062003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-04-18T12:03:47+08:00 ] 192.168.2.233 /php/erp/test/index.php/Admin/Stock/transfer.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+ERR: ------------------------------InitConfig-----start------------------------------------
+INFO: Run Common\Behavior\InitConfigBehavior [ RunTime:0.002001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004001s ]
+INFO: [ action_begin ] --START--
+ERR: ------------------------------LogBehavior-----start------------------------------------
+ERR: ACTION: Admin/Stock/transfer
+ERR: get param: []
+INFO: Run Admin\Behavior\LogBehavior [ RunTime:0.002000s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `erp_partner` [ RunTime:0.0020s ]
+NOTIC: [2] Missing argument 1 for Common\Model\CommonModel::getDataList(), called in D:\xampp\htdocs\php\erp\test\Application\Admin\Controller\StockController.class.php on line 166 and defined D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 38 行.
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 39 行.
+SQL: SELECT * FROM `erp_partner`  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `erp_stock` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_goods` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_warehouse` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_goods_code` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_log` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_log_detail` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_purchase` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_sales` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock_transfer` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_stock` [ RunTime:0.0020s ]
+NOTIC: [2] Missing argument 1 for Admin\Logic\StockLogic::getGoodsStockList(), called in D:\xampp\htdocs\php\erp\test\Application\Admin\Controller\StockController.class.php on line 167 and defined D:\xampp\htdocs\php\erp\test\Application\Admin\Logic\StockLogic.class.php 第 44 行.
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\php\erp\test\Application\Admin\Logic\StockLogic.class.php 第 45 行.
+SQL: SELECT * FROM `erp_goods`  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_stock` WHERE `goods_id` = 1  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `erp_stock` WHERE `goods_id` = 2  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_stock` WHERE `goods_id` = 4  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_stock` WHERE `goods_id` = 5  [ RunTime:0.0010s ]
+NOTIC: [2] Missing argument 1 for Common\Model\CommonModel::getDataList(), called in D:\xampp\htdocs\php\erp\test\Application\Admin\Controller\StockController.class.php on line 168 and defined D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 38 行.
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 39 行.
+SQL: SELECT * FROM `erp_warehouse`  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.062003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.063003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+

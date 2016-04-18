@@ -1,27 +1,7 @@
 <extend name="$_admin_public_layout"/>
 <block name="style">
     <style type="text/css">
-        td.operate {
-            text-align: center;
-        }
-        td .add-row {
-            color: #333;
-            margin-right: 10px;
-        }
-        td .del-row {
-            text-align: right;
-            color: #333;
-        }
-        .table td.td-select {
-            padding: 0;
-        }
-        td.td-select select {
-            border: none;
-            border-radius: 0;
-        }
-        .form-inline .form-group>label.label-left {
-            width: 6em;
-        }
+
     </style>
 </block>
 <block name="main">
@@ -29,13 +9,13 @@
         <!-- 面包屑导航 -->
         <ul class="breadcrumb">
             <li><i class="fa fa-map-marker"></i></li>
-            <li class="text-muted">销售管理</li><li class="text-muted">编辑销售单</li>
+            <li class="text-muted">销售管理</li><li class="text-muted">新增销售单</li>
         </ul>
 
         <!-- 主体内容区域 -->
         <div class="tab-content ct-tab-content">
 
-            <div class="builder listbuilder-box panel-body">
+            <div id="sell" class="builder listbuilder-box panel-body">
                 <!-- Tab导航 -->
 
                 <!-- 数据列表 -->
@@ -50,7 +30,7 @@
                                 </div>
                                 <div class="form-group col-xs-6">
                                     <label class="label-left">时间：</label>
-                                    <input type="text" class="form-control" readonly name="sell.create_time" value="{$sell.create_time}" id="dateTimePicker">
+                                    <input type="text" class="form-control dateTimePicker" readonly name="sell.update_time" value="{$sell.update_time}">
                                 </div>
                             </div>
                         </div>
@@ -72,24 +52,59 @@
                         <div class="row" style="margin-top: 15px;">
                             <div class="col-xs-12">
                                 <div class="form-group col-xs-6">
+                                    <label class="label-left">出货仓库：</label>
+                                    <select class="form-control" name="sell.warehouse_id_out">
+                                        <option value="">请选择：</option>
+                                        <foreach name="warehouseList" item="vo">
+                                            <switch name="vo.id">
+                                                <case value="$sell.warehouse_id_out">
+                                                    <option value="{$vo.id}" selected="selected">{$vo.name}</option>
+                                                </case>
+                                                <default/>
+                                                <option value="{$vo.id}">{$vo.name}</option>
+                                            </switch>
+                                        </foreach>
+                                    </select>
+                                </div>
+                                <div class="form-group col-xs-6">
+                                    <label class="label-left">负责人：</label>
+                                    <select class="form-control" name="sell.partner_id">
+                                        <option value="">请选择：</option>
+                                        <foreach name="partnerList" item="vo">
+                                            <switch name="vo.id">
+                                                <case value="$sell.partner_id">
+                                                    <option value="{$vo.id}" selected="selected">{$vo.name}</option>
+                                                </case>
+                                                <default/>
+                                                <option value="{$vo.id}">{$vo.name}</option>
+                                            </switch>
+                                        </foreach>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" style="margin-top: 15px;">
+                            <div class="col-xs-12">
+                                <div class="form-group col-xs-6">
                                     <label class="label-left">客户：</label>
                                     <input type="text" class="form-control" name="sell.customer" value="{$sell.customer}">
                                 </div>
                             </div>
                         </div>
                     </form>
-                    <div class="row">
+                    <div class="row" style="margin-top: 30px;">
                         <div class="col-xs-12 col-lg-12">
-                            <h4>商品列表：</h4>
                             <div class="builder-table">
                                 <div class="panel panel-default table-responsive">
-                                    <table id="sellList" class="table table-bordered table-striped table-hover">
+                                    <table id="sellList" class="table table-bordered table-striped table-hover table-input">
+                                        <caption>销售商品列表</caption>
                                         <thead>
                                         <tr>
-                                            <th>商品</th><th>出货仓库</th>
-                                            <th>余量</th>
-                                            <th>数量</th><th>单价</th>
+                                            <th>商品</th>
+                                            <th>数量</th>
+                                            <th>单价</th>
                                             <th>小计</th>
+                                            <th>库存</th>
                                             <th>操作</th>
                                         </tr>
                                         </thead>
@@ -110,30 +125,21 @@
                                                         </foreach>
                                                     </select>
                                                 </td>
-                                                <td class="td-select">
-                                                    <select name="warehouse_id" class="form-control">
-                                                        <option value="">请选择：</option>
-                                                        <foreach name="warehouseList" item="v">
-                                                            <switch name="vo.warehouse_id">
-                                                                <case value="$v.id">
-                                                                    <option selected="selected" value="{$v.id}">{$v.name}</option>
-                                                                </case>
-                                                                <default/>
-                                                                <option value="{$v.id}">{$v.name}</option>
-                                                            </switch>
-                                                        </foreach>
-                                                    </select>
-                                                </td>
-                                                <td name="total">{$vo.total}</td>
-                                                <td contenteditable="true" data-count="num" name="num">{$vo.num}</td>
-                                                <td contenteditable="true" data-count="per_price" name="per_price">{$vo.per_price}</td>
-                                                <td name="sub_total">{$vo[num] * $vo[per_price]}</td>
+                                                <td><input type="number" data-count="num" name="num" value="{$vo.num}"></td>
+                                                <td><input type="number" data-count="per_price" name="per_price" value="{$vo.per_price}"></td>
+                                                <td><input type="text" name="sub_total" readonly="" value="{$vo[num] * $vo[per_price]}"></td>
+                                                <td><input type="text" name="total" readonly="" value="{$vo.total}">
                                                 <td class="operate">
                                                     <a class="add-row" title="添加一行" href="javascript:;"><i class="fa fa-plus"></i></a>
                                                     <a title="删除一行" class="del-row" href="javascript:;"><i class="fa fa-trash-o"></i></a>
                                                 </td>
                                             </tr>
                                         </foreach>
+                                            <tr class="tr-default">
+                                                <td>总计</td>
+                                                <td class="countNum">{$sell.count_num}</td><td></td>
+                                                <td class="countTotal">{$sell.count_price}</td><td></td><td></td>
+                                            </tr>
                                         </tbody>
                                     </table>
                                 </div>
@@ -145,24 +151,10 @@
                         <div class="row" >
                             <div class="col-xs-12">
                                 <div class="form-group col-xs-6">
-                                    <label class="label-left">实际金额：</label>
+                                    <label class="label-left">实收金额：</label>
                                     <input type="number" class="form-control" name="sell.total_price" value="{$sell.total_price}">
                                 </div>
-                                <div class="form-group col-xs-6">
-                                    <label class="label-left">负责人：</label>
-                                    <select class="form-control" name="sell.partner_id">
-                                        <option value="0">请选择：</option>
-                                        <foreach name="partnerList" item="vo">
-                                            <switch name="vo.id">
-                                                <case value="$sell.partner_id">
-                                                    <option value="{$vo.id}" selected="selected">{$vo.name}</option>
-                                                </case>
-                                                <default/>
-                                                <option value="{$vo.id}">{$vo.name}</option>
-                                            </switch>
-                                        </foreach>
-                                    </select>
-                                </div>
+
                             </div>
                         </div>
                     </form>
@@ -173,7 +165,7 @@
                             <div class="form-group ">
                                 <label class="col-sm-1 control-label">备注：</label>
                                 <div class="col-sm-11 col-lg-9">
-                                    <input type="text" class="form-control" name="sell.note" value="{$sell.note}">
+                                    <textarea class="form-control" name="sell.note"  rows="3">{$sell.note}</textarea>
                                 </div>
                             </div>
                         </div>
@@ -194,195 +186,94 @@
                         </div>
                     </div>
                 </div>
+
                 <!-- 额外功能代码 -->
             </div>
+
         </div>
 
     </div>
 </block>
 <block name="script">
     <script type="text/javascript">
-        var sellDetail = {:json_encode($sell)};
-        var warehouseList = {:json_encode($warehouseList)};
-        var goodsList = {:json_encode($goodsList)};
-        // var partnerList = {:json_encode($partnerList)};
-        console.log(sellDetail);
-        console.log(goodsList);
         $(window).ready(function (e) {
-            // 添加*行
-            function addRow(row) {
-                var html = '';
-                for (var j= 0; j<row; j++) {
-                    html += '<tr>' +
-                            '<td class="td-select">' +
-                            '<select name="goods_id" class="form-control">' +
-                            '<option value="">请选择：</option>';
-                    for (var i in goodsList) {
-                        html += '<option value="'+ goodsList[i].id +'">'+ goodsList[i].name + '·' + goodsList[i].norm +'</option>';
-                    }
-                    html += '</select></td>' +
-                            '<td class="td-select">' +
-                            '<select name="warehouse_id" class="form-control">' +
-                            '<option value="">请选择：</option>';
-                    for (var i in warehouseList) {
-                        html += '<option value="'+ warehouseList[i].id +'">'+ warehouseList[i].name + '</option>';
-                    }
-                    html += '</select></td>' +
-                            '<td name="total"></td>' +
-                            '<td contenteditable="true" data-count="num" name="num"></td>' +
-                            '<td contenteditable="true" data-count="per_price" name="per_price"></td>' +
-                            '<td name="sub_total"></td>' +
-                            '<td class="operate">' +
-                            '<a class="add-row" title="添加一行" href="javascript:;"><i class="fa fa-plus"></i></a>' +
-                            '<a title="删除一行" class="del-row" href="javascript:;"><i class="fa fa-trash-o"></i></a>' +
-                            '</td>' +
-                            '</tr>';
-                }
-                return html;
+            var goodsList = {:json_encode($goodsList)};
+            console.log(goodsList);
+            var myTable = $('#sellList');
+            var trTemplate = '<tr>' +
+                    '<td class="td-select">' +
+                    '<select name="goods_id" class="form-control">' +
+                    '<option value="">请选择：</option>';
+            for (var i in goodsList) {
+                trTemplate += '<option value="'+ goodsList[i].id +'">'+ goodsList[i].name + '·' + goodsList[i].norm +'</option>';
             }
+            trTemplate += '</select></td>' +
+                    '<td><input type="number" data-count="num" name="num"></td>' +
+                    '<td><input type="number" data-count="per_price" name="per_price"></td>' +
+                    '<td><input type="text" name="sub_total" readonly></td>' +
+                    '<td><input type="text" name="total" readonly></td>' +
+                    '<td class="operate">' +
+                    '<a class="add-row" title="添加一行" href="javascript:;"><i class="fa fa-plus"></i></a>' +
+                    '<a title="删除一行" class="del-row" href="javascript:;"><i class="fa fa-trash-o"></i></a>' +
+                    '</td>' +
+                    '</tr>';
+
             // 初始化表格
             function initTable() {
-                var html = addRow(0);
-                html += '<tr><td>总计</td><td></td><td></td><td></td><td class="countNum"></td><td class="countTotal"></td><td></td></tr>';
-                $('#sellList').find('tbody').append(html);
+                var html = '';
+                // html += '<tr class="tr-default"><td>总计</td><td class="countNum"></td><td></td><td class="countTotal"></td><td></td><td></td></tr>';
+                // myTable.find('tbody').append(html);
             }
 
             //  添加一行
-            $('#sellList').on('click', '.add-row', function() {
-                var html = addRow(1);
-                $(this).parents('tr').after(html);
-            })
+            myTable.on('click', '.add-row', function() {
+                broadin.addTableRow(this, trTemplate, 1);
+            });
 
             // 删除一行
-            $('#sellList').on('click', '.del-row', function() {
-                var num = $(this).parents('#sellList').find('tr').length;
-                if (num === 2) {
-                    alert('必须保留一行');
-                    return;
-                }
-                var tr = $(this).parents('tr');
-
-                var id = tr.attr('data-id');
-                if (!id) {
-                    tr.remove();
-                } else {
-                    var result = confirm('确定要删除当前行？');
-                    if (result) {
-                        $.post("{:U('Goods/sellDetailDel')}", { id: id }, function(data) {
-                            console.log(data);
-                            if (data.status) {
-                                tr.remove();
-                            } else {
-                                alert('删除失败');
-                            }
-                        });
-                    }
-                }
-            })
-
-            function checkForm() {
-                var checkStr = '';
-                $('body').find('[name*="sell."]').each(function () {
-                    var key = $(this).attr('name');
-                    var value = $(this).val();
-                    if (key == 'sell.title' && !value) {
-                        checkStr = '主题不能为空！';
-                        return false;
-                    }
-                    if (key == 'sell.partner_id' && (!value || value == 0)) {
-                        checkStr = '请选择负责人！';
-                        return false;
-                    }
-                    if (key == 'sell.total_price' && !value) {
-                        checkStr = '请输入实收金额！';
-                        return false;
-                    }
-                });
-                return checkStr;
-            }
-
-            function getTableData() {
-                var detailList = new Array();
-                var detail = null;
-                $('#sellList').find('tbody tr').each(function() {
-                    detail = new Object();
-                    detail.id = $(this).attr('data-id');
-                    detail.goods_id = $(this).find('[name="goods_id"]').val();
-                    detail.warehouse_id = $(this).find('[name="warehouse_id"]').val();
-                    detail.num = $(this).find('[name="num"]').html();
-                    detail.per_price = $(this).find('[name="per_price"]').html();
-                    detail.sub_price = $(this).find('[name="sub_total"]').html();
-                    if (!detail.sub_price) {
-                        return;
-                    }
-                    /*if (!detail.goods_id || !detail.num || !detail.per_price || !detail.supplier_id) {
-                        $.alertMessager('商品、供应商、数量为必填参数', 'danger');
-                        return false;
-                    }*/
-                    detailList.push(detail);
-                });
-                if (detailList.length == 0) {
-                    $.alertMessager('请添加采购的商品', 'danger');
-                }
-                return detailList;
-            }
-
-            function getFormData() {
-                var sell = new Object();
-                sell.id = $('[name="sell.id"]').val();
-                sell.no = $('[name="sell.no"]').val();
-                sell.status = $('[name="sell.status"]').val();
-                sell.title = $('[name="sell.title"]').val();
-                sell.create_time = $('[name="sell.create_time"]').val();
-                sell.customer = $('[name="sell.customer"]').val();
-                sell.partner_id = $('[name="sell.partner_id"]').val();
-                sell.note = $('[name="sell.note"]').val();
-                sell.total_price = $('[name="sell.total_price"]').val();
-                if (!sell.create_time) {
-                    delete sell.create_time;
-                }
-                return sell;
-            }
+            myTable.on('click', '.del-row', function() {
+                broadin.delTableRow(this, "{:U('Goods/sellDetailDel')}");
+            });
 
             // 保存数据
             $('#save').on('click', function() {
-                var checkStr = checkForm();
-                if (checkStr) {
-                    $.alertMessager(checkStr, 'danger');
-                    return;
-                }
-                var sell  = getFormData();
-                var detailList = getTableData();
+                var sell = {id: '', title: '', warehouse_id_out: '', partner_id: '', status: '', customer: '', update_time: '', total_price: '', note: ''};
+                var sellCheck = {warehouse_id_out: '请选择出货仓库', partner_id: '请选择负责人', total_price: '请输入付款金额'};
+                sell = broadin.getFormData('#sell', sell, 'sell', sellCheck);
                 console.log(sell);
-                console.log(detailList);
-                if (detailList.length == 0) {
+                if (!sell) {
                     return;
                 }
-                $.post("{:U('Sell/sellEdit')}", {sell: sell, detailList: detailList}, function(data) {
-                    console.log(data);
-                    if (!data.status) {
-                        $.alertMessager('保存失败', 'danger');
-                    } else {
-                        $.alertMessager('保存成功', 'success');
-                        window.setTimeout(function() {
-                            window.location = "{:U('Sell/sellList')}";
-                        }, 2000);
-                    }
-                });
-            })
+                var detail = {id: '', goods_id: '', num: '', per_price: ''};
+                var detailCheck = {goods_id: '', num: '', per_price: ''};
+                var detailList = broadin.getTableData('#sell', detail, null, detailCheck);
+                console.log(detailList);
+                if (!detailList) {
+                    return;
+                }
+                broadin.ajaxPost("{:U('Sell/sellEdit')}", {sell: sell, detailList: detailList});
+            });
 
             // 统计商品价格
-            $('#sellList').on('blur', '[data-count]', function() {
+            myTable.on('blur', '[data-count]', function() {
                 var tr = $(this).parents('tr');
                 setSubTotal(tr);
             });
-            $('#sellList').on('change', 'select', function() {
+            myTable.on('change', 'select', function() {
                 var tr = $(this).parents('tr');
+                var goods_id = tr.find('[name="goods_id"]').val();
+                var elementPrice = tr.find('[data-count="per_price"]');
+                for (var i in goodsList) {
+                    if (goods_id == goodsList[i].id) {
+                        elementPrice.val(goodsList[i].price);
+                        break;
+                    }
+                }
                 setSubTotal(tr);
             });
             // 获取当前行小计
             function getSubTotal(tr) {
-                var subTotal = tr.find('[data-count="num"]').html() * tr.find('[data-count="per_price"]').html();
+                var subTotal = tr.find('[data-count="num"]').val() * tr.find('[data-count="per_price"]').val();
                 var goods_id = tr.find('[name="goods_id"]').val();
                 if (goods_id && subTotal) {
                     return subTotal;
@@ -392,24 +283,22 @@
             function setSubTotal(tr) {
                 var subTotal = getSubTotal(tr);
                 if (subTotal) {
-                    tr.find('[name="sub_total"]').html(subTotal.toFixed(2));
+                    tr.find('[name="sub_total"]').val(subTotal.toFixed(2));
                 } else {
-                    tr.find('[name="sub_total"]').html('');
+                    tr.find('[name="sub_total"]').val('');
                 }
                 setCountTotal();
             }
 
             // 获取商品价格合计与商品总数
             function getCountTotal() {
-                var countTotal = 0;
-                var countNum = 0;
                 var count = {
                     price: 0,
                     num: 0
                 }
-                $('#sellList').find('tbody tr').each(function() {
-                    var subTotal = $(this).find('[name="sub_total"]').html();
-                    var subNum = $(this).find('[name="num"]').html();
+                myTable.find('tbody tr').each(function() {
+                    var subTotal = $(this).find('[name="sub_total"]').val();
+                    var subNum = $(this).find('[name="num"]').val();
                     if (!subTotal) return;
                     count.price += parseFloat(subTotal);
                     count.num += parseInt(subNum);
@@ -422,42 +311,61 @@
                 if (count.price) {
                     $('.countTotal').html(count.price.toFixed(2));
                     $('.countNum').html(count.num);
-                } else {
-                    $('.countTotal').html('');
-                    $('.countNum').html('');
+                    $('[name="sell.total_price"]').val(count.price.toFixed(2));
                 }
             }
 
-            // 显示商品余量
-            $('#sellList tbody').on('change', 'select', function() {
+            function setStockNum() {
+                var warehouse_id_out = $('select[name="sell.warehouse_id_out"]').val();
+                if (!warehouse_id_out) {
+                    return;
+                }
+                myTable.find('tbody tr').each(function() {
+                    var goods_id = $(this).find('select[name="goods_id"]').val();
+                    if (goods_id) {
+                        var total = 0;
+                        for (var i in goodsList) {
+                            if (goodsList[i].id == goods_id) {
+                                for (var j in goodsList[i].stockList) {
+                                    if (goodsList[i].stockList[j].warehouse_id == warehouse_id_out) {
+                                        total = goodsList[i].stockList[j].num;
+                                        break;
+                                    }
+                                }
+                            }
+                        }
+                        $(this).find('[name="total"]').val(total);
+                    }
+                });
+            }
+
+            $('[name="sell.warehouse_id_out"]').on('change', function() {
+                setStockNum();
+            });
+
+            // 显示商品库存
+            myTable.on('change', 'select', function() {
                 var goods_id = $(this).parents('tr').find('select[name="goods_id"]').val();
-                var warehouse_id = $(this).parents('tr').find('select[name="warehouse_id"]').val();
-                if (goods_id && warehouse_id) {
+                var warehouse_id_out = $('select[name="sell.warehouse_id_out"]').val();
+                if (goods_id && warehouse_id_out) {
                     var total = 0;
                     for (var i in goodsList) {
                         if (goodsList[i].id == goods_id) {
                             for (var j in goodsList[i].stockList) {
-                                if (goodsList[i].stockList[j].warehouse_id == warehouse_id) {
+                                if (goodsList[i].stockList[j].warehouse_id == warehouse_id_out) {
                                     total = goodsList[i].stockList[j].num;
                                     break;
                                 }
                             }
                         }
                     }
-                    $(this).parents('tr').find('[name="total"]').html(total);
+                    $(this).parents('tr').find('[name="total"]').val(total);
                 }
             });
 
             // 初始化
             function init() {
                 initTable();
-                setCountTotal();
-                $('#dateTimePicker').datetimepicker({
-                    language: 'zh-CN',
-                    format: 'yyyy-mm-dd hh:ii:ss',
-                    autoclose: true,
-                    todayBtn: true
-                });
             }
             init();
         });

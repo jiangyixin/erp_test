@@ -1,30 +1,7 @@
 <extend name="$_admin_public_layout"/>
 <block name="style">
     <style type="text/css">
-        .form-control[disabled], fieldset[disabled] .form-control {
-            cursor: auto;
-        }
-        td.operate {
-            text-align: center;
-        }
-        td .add-row {
-            color: #333;
-            margin-right: 10px;
-        }
-        td .del-row {
-            text-align: right;
-            color: #333;
-        }
-        .table td.td-select {
-            padding: 0;
-        }
-        td.td-select select {
-            border: none;
-            border-radius: 0;
-        }
-        .form-inline .form-group>label.label-left {
-            width: 5em;
-        }
+
     </style>
 </block>
 <block name="main">
@@ -38,13 +15,13 @@
         <!-- 主体内容区域 -->
         <div class="tab-content ct-tab-content">
 
-            <div class="builder listbuilder-box panel-body">
+            <div id="stockLog" class="builder listbuilder-box panel-body">
                 <!-- Tab导航 -->
 
                 <!-- 数据列表 -->
                 <div class="builder-container">
-                    <form id="stockLog" action="" method="post" class="form-inline" >
-                        <!--<div class="row">
+                    <form action="" method="post" class="form-inline" >
+                        <div class="row">
                             <div class="col-xs-12">
                                 <div class="form-group col-xs-6">
                                     <label class="label-left">主题：</label>
@@ -52,20 +29,38 @@
                                 </div>
                                 <div class="form-group col-xs-6">
                                     <label class="label-left">时间：</label>
-                                    <input type="date" class="form-control" name="stockLog.time" value="">
+                                    <input type="text" class="form-control" id="dateTimePicker" readonly name="stockLog.create_time" value="{$curTime}">
                                 </div>
                             </div>
-                        </div>-->
-                        <div class="row" style="margin-top: 10px;">
+                        </div>
+                        <div class="row" style="margin-top: 15px;">
                             <div class="col-xs-12">
                                 <div class="form-group col-xs-6">
-                                    <label class="label-left">主题：</label>
-                                    <input type="text" class="form-control" name="stockLog.title" value="">
+                                    <label class="label-left">调出仓库：</label>
+                                    <select name="stockLog.warehouse_id_out" class="form-control">
+                                        <option value="">请选择：</option>
+                                        <foreach name="warehouseList" item="vo">
+                                            <option value="{$vo.id}">{$vo.name}</option>
+                                        </foreach>
+                                    </select>
                                 </div>
+                                <div class="form-group col-xs-6">
+                                    <label class="label-left">调入仓库：</label>
+                                    <select name="stockLog.warehouse_id_in" class="form-control">
+                                        <option value="">请选择：</option>
+                                        <foreach name="warehouseList" item="vo">
+                                            <option value="{$vo.id}">{$vo.name}</option>
+                                        </foreach>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" style="margin-top: 15px;">
+                            <div class="col-xs-12">
                                 <div class="form-group col-xs-6">
                                     <label class="label-left">负责人：</label>
                                     <select name="stockLog.partner_id" class="form-control">
-                                        <option value="0">请选择：</option>
+                                        <option value="">请选择：</option>
                                         <foreach name="partnerList" item="vo">
                                             <option value="{$vo.id}">{$vo.name}</option>
                                         </foreach>
@@ -74,18 +69,17 @@
                             </div>
                         </div>
                     </form>
-                    <div class="row">
+                    <div class="row" style="margin-top: 30px;">
                         <div class="col-xs-12 col-lg-12">
-                            <h4>出库商品列表：</h4>
                             <div class="builder-table">
                                 <div class="panel panel-default table-responsive">
-                                    <table id="salesList" class="table table-bordered table-striped table-hover">
+                                    <table id="transferList" class="table table-bordered table-striped table-hover table-input">
+                                        <caption>调拨商品表</caption>
                                         <thead>
                                         <tr>
-                                            <th>商品</th><th>调出仓库</th>
-                                            <th>调入仓库</th><th>数量</th>
-                                            <th>余量</th><th>条形码列表</th>
-                                            <!--<th>备注</th>-->
+                                            <th>商品</th>
+                                            <th>数量</th>
+                                            <th>当前库存</th>
                                             <th>操作</th>
                                         </tr>
                                         </thead>
@@ -105,7 +99,7 @@
                             <div class="form-group ">
                                 <label class="col-sm-1 control-label">备注：</label>
                                 <div class="col-sm-11 col-lg-9">
-                                    <input type="text" class="form-control" name="stockLog.note" value="">
+                                    <textarea class="form-control" name="stockLog.note" rows="3"></textarea>
                                 </div>
                             </div>
                         </div>
@@ -136,184 +130,106 @@
 </block>
 <block name="script">
     <script type="text/javascript">
-
-        var warehouseList = {:json_encode($warehouseList)};
-        var goodsList = {:json_encode($goodsList)};
-
-        console.log(goodsList);
-
         $(window).ready(function (e) {
-            // 添加*行
-            function addRow(row) {
-                var html = '';
-                for (var j= 0; j<row; j++) {
-                    html += '<tr>' +
-                            '<td class="td-select">' +
-                            '<select name="goods_id" class="form-control">' +
-                            '<option value="">请选择：</option>';
-                    for (var i in goodsList) {
-                        html += '<option value="'+ goodsList[i].id +'">'+ goodsList[i].name + '·' + goodsList[i].norm +'</option>';
-                    }
-                    html += '</select></td>' +
-                            '<td class="td-select">' +
-                            '<select name="warehouse_id_out" class="form-control">' +
-                            '<option value="">请选择：</option>';
-                    for (var i in warehouseList) {
-                        html += '<option value="'+ warehouseList[i].id +'">'+ warehouseList[i].name +'</option>';
-                    }
-                    html += '</select></td>' +
-                            '<td class="td-select">' +
-                            '<select name="warehouse_id_in" class="form-control">' +
-                            '<option value="">请选择：</option>';
-                    for (var i in warehouseList) {
-                        html += '<option value="'+ warehouseList[i].id +'">'+ warehouseList[i].name +'</option>';
-                    }
-                    html += '</select></td>' +
-                            '<td contenteditable="true" name="num"></td>' +
-                            '<td name="total"></td>' +
-                            '<td contenteditable="true" name="code_list"></td>' +
-                            /*'<td contenteditable="true" name="note"></td>' +*/
-                            '<td class="operate">' +
-                            '<a class="add-row" title="添加一行" href="javascript:;"><i class="fa fa-plus"></i></a>' +
-                            '<a title="删除一行" class="del-row" href="javascript:;"><i class="fa fa-trash-o"></i></a>' +
-                            '</td>' +
-                            '</tr>';
-                }
-                return html;
+            var goodsList = {:json_encode($goodsList)};
+            console.log(goodsList);
+            var myTable = $('table');
+            var trTemplate = '<tr>' +
+                    '<td class="td-select">' +
+                    '<select name="goods_id" class="form-control">' +
+                    '<option value="">请选择：</option>';
+            for (var i in goodsList) {
+                trTemplate += '<option value="'+ goodsList[i].id +'">'+ goodsList[i].name + '·' + goodsList[i].norm +'</option>';
             }
+            trTemplate += '</select></td>' +
+                    '<td><input type="number" name="num" min="1" max=""></td>' +
+                    '<td><input type="number" name="total" readonly></td>' +
+                    '<td class="operate">' +
+                        '<a class="add-row" title="添加一行" href="javascript:;"><i class="fa fa-plus"></i></a>' +
+                        '<a title="删除一行" class="del-row" href="javascript:;"><i class="fa fa-trash-o"></i></a>' +
+                    '</td>' +
+                    '</tr>';
+
             // 初始化表格
             function initTable() {
-                var html = addRow(5);
-                $('#salesList').find('tbody').html(html);
+                var html = trTemplate + trTemplate + trTemplate + trTemplate + trTemplate;
+                myTable.find('tbody').append(html);
             }
 
             //  添加一行
-            $('#salesList').on('click', '.add-row', function() {
-                var html = addRow(1);
-                $(this).parents('tr').after(html);
-            })
+            myTable.on('click', '.add-row', function() {
+                broadin.addTableRow(this, trTemplate, 1);
+            });
 
             // 删除一行
-            $('#salesList').on('click', '.del-row', function() {
-                var num = $(this).parents('#salesList').find('tr').length;
-                if (num === 2) {
-                    alert('必须保留一行');
-                    return;
-                }
-                var tr = $(this).parents('tr');
-                var result = confirm('确定删除当前行？');
-                if (result) {
-                    tr.remove();
-                }
-            })
-
-            function checkForm() {
-                var checkStr = '';
-                $('body').find('[name*="stockLog."]').each(function () {
-                    var key = $(this).attr('name');
-                    var value = $(this).val();
-                    /*if (key == 'stockLog.title' && !value) {
-                        checkStr = '主题不能为空！';
-                        return false;
-                    }*/
-                    if (key == 'stockLog.partner_id' && (!value || value == 0)) {
-                        checkStr = '请选择负责人！';
-                        return false;
-                    }
-                });
-                return checkStr;
-            }
-
-            function getTableData() {
-                var detailList = new Array();
-                var detail = null;
-                $('#salesList').find('tbody tr').each(function() {
-                    detail = new Object();
-                    detail.goods_id = $(this).find('[name="goods_id"]').val();
-                    detail.num = $(this).find('[name="num"]').html();
-                    detail.warehouse_id_out = $(this).find('[name="warehouse_id_out"]').val();
-                    detail.warehouse_id_in = $(this).find('[name="warehouse_id_in"]').val();
-                    detail.code_list = $(this).find('[name="code_list"]').html();
-                    detail.note = $(this).find('[name="note"]').html();
-                    if (!detail.goods_id && !detail.num) {
-                        return;
-                    }
-                    if (!detail.goods_id || !detail.num || !detail.warehouse_id_in || !detail.warehouse_id_out) {
-                        $.alertMessager('商品、调出仓库、调入仓库、数量为必填参数', 'danger');
-                        return false;
-                    }
-                    detailList.push(detail);
-                });
-                if (detailList.length == 0) {
-                    $.alertMessager('请添加调拨的商品', 'danger');
-                }
-                return detailList;
-            }
-
-
-            function getFormData() {
-                var stockLog = new Object();
-                // stockLog.title = $('[name="stockLog.title"]').val();
-                // stockLog.warehouse_id = $('[name="stockLog.warehouse_id"]').val();
-                stockLog.time = $('[name="stockLog.time"]').val();
-                stockLog.partner_id = $('[name="stockLog.partner_id"]').val();
-                stockLog.note = $('[name="stockLog.note"]').val();
-                // stockLog.in_transfer_out = $('[name="stockLog.in_transfer_out"]').val();
-                if (!stockLog.time) {
-                    delete stockLog.time;
-                }
-                return stockLog;
-            }
-
+            myTable.on('click', '.del-row', function() {
+                broadin.delTableRow(this);
+            });
 
             $('#save').on('click', function() {
-                var checkStr = checkForm();
-                if (checkStr) {
-                    $.alertMessager(checkStr, 'danger');
-                    return;
-                }
-                var stockLog  = getFormData();
-                var detailList = getTableData();
+                var stockLog = {title: '', warehouse_id_out: '', warehouse_id_in: '', partner_id: '', create_time: '', note: ''};
+                var stockLogCheck = { partner_id: '请选择负责人', warehouse_id_out: '请选择调出仓库', warehouse_id_in: '请选择调入仓库'};
+                var logDetail = {goods_id: '', num: ''};
+                var logDetailCheck = {goods_id: '', num: ''};
+                stockLog = broadin.getFormData('#stockLog', stockLog, 'stockLog', stockLogCheck);
                 console.log(stockLog);
-                console.log(detailList);
-                if (detailList.length == 0) {
+                if (!stockLog) {
                     return;
                 }
-
-                $.post("{:U('Stock/transfer')}", {stockLog: stockLog, detailList: detailList}, function(data) {
-                    console.log(data);
-                    if (!data.status) {
-                        $.alertMessager('修改失败', 'danger');
-                    } else {
-                        $.alertMessager('修改成功', 'success');
-                        window.setTimeout(function() {
-                            window.location = "{:U('Stock/transferList')}";
-                        }, 2000);
-                    }
-                });
-            })
-
-            // 显示商品余量
-            $('#salesList tbody').on('change', 'select', function() {
-                var goods_id = $(this).parents('tr').find('select[name="goods_id"]').val();
-                var warehouse_id_out = $(this).parents('tr').find('select[name="warehouse_id_out"]').val();
-                if (goods_id && warehouse_id_out) {
+                var detailList = broadin.getTableData('#transferList', logDetail, null, logDetailCheck);
+                console.log(detailList);
+                if (!detailList) {
+                    return;
+                }
+                broadin.ajaxPost("{:U('Stock/transfer')}", {stockLog: stockLog, detailList: detailList});
+            });
+            /**
+             * 显示库存余量
+             */
+            function showStock() {
+                console.log('showStock');
+                var warehouse_id_out = $('select[name="stockLog.warehouse_id_out"]').val();
+                if (!warehouse_id_out) {
+                    return;
+                }
+                $('#transferList').find('tbody tr').each(function() {
+                    var goods_id = $(this).find('select[name="goods_id"]').val();
                     var total = 0;
-                    for (var i in goodsList) {
-                        if (goodsList[i].id == goods_id) {
-                            for (var j in goodsList[i].stockList) {
-                                if (goodsList[i].stockList[j].warehouse_id == warehouse_id_out) {
-                                    total = goodsList[i].stockList[j].num;
-                                    break;
+                    if (goods_id) {
+                        for (var i in goodsList) {
+                            if (goodsList[i].id == goods_id) {
+                                for (var j in goodsList[i].stockList) {
+                                    if (goodsList[i].stockList[j].warehouse_id == warehouse_id_out) {
+                                        total = goodsList[i].stockList[j].num;
+                                        break;
+                                    }
                                 }
                             }
                         }
+                        $(this).find('[name="total"]').val(total);
+                        $(this).find('[name="num"]').attr('max', total);
                     }
-                    $(this).parents('tr').find('[name="total"]').html(total);
-                }
+                });
+            }
+
+            $('select[name="stockLog.warehouse_id_out"]').on('change', function() {
+                showStock();
             });
+
+            $('#transferList tbody').on('change', 'select[name="goods_id"]', function() {
+                showStock();
+            });
+
             // 初始化
             initTable();
+
+            $('#dateTimePicker').datetimepicker({
+                language: 'zh-CN',
+                format: 'yyyy-mm-dd hh:ii:ss',
+                autoclose: true,
+                todayBtn: true
+            });
+
         });
     </script>
 </block>

@@ -12,8 +12,26 @@ namespace Admin\Controller;
 use Think\Log;
 class SellController extends AdminController{
 
+    /**
+     * 销售统计
+     */
     public function sellStatistical() {
-
+        if (IS_POST) {
+            // 按日期查询
+            $time = I('post.time');
+            $statisticalList =  D('Admin/Statistical', 'Logic')->salesStatisticalByDate($time);
+            $data['list'] = $statisticalList;
+            $data['status'] = 1;
+            $this->ajaxReturn($data, 'json');
+        } else {
+            $statisticalList =  D('Admin/Statistical', 'Logic')->salesStatistical();
+            $warehouseList = D('Admin/Warehouse')->getDataList();
+            $goodsList = D('Admin/Goods')->getDataList();
+            $this->assign('warehouseList', $warehouseList);
+            $this->assign('goodsList', $goodsList);
+            $this->assign('statisticalList', $statisticalList);
+            $this->display('Sell/sellStatistical');
+        }
     }
 
     /**
@@ -28,12 +46,10 @@ class SellController extends AdminController{
             }
             $result = $this->getDgLogic()->sell($sell, $detailList);
             if ($result) {
-                $this->success('操作成功！', '');
+                $this->success('操作成功！', 'sellList');
             } else {
                 $this->error('操作失败！');
             }
-            \Think\Log::record('$sell: ' . json_encode($sell));
-
         } else {
             $goodsList = D('Admin/Stock', 'Logic')->getGoodsStockList();
             $warehouseList = $this->getDw()->getDataList();
@@ -56,9 +72,8 @@ class SellController extends AdminController{
                 return;
             }
             $result = $this->getDgLogic()->sellEdit($sell, $detailList);
-            Log::record('---------' . json_encode($result));
             if ($result) {
-                $this->success('操作成功！', '');
+                $this->success('操作成功！', 'sellList');
             } else {
                 $this->error('操作失败！');
             }

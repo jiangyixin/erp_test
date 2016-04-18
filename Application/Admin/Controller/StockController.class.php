@@ -32,20 +32,14 @@ class StockController extends AdminController{
      */
     public function warehouseDel() {
         $data['id'] = I('id');
-        $ids = I('request.ids');
-        $result = array();
-        if ($ids) {
-            foreach ($ids as $id) {
-                $result[] = $this->getDw()->delData(array('id'=>$id));
-            }
-        }
         if ($data['id']) {
-            $result[] = $this->getDw()->delData($data);
+            $result = D('Admin/warehouse', 'Logic')->warehouseDel($data);
         }
-        if ($result && array_product($result)) {
+        if ($result['status']) {
             $this->success('删除成功，页面即将自动刷新！', 'index');
         } else {
-            $this->error('删除失败');
+            $msg = $result['msg'] ? $result['msg'] : '删除失败';
+            $this->error($msg);
         }
     }
 
@@ -87,13 +81,22 @@ class StockController extends AdminController{
      * 当前仓库库存信息
      */
     public function stockList() {
-        $warehouse_id = I('id');
-        if ($warehouse_id) {
-            $stockList = $this->getDsLogic()->getStockList(array('warehouse_id' => $warehouse_id));
-        } else {
-            $stockList = $this->getDsLogic()->getStockList();
+        $data['warehouse_id'] = I('id');
+        if (!$data['warehouse_id'] || $data['warehouse_id'] === 0) {
+            $data = null;
         }
+        $page = I('get.p');
+        if (!$page) {
+            $page = 1;
+        }
+        $limit = 10;
+        $count = $this->getDs()->where($data)->count();
+        $Page = new Page($count, $limit);
+        $show = $Page->show();
+        $stockList = $this->getDsLogic()->getStockList($data, $page, $limit);
+
         $this->assign('stockList', $stockList);
+        $this->assign('page', $show);
         $this->display('Stock/stockList');
     }
 

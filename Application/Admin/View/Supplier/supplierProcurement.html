@@ -1,0 +1,108 @@
+<extend name="$_admin_public_layout"/>
+<block name="main">
+    <div id="main" class="col-xs-12 col-sm-10 main" style="overflow-y: scroll;">
+        <!-- 面包屑导航 -->
+        <ul class="breadcrumb">
+            <li><i class="fa fa-map-marker"></i></li>
+            <li class="text-muted">供应商管理</li><li class="text-muted">供应商采购列表</li>
+        </ul>
+
+        <!-- 主体内容区域 -->
+        <div class="tab-content ct-tab-content">
+
+            <div class="builder listbuilder-box panel-body">
+                <!-- Tab导航 -->
+                <!-- 顶部工具栏按钮 -->
+                <div class="builder-toolbar">
+
+                </div>
+                <!-- 数据列表 -->
+                <div class="builder-container">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="builder-table">
+                                <div class="panel panel-default table-responsive">
+                                    <table  id="supplierList" class="table table-bordered table-striped table-hover">
+                                        <caption>{$supplier.name}采购列表</caption>
+                                        <thead>
+                                        <tr>
+                                            <th>订单编号</th>
+                                            <th>负责人</th><th>当前状态</th>
+                                            <th>商品</th><th>数目</th>
+                                            <th>单价</th><th>最后操作时间</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <foreach name="supplier.procurementList" item="vo">
+                                            <foreach name="vo['detailList']" item="v">
+                                                <tr title="" data-id="">
+                                                    <td>{$vo.no}</td>
+                                                    <td>
+                                                        <foreach name="partnerList" item="i">
+                                                            <eq name="i.id" value="$vo.partner_id">{$i.name}</eq>
+                                                        </foreach>
+                                                    </td>
+                                                    <td><switch name="vo['status']">
+                                                        <case value="3">采购完成</case>
+                                                        <case value="2">配送中</case>
+                                                        <case value="1">采购中</case>
+                                                        <case value="0">计划中</case>
+                                                        <case value="-1">已取消</case>
+                                                    </switch></td>
+                                                    <td>
+                                                        <foreach name="goodsList" item="i">
+                                                            <eq name="i.id" value="$v.goods_id">{$i.name}·{$i.norm}</eq>
+                                                        </foreach>
+                                                    </td>
+                                                    <td>{$v.num}</td>
+                                                    <td>{$v.per_price}</td>
+                                                    <td>{$v.update_time}</td>
+                                                </tr>
+                                            </foreach>
+                                        </foreach>
+                                        <empty name="supplier.procurementList">
+                                            <tr>
+                                                <td class="text-center empty-info" colspan="9">
+                                                    <i class="fa fa-database"></i> 暂时没有数据<br>
+                                                </td>
+                                            </tr>
+                                        </empty>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 额外功能代码 -->
+                <div class="builder-toolbar">
+                    <div class="row">
+                        <!-- 工具栏按钮 -->
+                        <div class="col-xs-12 col-sm-9 button-list clearfix">
+                            <div class="form-group">
+                                <div class="col-sm-10">
+                                    <button type="button" class="btn btn-danger" onclick="history.back();">返回</button>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</block>
+<block name="script">
+<script type="text/javascript">
+    var supplier = {:json_encode($supplier)};
+    console.log(supplier);
+    $(window).ready(function(e) {
+
+
+    });
+</script>
+</block>

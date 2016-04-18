@@ -10,6 +10,8 @@
 namespace Admin\Controller;
 
 
+use Think\Log;
+
 class SupplierController extends AdminController{
 
     /**
@@ -46,14 +48,16 @@ class SupplierController extends AdminController{
      */
     public function supplierEdit() {
         $supplier = I('post.supplier');
-        $linkmanList = I('post.linkmanList');
-        $result1 = $this->getDsLogic()->editSupplierAndLinkmanList($supplier, $linkmanList);
-        if ($result1) {
-            $result['status'] = 1;
+        $linkmanList = I('post.linkManList');
+
+        $result = $this->getDsLogic()->editSupplierAndLinkmanList($supplier, $linkmanList);
+        if ($result) {
+            $this->success('修改成功，页面即将自动刷新！', 'index');
         } else {
-            $result['status'] = 0;
+            Log::record(__ACTION__ . ' --delete-- ' . json_encode(I('post.')) , 'WARN');
+            $this->error('修改失败失败');
         }
-        $this->ajaxReturn($result , 'json');
+        // $this->ajaxReturn($result , 'json');
     }
 
     /**
@@ -61,21 +65,15 @@ class SupplierController extends AdminController{
      */
     public function supplierDel() {
         $data['id'] = I('id');
-        $ids = I('request.ids');
         $result = array();
-        if ($ids) {
-            foreach ($ids as $id) {
-                $result[] = $this->getDs()->delData(array('id'=>$id));
-                $result[] = $this->getDsl()->delData(array('supplier_id'=>$id));
-            }
-        }
         if ($data['id']) {
-            $result[] = $this->getDs()->delData($data);
-            $result[] = $this->getDsl()->delData(array('supplier_id'=>$data['id']));
+            $result = $this->getDs()->delData($data);
+            $this->getDsl()->delData(array('supplier_id'=>$data['id']));
         }
-        if ($result && array_product($result)) {
+        if ($result) {
             $this->success('删除成功，页面即将自动刷新！', 'index');
         } else {
+            Log::record(__ACTION__ . ' --delete-- ' . json_encode(I('post.')) , 'WARN');
             $this->error('删除失败');
         }
     }
@@ -89,7 +87,28 @@ class SupplierController extends AdminController{
         if ($data['id']) {
             $result['status'] = $this->getDsl()->delData($data);
         }
+        if ($result['status']) {
+            $this->getDluLogic()->log('删除联系人', 'd');
+        } else {
+            Log::record(__ACTION__ . ' --delete-- ' . json_encode(I('post.')) , 'WARN');
+        }
         $this->ajaxReturn($result , 'json');
+    }
+
+    /**
+     * 供应商采购信息
+     */
+    public function supplierProcurement() {
+        $data['id'] = I('id');
+        if ($data['id']) {
+            $supplier = $this->getDsLogic()->getSupplierProcurement($data);
+            $goodsList = D('Admin/Goods')->getDataList();
+            $partnerList = D('Admin/Partner')->getDataList();
+            $this->assign('supplier', $supplier);
+            $this->assign('goodsList', $goodsList);
+            $this->assign('partnerList', $partnerList);
+            $this->display('Supplier/supplierProcurement');
+        }
     }
 
     /**
@@ -188,6 +207,10 @@ class SupplierController extends AdminController{
 
     public function getDsLogic() {
         return D('Admin/Supplier', 'Logic');
+    }
+
+    public function getDluLogic() {
+        return D('Admin/LogUser', 'Logic');
     }
 
 }

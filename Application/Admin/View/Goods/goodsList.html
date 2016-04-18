@@ -43,11 +43,14 @@
                             <div class="builder-table">
                                 <div class="panel panel-default table-responsive">
                                     <table id="goodsList" class="table table-bordered table-striped table-hover">
+                                        <caption>商品列表</caption>
                                         <thead>
                                         <tr>
                                             <th><input class="check-all" type="checkbox"></th>
                                             <th>商品名</th><th>规格</th>
+                                            <th>采购价</th>
                                             <th>分组</th><th>备注</th>
+                                            <th>操作</th>
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -56,8 +59,13 @@
                                                 <td><input class="ids" type="checkbox" value="{$vo.id}" name="ids[]"></td>
                                                 <td>{$vo.name}</td>
                                                 <td>{$vo.norm}</td>
+                                                <td>{$vo.price}</td>
                                                 <td>{$vo.group.name}</td>
                                                 <td>{$vo.note}</td>
+                                                <td>
+                                                    <a class="label label-warning btn-edit" title="编辑" href="{:U('Goods/goodsInfo')}?id={$vo.id}" >编辑</a>
+                                                    <a class="label label-danger btn-del" title="删除" href="javascript:;" >删除</a>
+                                                </td>
                                             </tr>
                                         </foreach>
                                         </tbody>
@@ -108,8 +116,19 @@
 
     $(window).ready(function(e) {
 
-        $("#goodsList tr").smartMenu(tableMenuData, {
-            name: "table"
+        $('.btn-edit').on('click', function() {
+            var id = $(this).attr('data-id');
+            var url = $(this).attr()
+            $.post("{:U('Supplier/supplierDel')}", { id: id}, function(data) {
+                if (data.status) {
+                    $.alertMessager(data.info, 'success');
+                    window.setTimeout(function() {
+                        window.location = data.url;
+                    }, 2000);
+                } else {
+                    $.alertMessager(data.info, 'error');
+                }
+            } );
         });
 
     });

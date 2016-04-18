@@ -1,0 +1,1390 @@
+[ 2016-04-05T18:02:26+08:00 ] 192.168.2.233 /php/erp/test/index.php/Admin/Goods/procurementEdit.html?id=2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+ERR: ------------------------------InitConfig-----start------------------------------------
+INFO: Run Common\Behavior\InitConfigBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+INFO: [ action_begin ] --START--
+ERR: ------------------------------LogBehavior-----start------------------------------------
+ERR: model_name: Admin
+ERR: controller_name: Goods
+ERR: action_name: procurementEdit
+ERR: __action__: /php/erp/test/index.php/Admin/Goods/procurementEdit
+ERR: get param: {"id":"2"}
+INFO: Run Admin\Behavior\LogBehavior [ RunTime:0.002001s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.002001s ]
+SQL: SHOW COLUMNS FROM `erp_goods` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `erp_procurement` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `erp_procurement` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `erp_procurement_detail` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `erp_procurement_detail` WHERE `procurement_id` = 2  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `erp_partner` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `erp_partner` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `erp_goods` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `erp_goods` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `erp_supplier` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `erp_supplier` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0010s ]
+NOTIC: [2] Missing argument 1 for Common\Model\CommonModel::getDataList(), called in D:\xampp\htdocs\php\erp\test\Application\Admin\Controller\GoodsController.class.php on line 50 and defined D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 33 行.
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 34 行.
+SQL: SELECT * FROM `erp_goods`  [ RunTime:0.0000s ]
+NOTIC: [2] Missing argument 1 for Common\Model\CommonModel::getDataList(), called in D:\xampp\htdocs\php\erp\test\Application\Admin\Controller\GoodsController.class.php on line 51 and defined D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 33 行.
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 34 行.
+SQL: SELECT * FROM `erp_supplier`  [ RunTime:0.0010s ]
+NOTIC: [2] Missing argument 1 for Common\Model\CommonModel::getDataList(), called in D:\xampp\htdocs\php\erp\test\Application\Admin\Controller\GoodsController.class.php on line 52 and defined D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 33 行.
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 34 行.
+SQL: SELECT * FROM `erp_partner`  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant num - assumed 'num' D:\xampp\htdocs\php\erp\test\Application\Runtime\Cache\Admin\95716ecd6af5bc518e9f20a1590ed50f.php 第 219 行.
+NOTIC: [8] Use of undefined constant per_price - assumed 'per_price' D:\xampp\htdocs\php\erp\test\Application\Runtime\Cache\Admin\95716ecd6af5bc518e9f20a1590ed50f.php 第 219 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.083005s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.083005s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-04-05T18:02:27+08:00 ] 192.168.2.233 /php/erp/test/index.php/Admin/Goods/procurementEdit.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+ERR: ------------------------------InitConfig-----start------------------------------------
+INFO: Run Common\Behavior\InitConfigBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+INFO: [ action_begin ] --START--
+ERR: ------------------------------LogBehavior-----start------------------------------------
+ERR: model_name: Admin
+ERR: controller_name: Goods
+ERR: action_name: procurementEdit
+ERR: __action__: /php/erp/test/index.php/Admin/Goods/procurementEdit
+ERR: post param: {"procurement":{"id":"2","no":"1458879670118374","status":"3","title":"12","create_time":"2016-03-25 12:21:10","partner_id":"1","note":"122","total_price":"370.00"},"detailList":[{"goods_id":"1","supplier_id":"4","num":"12","per_price":"31.00","sub_price":"372"}]}
+INFO: Run Admin\Behavior\LogBehavior [ RunTime:0.003000s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `erp_goods` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_procurement` [ RunTime:0.0030s ]
+SQL: UPDATE `erp_procurement` SET `id`='2',`no`='1458879670118374',`status`='3',`title`='12',`create_time`='2016-03-25 12:21:10',`partner_id`='1',`note`='122',`total_price`='370.00' WHERE ( id=2 ) [ RunTime:0.0170s ]
+ERR: ---result---0
+ERR: ---------false
+
+[ 2016-04-05T18:03:05+08:00 ] 192.168.2.233 /php/erp/test/index.php/Admin/Goods/procurementEdit.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+ERR: ------------------------------InitConfig-----start------------------------------------
+INFO: Run Common\Behavior\InitConfigBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+INFO: [ action_begin ] --START--
+ERR: ------------------------------LogBehavior-----start------------------------------------
+ERR: model_name: Admin
+ERR: controller_name: Goods
+ERR: action_name: procurementEdit
+ERR: __action__: /php/erp/test/index.php/Admin/Goods/procurementEdit
+ERR: post param: {"procurement":{"id":"2","no":"1458879670118374","status":"3","title":"12","create_time":"2016-03-25 12:21:10","partner_id":"1","note":"122","total_price":"370.00"},"detailList":[{"goods_id":"1","supplier_id":"4","num":"12","per_price":"31.00","sub_price":"372"}]}
+INFO: Run Admin\Behavior\LogBehavior [ RunTime:0.003000s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `erp_goods` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `erp_procurement` [ RunTime:0.0020s ]
+SQL: UPDATE `erp_procurement` SET `id`='2',`no`='1458879670118374',`status`='3',`title`='12',`create_time`='2016-03-25 12:21:10',`partner_id`='1',`note`='122',`total_price`='370.00' WHERE ( id=2 ) [ RunTime:0.0080s ]
+ERR: ---result---0
+ERR: ---result---true
+ERR: ---------false
+
+[ 2016-04-05T18:04:38+08:00 ] 192.168.2.233 /php/erp/test/index.php/Admin/Goods/procurementEdit.html?id=2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+ERR: ------------------------------InitConfig-----start------------------------------------
+INFO: Run Common\Behavior\InitConfigBehavior [ RunTime:0.002001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003001s ]
+INFO: [ action_begin ] --START--
+ERR: ------------------------------LogBehavior-----start------------------------------------
+ERR: model_name: Admin
+ERR: controller_name: Goods
+ERR: action_name: procurementEdit
+ERR: __action__: /php/erp/test/index.php/Admin/Goods/procurementEdit
+ERR: get param: {"id":"2"}
+INFO: Run Admin\Behavior\LogBehavior [ RunTime:0.002000s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `erp_goods` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `erp_procurement` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `erp_procurement` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `erp_procurement_detail` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `erp_procurement_detail` WHERE `procurement_id` = 2  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `erp_partner` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `erp_partner` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `erp_goods` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `erp_goods` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `erp_supplier` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `erp_supplier` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [2] Missing argument 1 for Common\Model\CommonModel::getDataList(), called in D:\xampp\htdocs\php\erp\test\Application\Admin\Controller\GoodsController.class.php on line 50 and defined D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 33 行.
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 34 行.
+SQL: SELECT * FROM `erp_goods`  [ RunTime:0.0000s ]
+NOTIC: [2] Missing argument 1 for Common\Model\CommonModel::getDataList(), called in D:\xampp\htdocs\php\erp\test\Application\Admin\Controller\GoodsController.class.php on line 51 and defined D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 33 行.
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 34 行.
+SQL: SELECT * FROM `erp_supplier`  [ RunTime:0.0000s ]
+NOTIC: [2] Missing argument 1 for Common\Model\CommonModel::getDataList(), called in D:\xampp\htdocs\php\erp\test\Application\Admin\Controller\GoodsController.class.php on line 52 and defined D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 33 行.
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 34 行.
+SQL: SELECT * FROM `erp_partner`  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant num - assumed 'num' D:\xampp\htdocs\php\erp\test\Application\Runtime\Cache\Admin\95716ecd6af5bc518e9f20a1590ed50f.php 第 219 行.
+NOTIC: [8] Use of undefined constant per_price - assumed 'per_price' D:\xampp\htdocs\php\erp\test\Application\Runtime\Cache\Admin\95716ecd6af5bc518e9f20a1590ed50f.php 第 219 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.084005s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.084005s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-04-05T18:04:39+08:00 ] 192.168.2.233 /php/erp/test/index.php/Admin/Goods/procurementEdit.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+ERR: ------------------------------InitConfig-----start------------------------------------
+INFO: Run Common\Behavior\InitConfigBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+INFO: [ action_begin ] --START--
+ERR: ------------------------------LogBehavior-----start------------------------------------
+ERR: model_name: Admin
+ERR: controller_name: Goods
+ERR: action_name: procurementEdit
+ERR: __action__: /php/erp/test/index.php/Admin/Goods/procurementEdit
+ERR: post param: {"procurement":{"id":"2","no":"1458879670118374","status":"3","title":"12","create_time":"2016-03-25 12:21:10","partner_id":"1","note":"122","total_price":"370.00"},"detailList":[{"goods_id":"1","supplier_id":"4","num":"12","per_price":"31.00","sub_price":"372"}]}
+INFO: Run Admin\Behavior\LogBehavior [ RunTime:0.003000s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `erp_goods` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_procurement` [ RunTime:0.0020s ]
+SQL: UPDATE `erp_procurement` SET `id`='2',`no`='1458879670118374',`status`='3',`title`='12',`create_time`='2016-03-25 12:21:10',`partner_id`='1',`note`='122',`total_price`='370.00' WHERE ( id=2 ) [ RunTime:0.0060s ]
+ERR: ---result---0
+SQL: SHOW COLUMNS FROM `erp_procurement_detail` [ RunTime:0.0020s ]
+NOTIC: [8] Undefined index: id D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 95 行.
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : UPDATE `erp_procurement_detail` SET `goods_id`='1',`supplier_id`='4',`num`='12',`per_price`='31.00' WHERE ( id= )
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : UPDATE `erp_procurement_detail` SET `goods_id`='1',`supplier_id`='4',`num`='12',`per_price`='31.00' WHERE ( id= )
+
+[ 2016-04-05T18:10:24+08:00 ] 192.168.2.233 /php/erp/test/index.php/Admin/Goods/procurementEdit.html?id=2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+ERR: ------------------------------InitConfig-----start------------------------------------
+INFO: Run Common\Behavior\InitConfigBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004001s ]
+INFO: [ action_begin ] --START--
+ERR: ------------------------------LogBehavior-----start------------------------------------
+ERR: model_name: Admin
+ERR: controller_name: Goods
+ERR: action_name: procurementEdit
+ERR: __action__: /php/erp/test/index.php/Admin/Goods/procurementEdit
+ERR: get param: {"id":"2"}
+INFO: Run Admin\Behavior\LogBehavior [ RunTime:0.002000s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `erp_goods` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_procurement` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `erp_procurement` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `erp_procurement_detail` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `erp_procurement_detail` WHERE `procurement_id` = 2  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `erp_partner` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `erp_partner` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `erp_goods` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `erp_goods` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `erp_supplier` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `erp_supplier` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [2] Missing argument 1 for Common\Model\CommonModel::getDataList(), called in D:\xampp\htdocs\php\erp\test\Application\Admin\Controller\GoodsController.class.php on line 50 and defined D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 33 行.
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 34 行.
+SQL: SELECT * FROM `erp_goods`  [ RunTime:0.0000s ]
+NOTIC: [2] Missing argument 1 for Common\Model\CommonModel::getDataList(), called in D:\xampp\htdocs\php\erp\test\Application\Admin\Controller\GoodsController.class.php on line 51 and defined D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 33 行.
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 34 行.
+SQL: SELECT * FROM `erp_supplier`  [ RunTime:0.0000s ]
+NOTIC: [2] Missing argument 1 for Common\Model\CommonModel::getDataList(), called in D:\xampp\htdocs\php\erp\test\Application\Admin\Controller\GoodsController.class.php on line 52 and defined D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 33 行.
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 34 行.
+SQL: SELECT * FROM `erp_partner`  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant num - assumed 'num' D:\xampp\htdocs\php\erp\test\Application\Runtime\Cache\Admin\95716ecd6af5bc518e9f20a1590ed50f.php 第 219 行.
+NOTIC: [8] Use of undefined constant per_price - assumed 'per_price' D:\xampp\htdocs\php\erp\test\Application\Runtime\Cache\Admin\95716ecd6af5bc518e9f20a1590ed50f.php 第 219 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.082005s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.083005s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-04-05T18:10:25+08:00 ] 192.168.2.233 /php/erp/test/index.php/Admin/Goods/procurementEdit.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+ERR: ------------------------------InitConfig-----start------------------------------------
+INFO: Run Common\Behavior\InitConfigBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003001s ]
+INFO: [ action_begin ] --START--
+ERR: ------------------------------LogBehavior-----start------------------------------------
+ERR: model_name: Admin
+ERR: controller_name: Goods
+ERR: action_name: procurementEdit
+ERR: __action__: /php/erp/test/index.php/Admin/Goods/procurementEdit
+ERR: post param: {"procurement":{"id":"2","no":"1458879670118374","status":"3","title":"12","create_time":"2016-03-25 12:21:10","partner_id":"1","note":"122","total_price":"370.00"},"detailList":[{"id":"{v.id}","goods_id":"1","supplier_id":"4","num":"12","per_price":"31.00","sub_price":"372"}]}
+INFO: Run Admin\Behavior\LogBehavior [ RunTime:0.003000s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `erp_goods` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `erp_procurement` [ RunTime:0.0020s ]
+SQL: UPDATE `erp_procurement` SET `id`='2',`no`='1458879670118374',`status`='3',`title`='12',`create_time`='2016-03-25 12:21:10',`partner_id`='1',`note`='122',`total_price`='370.00' WHERE ( id=2 ) [ RunTime:0.0120s ]
+ERR: ---result---0
+SQL: SHOW COLUMNS FROM `erp_procurement_detail` [ RunTime:0.0030s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '} )' at line 1
+ [ SQL语句 ] : UPDATE `erp_procurement_detail` SET `id`='0',`goods_id`='1',`supplier_id`='4',`num`='12',`per_price`='31.00' WHERE ( id={v.id} )
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '} )' at line 1
+ [ SQL语句 ] : UPDATE `erp_procurement_detail` SET `id`='0',`goods_id`='1',`supplier_id`='4',`num`='12',`per_price`='31.00' WHERE ( id={v.id} )
+
+[ 2016-04-05T18:10:28+08:00 ] 192.168.2.233 /php/erp/test/index.php/Admin/Goods/procurementEdit.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+ERR: ------------------------------InitConfig-----start------------------------------------
+INFO: Run Common\Behavior\InitConfigBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+INFO: [ action_begin ] --START--
+ERR: ------------------------------LogBehavior-----start------------------------------------
+ERR: model_name: Admin
+ERR: controller_name: Goods
+ERR: action_name: procurementEdit
+ERR: __action__: /php/erp/test/index.php/Admin/Goods/procurementEdit
+ERR: post param: {"procurement":{"id":"2","no":"1458879670118374","status":"3","title":"12","create_time":"2016-03-25 12:21:10","partner_id":"1","note":"122","total_price":"370.00"},"detailList":[{"id":"{v.id}","goods_id":"1","supplier_id":"4","num":"12","per_price":"31.00","sub_price":"372"}]}
+INFO: Run Admin\Behavior\LogBehavior [ RunTime:0.003000s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `erp_goods` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `erp_procurement` [ RunTime:0.0020s ]
+SQL: UPDATE `erp_procurement` SET `id`='2',`no`='1458879670118374',`status`='3',`title`='12',`create_time`='2016-03-25 12:21:10',`partner_id`='1',`note`='122',`total_price`='370.00' WHERE ( id=2 ) [ RunTime:0.0060s ]
+ERR: ---result---0
+SQL: SHOW COLUMNS FROM `erp_procurement_detail` [ RunTime:0.0020s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '} )' at line 1
+ [ SQL语句 ] : UPDATE `erp_procurement_detail` SET `id`='0',`goods_id`='1',`supplier_id`='4',`num`='12',`per_price`='31.00' WHERE ( id={v.id} )
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '} )' at line 1
+ [ SQL语句 ] : UPDATE `erp_procurement_detail` SET `id`='0',`goods_id`='1',`supplier_id`='4',`num`='12',`per_price`='31.00' WHERE ( id={v.id} )
+
+[ 2016-04-05T18:11:05+08:00 ] 192.168.2.233 /php/erp/test/index.php/Admin/Goods/procurementEdit.html?id=2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+ERR: ------------------------------InitConfig-----start------------------------------------
+INFO: Run Common\Behavior\InitConfigBehavior [ RunTime:0.002001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003001s ]
+INFO: [ action_begin ] --START--
+ERR: ------------------------------LogBehavior-----start------------------------------------
+ERR: model_name: Admin
+ERR: controller_name: Goods
+ERR: action_name: procurementEdit
+ERR: __action__: /php/erp/test/index.php/Admin/Goods/procurementEdit
+ERR: get param: {"id":"2"}
+INFO: Run Admin\Behavior\LogBehavior [ RunTime:0.002000s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `erp_goods` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `erp_procurement` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `erp_procurement` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `erp_procurement_detail` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `erp_procurement_detail` WHERE `procurement_id` = 2  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `erp_partner` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `erp_partner` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `erp_goods` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `erp_goods` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `erp_supplier` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `erp_supplier` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [2] Missing argument 1 for Common\Model\CommonModel::getDataList(), called in D:\xampp\htdocs\php\erp\test\Application\Admin\Controller\GoodsController.class.php on line 50 and defined D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 33 行.
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 34 行.
+SQL: SELECT * FROM `erp_goods`  [ RunTime:0.0010s ]
+NOTIC: [2] Missing argument 1 for Common\Model\CommonModel::getDataList(), called in D:\xampp\htdocs\php\erp\test\Application\Admin\Controller\GoodsController.class.php on line 51 and defined D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 33 行.
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 34 行.
+SQL: SELECT * FROM `erp_supplier`  [ RunTime:0.0000s ]
+NOTIC: [2] Missing argument 1 for Common\Model\CommonModel::getDataList(), called in D:\xampp\htdocs\php\erp\test\Application\Admin\Controller\GoodsController.class.php on line 52 and defined D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 33 行.
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 34 行.
+SQL: SELECT * FROM `erp_partner`  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant num - assumed 'num' D:\xampp\htdocs\php\erp\test\Application\Runtime\Cache\Admin\95716ecd6af5bc518e9f20a1590ed50f.php 第 219 行.
+NOTIC: [8] Use of undefined constant per_price - assumed 'per_price' D:\xampp\htdocs\php\erp\test\Application\Runtime\Cache\Admin\95716ecd6af5bc518e9f20a1590ed50f.php 第 219 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.083005s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.083005s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-04-05T18:11:07+08:00 ] 192.168.2.233 /php/erp/test/index.php/Admin/Goods/procurementEdit.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+ERR: ------------------------------InitConfig-----start------------------------------------
+INFO: Run Common\Behavior\InitConfigBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+INFO: [ action_begin ] --START--
+ERR: ------------------------------LogBehavior-----start------------------------------------
+ERR: model_name: Admin
+ERR: controller_name: Goods
+ERR: action_name: procurementEdit
+ERR: __action__: /php/erp/test/index.php/Admin/Goods/procurementEdit
+ERR: post param: {"procurement":{"id":"2","no":"1458879670118374","status":"3","title":"12","create_time":"2016-03-25 12:21:10","partner_id":"1","note":"122","total_price":"370.00"},"detailList":[{"id":"5","goods_id":"1","supplier_id":"4","num":"12","per_price":"31.00","sub_price":"372"}]}
+INFO: Run Admin\Behavior\LogBehavior [ RunTime:0.003001s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.003001s ]
+SQL: SHOW COLUMNS FROM `erp_goods` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_procurement` [ RunTime:0.0030s ]
+SQL: UPDATE `erp_procurement` SET `id`='2',`no`='1458879670118374',`status`='3',`title`='12',`create_time`='2016-03-25 12:21:10',`partner_id`='1',`note`='122',`total_price`='370.00' WHERE ( id=2 ) [ RunTime:0.0180s ]
+ERR: ---result---0
+SQL: SHOW COLUMNS FROM `erp_procurement_detail` [ RunTime:0.0020s ]
+SQL: UPDATE `erp_procurement_detail` SET `id`='5',`goods_id`='1',`supplier_id`='4',`num`='12',`per_price`='31.00' WHERE ( id=5 ) [ RunTime:0.0010s ]
+ERR: ---------true
+
+[ 2016-04-05T18:11:09+08:00 ] 192.168.2.233 /php/erp/test/index.php/Admin/Goods/procurementList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+ERR: ------------------------------InitConfig-----start------------------------------------
+INFO: Run Common\Behavior\InitConfigBehavior [ RunTime:0.002001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003001s ]
+INFO: [ action_begin ] --START--
+ERR: ------------------------------LogBehavior-----start------------------------------------
+ERR: model_name: Admin
+ERR: controller_name: Goods
+ERR: action_name: procurementList
+ERR: __action__: /php/erp/test/index.php/Admin/Goods/procurementList
+ERR: get param: []
+INFO: Run Admin\Behavior\LogBehavior [ RunTime:0.002000s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `erp_procurement` [ RunTime:0.0020s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `erp_procurement` LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `erp_goods` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `erp_procurement` LIMIT 0,10   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `erp_partner` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `erp_partner` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_partner` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8] Undefined index: num D:\xampp\htdocs\php\erp\test\Application\Runtime\Cache\Admin\8296c2c0faadc3fb25d2fe6a107f3c46.php 第 171 行.
+NOTIC: [8] Undefined index: num D:\xampp\htdocs\php\erp\test\Application\Runtime\Cache\Admin\8296c2c0faadc3fb25d2fe6a107f3c46.php 第 171 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.066003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.067003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-04-05T18:11:11+08:00 ] 192.168.2.233 /php/erp/test/index.php/Admin/Goods/procurementEdit.html?id=2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+ERR: ------------------------------InitConfig-----start------------------------------------
+INFO: Run Common\Behavior\InitConfigBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+INFO: [ action_begin ] --START--
+ERR: ------------------------------LogBehavior-----start------------------------------------
+ERR: model_name: Admin
+ERR: controller_name: Goods
+ERR: action_name: procurementEdit
+ERR: __action__: /php/erp/test/index.php/Admin/Goods/procurementEdit
+ERR: get param: {"id":"2"}
+INFO: Run Admin\Behavior\LogBehavior [ RunTime:0.002000s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `erp_goods` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `erp_procurement` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `erp_procurement` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `erp_procurement_detail` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `erp_procurement_detail` WHERE `procurement_id` = 2  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `erp_partner` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `erp_partner` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `erp_goods` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `erp_goods` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `erp_supplier` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `erp_supplier` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [2] Missing argument 1 for Common\Model\CommonModel::getDataList(), called in D:\xampp\htdocs\php\erp\test\Application\Admin\Controller\GoodsController.class.php on line 50 and defined D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 33 行.
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 34 行.
+SQL: SELECT * FROM `erp_goods`  [ RunTime:0.0000s ]
+NOTIC: [2] Missing argument 1 for Common\Model\CommonModel::getDataList(), called in D:\xampp\htdocs\php\erp\test\Application\Admin\Controller\GoodsController.class.php on line 51 and defined D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 33 行.
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 34 行.
+SQL: SELECT * FROM `erp_supplier`  [ RunTime:0.0010s ]
+NOTIC: [2] Missing argument 1 for Common\Model\CommonModel::getDataList(), called in D:\xampp\htdocs\php\erp\test\Application\Admin\Controller\GoodsController.class.php on line 52 and defined D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 33 行.
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 34 行.
+SQL: SELECT * FROM `erp_partner`  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8] Use of undefined constant num - assumed 'num' D:\xampp\htdocs\php\erp\test\Application\Runtime\Cache\Admin\95716ecd6af5bc518e9f20a1590ed50f.php 第 219 行.
+NOTIC: [8] Use of undefined constant per_price - assumed 'per_price' D:\xampp\htdocs\php\erp\test\Application\Runtime\Cache\Admin\95716ecd6af5bc518e9f20a1590ed50f.php 第 219 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.083005s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.084005s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-04-05T18:11:14+08:00 ] 192.168.2.233 /php/erp/test/index.php/Admin/Goods/procurementEdit.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+ERR: ------------------------------InitConfig-----start------------------------------------
+INFO: Run Common\Behavior\InitConfigBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+INFO: [ action_begin ] --START--
+ERR: ------------------------------LogBehavior-----start------------------------------------
+ERR: model_name: Admin
+ERR: controller_name: Goods
+ERR: action_name: procurementEdit
+ERR: __action__: /php/erp/test/index.php/Admin/Goods/procurementEdit
+ERR: post param: {"procurement":{"id":"2","no":"1458879670118374","status":"2","title":"12","create_time":"2016-03-25 12:21:10","partner_id":"1","note":"122","total_price":"370.00"},"detailList":[{"id":"5","goods_id":"1","supplier_id":"4","num":"12","per_price":"31.00","sub_price":"372"}]}
+INFO: Run Admin\Behavior\LogBehavior [ RunTime:0.003000s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `erp_goods` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_procurement` [ RunTime:0.0020s ]
+SQL: UPDATE `erp_procurement` SET `id`='2',`no`='1458879670118374',`status`='2',`title`='12',`create_time`='2016-03-25 12:21:10',`partner_id`='1',`note`='122',`total_price`='370.00' WHERE ( id=2 ) [ RunTime:0.0330s ]
+ERR: ---result---1
+SQL: SHOW COLUMNS FROM `erp_procurement_detail` [ RunTime:0.0020s ]
+SQL: UPDATE `erp_procurement_detail` SET `id`='5',`goods_id`='1',`supplier_id`='4',`num`='12',`per_price`='31.00' WHERE ( id=5 ) [ RunTime:0.0000s ]
+ERR: ---------true
+
+[ 2016-04-05T18:11:16+08:00 ] 192.168.2.233 /php/erp/test/index.php/Admin/Goods/procurementList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+ERR: ------------------------------InitConfig-----start------------------------------------
+INFO: Run Common\Behavior\InitConfigBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+INFO: [ action_begin ] --START--
+ERR: ------------------------------LogBehavior-----start------------------------------------
+ERR: model_name: Admin
+ERR: controller_name: Goods
+ERR: action_name: procurementList
+ERR: __action__: /php/erp/test/index.php/Admin/Goods/procurementList
+ERR: get param: []
+INFO: Run Admin\Behavior\LogBehavior [ RunTime:0.001001s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.003001s ]
+SQL: SHOW COLUMNS FROM `erp_procurement` [ RunTime:0.0020s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `erp_procurement` LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `erp_goods` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `erp_procurement` LIMIT 0,10   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `erp_partner` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `erp_partner` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `erp_partner` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8] Undefined index: num D:\xampp\htdocs\php\erp\test\Application\Runtime\Cache\Admin\8296c2c0faadc3fb25d2fe6a107f3c46.php 第 171 行.
+NOTIC: [8] Undefined index: num D:\xampp\htdocs\php\erp\test\Application\Runtime\Cache\Admin\8296c2c0faadc3fb25d2fe6a107f3c46.php 第 171 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.065004s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.066004s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-04-05T18:11:33+08:00 ] 192.168.2.233 /php/erp/test/index.php/Admin/Goods/procurementEdit.html?id=2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+ERR: ------------------------------InitConfig-----start------------------------------------
+INFO: Run Common\Behavior\InitConfigBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004001s ]
+INFO: [ action_begin ] --START--
+ERR: ------------------------------LogBehavior-----start------------------------------------
+ERR: model_name: Admin
+ERR: controller_name: Goods
+ERR: action_name: procurementEdit
+ERR: __action__: /php/erp/test/index.php/Admin/Goods/procurementEdit
+ERR: get param: {"id":"2"}
+INFO: Run Admin\Behavior\LogBehavior [ RunTime:0.002000s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `erp_goods` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_procurement` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `erp_procurement` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `erp_procurement_detail` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `erp_procurement_detail` WHERE `procurement_id` = 2  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `erp_partner` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `erp_partner` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `erp_goods` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `erp_goods` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `erp_supplier` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `erp_supplier` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [2] Missing argument 1 for Common\Model\CommonModel::getDataList(), called in D:\xampp\htdocs\php\erp\test\Application\Admin\Controller\GoodsController.class.php on line 50 and defined D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 33 行.
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 34 行.
+SQL: SELECT * FROM `erp_goods`  [ RunTime:0.0000s ]
+NOTIC: [2] Missing argument 1 for Common\Model\CommonModel::getDataList(), called in D:\xampp\htdocs\php\erp\test\Application\Admin\Controller\GoodsController.class.php on line 51 and defined D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 33 行.
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 34 行.
+SQL: SELECT * FROM `erp_supplier`  [ RunTime:0.0010s ]
+NOTIC: [2] Missing argument 1 for Common\Model\CommonModel::getDataList(), called in D:\xampp\htdocs\php\erp\test\Application\Admin\Controller\GoodsController.class.php on line 52 and defined D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 33 行.
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 34 行.
+SQL: SELECT * FROM `erp_partner`  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant num - assumed 'num' D:\xampp\htdocs\php\erp\test\Application\Runtime\Cache\Admin\95716ecd6af5bc518e9f20a1590ed50f.php 第 219 行.
+NOTIC: [8] Use of undefined constant per_price - assumed 'per_price' D:\xampp\htdocs\php\erp\test\Application\Runtime\Cache\Admin\95716ecd6af5bc518e9f20a1590ed50f.php 第 219 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.084005s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.086005s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-04-05T18:14:20+08:00 ] 192.168.2.233 /php/erp/test/index.php/Admin/Goods/procurementList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+ERR: ------------------------------InitConfig-----start------------------------------------
+INFO: Run Common\Behavior\InitConfigBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+INFO: [ action_begin ] --START--
+ERR: ------------------------------LogBehavior-----start------------------------------------
+ERR: model_name: Admin
+ERR: controller_name: Goods
+ERR: action_name: procurementList
+ERR: __action__: /php/erp/test/index.php/Admin/Goods/procurementList
+ERR: get param: []
+INFO: Run Admin\Behavior\LogBehavior [ RunTime:0.001000s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.003001s ]
+SQL: SHOW COLUMNS FROM `erp_procurement` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `erp_procurement` LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `erp_goods` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `erp_procurement` LIMIT 0,10   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `erp_partner` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `erp_partner` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `erp_partner` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: num D:\xampp\htdocs\php\erp\test\Application\Runtime\Cache\Admin\8296c2c0faadc3fb25d2fe6a107f3c46.php 第 171 行.
+NOTIC: [8] Undefined index: num D:\xampp\htdocs\php\erp\test\Application\Runtime\Cache\Admin\8296c2c0faadc3fb25d2fe6a107f3c46.php 第 171 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.065004s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.066004s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-04-05T18:14:25+08:00 ] 192.168.2.233 /php/erp/test/index.php/Admin/Goods/procurementEdit.html?id=2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+ERR: ------------------------------InitConfig-----start------------------------------------
+INFO: Run Common\Behavior\InitConfigBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+INFO: [ action_begin ] --START--
+ERR: ------------------------------LogBehavior-----start------------------------------------
+ERR: model_name: Admin
+ERR: controller_name: Goods
+ERR: action_name: procurementEdit
+ERR: __action__: /php/erp/test/index.php/Admin/Goods/procurementEdit
+ERR: get param: {"id":"2"}
+INFO: Run Admin\Behavior\LogBehavior [ RunTime:0.002000s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `erp_goods` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `erp_procurement` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `erp_procurement` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `erp_procurement_detail` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `erp_procurement_detail` WHERE `procurement_id` = 2  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `erp_partner` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `erp_partner` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `erp_goods` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `erp_goods` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `erp_supplier` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `erp_supplier` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [2] Missing argument 1 for Common\Model\CommonModel::getDataList(), called in D:\xampp\htdocs\php\erp\test\Application\Admin\Controller\GoodsController.class.php on line 50 and defined D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 33 行.
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 34 行.
+SQL: SELECT * FROM `erp_goods`  [ RunTime:0.0010s ]
+NOTIC: [2] Missing argument 1 for Common\Model\CommonModel::getDataList(), called in D:\xampp\htdocs\php\erp\test\Application\Admin\Controller\GoodsController.class.php on line 51 and defined D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 33 行.
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 34 行.
+SQL: SELECT * FROM `erp_supplier`  [ RunTime:0.0000s ]
+NOTIC: [2] Missing argument 1 for Common\Model\CommonModel::getDataList(), called in D:\xampp\htdocs\php\erp\test\Application\Admin\Controller\GoodsController.class.php on line 52 and defined D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 33 行.
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 34 行.
+SQL: SELECT * FROM `erp_partner`  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8] Use of undefined constant num - assumed 'num' D:\xampp\htdocs\php\erp\test\Application\Runtime\Cache\Admin\95716ecd6af5bc518e9f20a1590ed50f.php 第 219 行.
+NOTIC: [8] Use of undefined constant per_price - assumed 'per_price' D:\xampp\htdocs\php\erp\test\Application\Runtime\Cache\Admin\95716ecd6af5bc518e9f20a1590ed50f.php 第 219 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.084005s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.084005s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-04-05T18:14:44+08:00 ] 192.168.2.233 /php/erp/test/index.php/Admin/Goods/procurementEdit.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+ERR: ------------------------------InitConfig-----start------------------------------------
+INFO: Run Common\Behavior\InitConfigBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003001s ]
+INFO: [ action_begin ] --START--
+ERR: ------------------------------LogBehavior-----start------------------------------------
+ERR: model_name: Admin
+ERR: controller_name: Goods
+ERR: action_name: procurementEdit
+ERR: __action__: /php/erp/test/index.php/Admin/Goods/procurementEdit
+ERR: post param: {"procurement":{"id":"2","no":"1458879670118374","status":"2","title":"12","create_time":"2016-03-25 12:21:10","partner_id":"1","note":"122","total_price":"300.00"},"detailList":[{"id":"5","goods_id":"1","supplier_id":"4","num":"10","per_price":"31.00","sub_price":"310.00"}]}
+INFO: Run Admin\Behavior\LogBehavior [ RunTime:0.003000s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `erp_goods` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_procurement` [ RunTime:0.0020s ]
+SQL: UPDATE `erp_procurement` SET `id`='2',`no`='1458879670118374',`status`='2',`title`='12',`create_time`='2016-03-25 12:21:10',`partner_id`='1',`note`='122',`total_price`='300.00' WHERE ( id=2 ) [ RunTime:0.0190s ]
+ERR: ---result---1
+SQL: SHOW COLUMNS FROM `erp_procurement_detail` [ RunTime:0.0020s ]
+SQL: UPDATE `erp_procurement_detail` SET `id`='5',`goods_id`='1',`supplier_id`='4',`num`='10',`per_price`='31.00' WHERE ( id=5 ) [ RunTime:0.0010s ]
+ERR: ---------true
+
+[ 2016-04-05T18:14:47+08:00 ] 192.168.2.233 /php/erp/test/index.php/Admin/Goods/procurementList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+ERR: ------------------------------InitConfig-----start------------------------------------
+INFO: Run Common\Behavior\InitConfigBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+INFO: [ action_begin ] --START--
+ERR: ------------------------------LogBehavior-----start------------------------------------
+ERR: model_name: Admin
+ERR: controller_name: Goods
+ERR: action_name: procurementList
+ERR: __action__: /php/erp/test/index.php/Admin/Goods/procurementList
+ERR: get param: []
+INFO: Run Admin\Behavior\LogBehavior [ RunTime:0.001000s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `erp_procurement` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `erp_procurement` LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `erp_goods` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `erp_procurement` LIMIT 0,10   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `erp_partner` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `erp_partner` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `erp_partner` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.002001s ]
+NOTIC: [8] Undefined index: num D:\xampp\htdocs\php\erp\test\Application\Runtime\Cache\Admin\8296c2c0faadc3fb25d2fe6a107f3c46.php 第 171 行.
+NOTIC: [8] Undefined index: num D:\xampp\htdocs\php\erp\test\Application\Runtime\Cache\Admin\8296c2c0faadc3fb25d2fe6a107f3c46.php 第 171 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.067004s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.067004s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002001s ]
+
+[ 2016-04-05T18:14:49+08:00 ] 192.168.2.233 /php/erp/test/index.php/Admin/Goods/procurementDetail.html?id=2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+ERR: ------------------------------InitConfig-----start------------------------------------
+INFO: Run Common\Behavior\InitConfigBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+INFO: [ action_begin ] --START--
+ERR: ------------------------------LogBehavior-----start------------------------------------
+ERR: model_name: Admin
+ERR: controller_name: Goods
+ERR: action_name: procurementDetail
+ERR: __action__: /php/erp/test/index.php/Admin/Goods/procurementDetail
+ERR: get param: {"id":"2"}
+INFO: Run Admin\Behavior\LogBehavior [ RunTime:0.001000s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `erp_goods` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_procurement` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `erp_procurement` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `erp_procurement_detail` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `erp_procurement_detail` WHERE `procurement_id` = 2  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `erp_partner` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `erp_partner` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `erp_goods` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `erp_goods` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `erp_supplier` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `erp_supplier` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined variable: stockLog D:\xampp\htdocs\php\erp\test\Application\Runtime\Cache\Admin\a90b2701adc85f0742b15d5e7181c8ae.php 第 191 行.
+NOTIC: [8] Use of undefined constant num - assumed 'num' D:\xampp\htdocs\php\erp\test\Application\Runtime\Cache\Admin\a90b2701adc85f0742b15d5e7181c8ae.php 第 208 行.
+NOTIC: [8] Use of undefined constant per_price - assumed 'per_price' D:\xampp\htdocs\php\erp\test\Application\Runtime\Cache\Admin\a90b2701adc85f0742b15d5e7181c8ae.php 第 208 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.060003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.060003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002001s ]
+
+[ 2016-04-05T18:14:58+08:00 ] 192.168.2.233 /php/erp/test/index.php/Admin/Goods/procurementEdit.html?id=2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+ERR: ------------------------------InitConfig-----start------------------------------------
+INFO: Run Common\Behavior\InitConfigBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+INFO: [ action_begin ] --START--
+ERR: ------------------------------LogBehavior-----start------------------------------------
+ERR: model_name: Admin
+ERR: controller_name: Goods
+ERR: action_name: procurementEdit
+ERR: __action__: /php/erp/test/index.php/Admin/Goods/procurementEdit
+ERR: get param: {"id":"2"}
+INFO: Run Admin\Behavior\LogBehavior [ RunTime:0.002000s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `erp_goods` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_procurement` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `erp_procurement` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `erp_procurement_detail` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `erp_procurement_detail` WHERE `procurement_id` = 2  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `erp_partner` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `erp_partner` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `erp_goods` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `erp_goods` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `erp_supplier` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `erp_supplier` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [2] Missing argument 1 for Common\Model\CommonModel::getDataList(), called in D:\xampp\htdocs\php\erp\test\Application\Admin\Controller\GoodsController.class.php on line 50 and defined D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 33 行.
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 34 行.
+SQL: SELECT * FROM `erp_goods`  [ RunTime:0.0010s ]
+NOTIC: [2] Missing argument 1 for Common\Model\CommonModel::getDataList(), called in D:\xampp\htdocs\php\erp\test\Application\Admin\Controller\GoodsController.class.php on line 51 and defined D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 33 行.
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 34 行.
+SQL: SELECT * FROM `erp_supplier`  [ RunTime:0.0000s ]
+NOTIC: [2] Missing argument 1 for Common\Model\CommonModel::getDataList(), called in D:\xampp\htdocs\php\erp\test\Application\Admin\Controller\GoodsController.class.php on line 52 and defined D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 33 行.
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 34 行.
+SQL: SELECT * FROM `erp_partner`  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant num - assumed 'num' D:\xampp\htdocs\php\erp\test\Application\Runtime\Cache\Admin\95716ecd6af5bc518e9f20a1590ed50f.php 第 219 行.
+NOTIC: [8] Use of undefined constant per_price - assumed 'per_price' D:\xampp\htdocs\php\erp\test\Application\Runtime\Cache\Admin\95716ecd6af5bc518e9f20a1590ed50f.php 第 219 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.085005s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.085005s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-04-05T18:18:03+08:00 ] 192.168.2.233 /php/erp/test/index.php/Admin/Goods/procurementEdit.html?id=2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+ERR: ------------------------------InitConfig-----start------------------------------------
+INFO: Run Common\Behavior\InitConfigBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+INFO: [ action_begin ] --START--
+ERR: ------------------------------LogBehavior-----start------------------------------------
+ERR: model_name: Admin
+ERR: controller_name: Goods
+ERR: action_name: procurementEdit
+ERR: __action__: /php/erp/test/index.php/Admin/Goods/procurementEdit
+ERR: get param: {"id":"2"}
+INFO: Run Admin\Behavior\LogBehavior [ RunTime:0.002000s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `erp_goods` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `erp_procurement` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `erp_procurement` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `erp_procurement_detail` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `erp_procurement_detail` WHERE `procurement_id` = 2  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `erp_partner` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `erp_partner` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `erp_goods` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `erp_goods` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `erp_supplier` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `erp_supplier` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [2] Missing argument 1 for Common\Model\CommonModel::getDataList(), called in D:\xampp\htdocs\php\erp\test\Application\Admin\Controller\GoodsController.class.php on line 50 and defined D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 33 行.
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 34 行.
+SQL: SELECT * FROM `erp_goods`  [ RunTime:0.0010s ]
+NOTIC: [2] Missing argument 1 for Common\Model\CommonModel::getDataList(), called in D:\xampp\htdocs\php\erp\test\Application\Admin\Controller\GoodsController.class.php on line 51 and defined D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 33 行.
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 34 行.
+SQL: SELECT * FROM `erp_supplier`  [ RunTime:0.0000s ]
+NOTIC: [2] Missing argument 1 for Common\Model\CommonModel::getDataList(), called in D:\xampp\htdocs\php\erp\test\Application\Admin\Controller\GoodsController.class.php on line 52 and defined D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 33 行.
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 34 行.
+SQL: SELECT * FROM `erp_partner`  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8] Use of undefined constant num - assumed 'num' D:\xampp\htdocs\php\erp\test\Application\Runtime\Cache\Admin\95716ecd6af5bc518e9f20a1590ed50f.php 第 219 行.
+NOTIC: [8] Use of undefined constant per_price - assumed 'per_price' D:\xampp\htdocs\php\erp\test\Application\Runtime\Cache\Admin\95716ecd6af5bc518e9f20a1590ed50f.php 第 219 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.083005s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.085005s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-04-05T18:18:24+08:00 ] 192.168.2.233 /php/erp/test/index.php/Admin/Goods/procurementEdit.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+ERR: ------------------------------InitConfig-----start------------------------------------
+INFO: Run Common\Behavior\InitConfigBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+INFO: [ action_begin ] --START--
+ERR: ------------------------------LogBehavior-----start------------------------------------
+ERR: model_name: Admin
+ERR: controller_name: Goods
+ERR: action_name: procurementEdit
+ERR: __action__: /php/erp/test/index.php/Admin/Goods/procurementEdit
+ERR: post param: {"procurement":{"id":"2","no":"1458879670118374","status":"3","title":"12","create_time":"2016-03-25 12:21:10","partner_id":"1","note":"122","total_price":"300.00"},"detailList":[{"id":"5","goods_id":"1","supplier_id":"4","num":"10","per_price":"31.00","sub_price":"310.00"}]}
+INFO: Run Admin\Behavior\LogBehavior [ RunTime:0.003000s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `erp_goods` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `erp_procurement` [ RunTime:0.0020s ]
+SQL: UPDATE `erp_procurement` SET `id`='2',`no`='1458879670118374',`status`='3',`title`='12',`create_time`='2016-03-25 12:21:10',`partner_id`='1',`note`='122',`total_price`='300.00' WHERE ( id=2 ) [ RunTime:0.0200s ]
+ERR: ---result---1
+SQL: SHOW COLUMNS FROM `erp_procurement_detail` [ RunTime:0.0030s ]
+SQL: UPDATE `erp_procurement_detail` SET `id`='5',`goods_id`='1',`supplier_id`='4',`num`='10',`per_price`='31.00' WHERE ( id=5 ) [ RunTime:0.0010s ]
+ERR: ---------true
+
+[ 2016-04-05T18:18:27+08:00 ] 192.168.2.233 /php/erp/test/index.php/Admin/Goods/procurementList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+ERR: ------------------------------InitConfig-----start------------------------------------
+INFO: Run Common\Behavior\InitConfigBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+INFO: [ action_begin ] --START--
+ERR: ------------------------------LogBehavior-----start------------------------------------
+ERR: model_name: Admin
+ERR: controller_name: Goods
+ERR: action_name: procurementList
+ERR: __action__: /php/erp/test/index.php/Admin/Goods/procurementList
+ERR: get param: []
+INFO: Run Admin\Behavior\LogBehavior [ RunTime:0.001000s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `erp_procurement` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `erp_procurement` LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `erp_goods` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `erp_procurement` LIMIT 0,10   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `erp_partner` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `erp_partner` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `erp_partner` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: num D:\xampp\htdocs\php\erp\test\Application\Runtime\Cache\Admin\8296c2c0faadc3fb25d2fe6a107f3c46.php 第 171 行.
+NOTIC: [8] Undefined index: num D:\xampp\htdocs\php\erp\test\Application\Runtime\Cache\Admin\8296c2c0faadc3fb25d2fe6a107f3c46.php 第 171 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.066004s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.066004s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-04-05T19:12:02+08:00 ] 192.168.2.233 /php/erp/test/index.php/Admin/Goods/procurementEdit.html?id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+ERR: ------------------------------InitConfig-----start------------------------------------
+INFO: Run Common\Behavior\InitConfigBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+INFO: [ action_begin ] --START--
+ERR: ------------------------------LogBehavior-----start------------------------------------
+ERR: model_name: Admin
+ERR: controller_name: Goods
+ERR: action_name: procurementEdit
+ERR: __action__: /php/erp/test/index.php/Admin/Goods/procurementEdit
+ERR: get param: {"id":"1"}
+INFO: Run Admin\Behavior\LogBehavior [ RunTime:0.001000s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `erp_goods` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_procurement` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `erp_procurement` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `erp_procurement_detail` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `erp_procurement_detail` WHERE `procurement_id` = 1  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `erp_partner` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `erp_partner` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `erp_goods` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `erp_goods` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `erp_supplier` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `erp_supplier` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `erp_goods` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_supplier` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0010s ]
+NOTIC: [2] Missing argument 1 for Common\Model\CommonModel::getDataList(), called in D:\xampp\htdocs\php\erp\test\Application\Admin\Controller\GoodsController.class.php on line 50 and defined D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 33 行.
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 34 行.
+SQL: SELECT * FROM `erp_goods`  [ RunTime:0.0000s ]
+NOTIC: [2] Missing argument 1 for Common\Model\CommonModel::getDataList(), called in D:\xampp\htdocs\php\erp\test\Application\Admin\Controller\GoodsController.class.php on line 51 and defined D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 33 行.
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 34 行.
+SQL: SELECT * FROM `erp_supplier`  [ RunTime:0.0000s ]
+NOTIC: [2] Missing argument 1 for Common\Model\CommonModel::getDataList(), called in D:\xampp\htdocs\php\erp\test\Application\Admin\Controller\GoodsController.class.php on line 52 and defined D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 33 行.
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 34 行.
+SQL: SELECT * FROM `erp_partner`  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8] Use of undefined constant num - assumed 'num' D:\xampp\htdocs\php\erp\test\Application\Runtime\Cache\Admin\95716ecd6af5bc518e9f20a1590ed50f.php 第 219 行.
+NOTIC: [8] Use of undefined constant per_price - assumed 'per_price' D:\xampp\htdocs\php\erp\test\Application\Runtime\Cache\Admin\95716ecd6af5bc518e9f20a1590ed50f.php 第 219 行.
+NOTIC: [8] Use of undefined constant num - assumed 'num' D:\xampp\htdocs\php\erp\test\Application\Runtime\Cache\Admin\95716ecd6af5bc518e9f20a1590ed50f.php 第 219 行.
+NOTIC: [8] Use of undefined constant per_price - assumed 'per_price' D:\xampp\htdocs\php\erp\test\Application\Runtime\Cache\Admin\95716ecd6af5bc518e9f20a1590ed50f.php 第 219 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.086005s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.087005s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-04-05T19:22:03+08:00 ] 192.168.2.233 /php/erp/test/index.php/Admin/Supplier/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+ERR: ------------------------------InitConfig-----start------------------------------------
+INFO: Run Common\Behavior\InitConfigBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+INFO: [ action_begin ] --START--
+ERR: ------------------------------LogBehavior-----start------------------------------------
+ERR: model_name: Admin
+ERR: controller_name: Supplier
+ERR: action_name: index
+ERR: __action__: /php/erp/test/index.php/Admin/Supplier/index
+ERR: get param: []
+INFO: Run Admin\Behavior\LogBehavior [ RunTime:0.001000s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `erp_supplier` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `erp_supplier_linkman` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `erp_supplier_group` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_partner` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_supplier_partner` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_supplier` [ RunTime:0.0020s ]
+NOTIC: [2] Missing argument 1 for Admin\Logic\SupplierLogic::getSupplierListAndLinkmanList(), called in D:\xampp\htdocs\php\erp\test\Application\Admin\Controller\SupplierController.class.php on line 19 and defined D:\xampp\htdocs\php\erp\test\Application\Admin\Logic\SupplierLogic.class.php 第 55 行.
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\php\erp\test\Application\Admin\Logic\SupplierLogic.class.php 第 56 行.
+SQL: SELECT * FROM `erp_supplier`  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `erp_supplier_partner` WHERE `supplier_id` = 4  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_partner` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_partner` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `erp_supplier_group` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_supplier_linkman` WHERE `supplier_id` = 4  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_supplier_partner` WHERE `supplier_id` = 7  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `erp_supplier_group` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_supplier_linkman` WHERE `supplier_id` = 7  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_supplier_partner` WHERE `supplier_id` = 8  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `erp_supplier_group` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_supplier_linkman` WHERE `supplier_id` = 8  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.002001s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.074005s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.074005s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-04-05T19:22:04+08:00 ] 192.168.2.233 /php/erp/test/index.php/Admin/Supplier/groupList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+ERR: ------------------------------InitConfig-----start------------------------------------
+INFO: Run Common\Behavior\InitConfigBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+INFO: [ action_begin ] --START--
+ERR: ------------------------------LogBehavior-----start------------------------------------
+ERR: model_name: Admin
+ERR: controller_name: Supplier
+ERR: action_name: groupList
+ERR: __action__: /php/erp/test/index.php/Admin/Supplier/groupList
+ERR: get param: []
+INFO: Run Admin\Behavior\LogBehavior [ RunTime:0.001000s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `erp_supplier_group` [ RunTime:0.0020s ]
+NOTIC: [2] Missing argument 1 for Common\Model\CommonModel::getDataList(), called in D:\xampp\htdocs\php\erp\test\Application\Admin\Controller\SupplierController.class.php on line 111 and defined D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 33 行.
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 34 行.
+SQL: SELECT * FROM `erp_supplier_group`  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001001s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.049003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.049003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-04-05T19:22:04+08:00 ] 192.168.2.233 /php/erp/test/index.php/Admin/Supplier/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+ERR: ------------------------------InitConfig-----start------------------------------------
+INFO: Run Common\Behavior\InitConfigBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+INFO: [ action_begin ] --START--
+ERR: ------------------------------LogBehavior-----start------------------------------------
+ERR: model_name: Admin
+ERR: controller_name: Supplier
+ERR: action_name: index
+ERR: __action__: /php/erp/test/index.php/Admin/Supplier/index
+ERR: get param: []
+INFO: Run Admin\Behavior\LogBehavior [ RunTime:0.001000s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `erp_supplier` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `erp_supplier_linkman` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_supplier_group` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_partner` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_supplier_partner` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_supplier` [ RunTime:0.0030s ]
+NOTIC: [2] Missing argument 1 for Admin\Logic\SupplierLogic::getSupplierListAndLinkmanList(), called in D:\xampp\htdocs\php\erp\test\Application\Admin\Controller\SupplierController.class.php on line 19 and defined D:\xampp\htdocs\php\erp\test\Application\Admin\Logic\SupplierLogic.class.php 第 55 行.
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\php\erp\test\Application\Admin\Logic\SupplierLogic.class.php 第 56 行.
+SQL: SELECT * FROM `erp_supplier`  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `erp_supplier_partner` WHERE `supplier_id` = 4  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_partner` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `erp_partner` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `erp_supplier_group` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_supplier_linkman` WHERE `supplier_id` = 4  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_supplier_partner` WHERE `supplier_id` = 7  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_supplier_group` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_supplier_linkman` WHERE `supplier_id` = 7  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_supplier_partner` WHERE `supplier_id` = 8  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_supplier_group` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_supplier_linkman` WHERE `supplier_id` = 8  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.073004s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.074004s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-04-05T19:22:07+08:00 ] 192.168.2.233 /php/erp/test/index.php/Admin/Supplier/supplierInfo.html?id=4&way=edit
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+ERR: ------------------------------InitConfig-----start------------------------------------
+INFO: Run Common\Behavior\InitConfigBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+INFO: [ action_begin ] --START--
+ERR: ------------------------------LogBehavior-----start------------------------------------
+ERR: model_name: Admin
+ERR: controller_name: Supplier
+ERR: action_name: supplierInfo
+ERR: __action__: /php/erp/test/index.php/Admin/Supplier/supplierInfo
+ERR: get param: {"id":"4","way":"edit"}
+INFO: Run Admin\Behavior\LogBehavior [ RunTime:0.002000s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `erp_supplier` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `erp_supplier_linkman` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `erp_supplier_group` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_partner` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `erp_supplier_partner` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `erp_supplier` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `erp_supplier` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_supplier_group` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_supplier_linkman` WHERE `supplier_id` = 4  [ RunTime:0.0000s ]
+NOTIC: [2] Missing argument 1 for Common\Model\CommonModel::getDataList(), called in D:\xampp\htdocs\php\erp\test\Application\Admin\Controller\SupplierController.class.php on line 37 and defined D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 33 行.
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 34 行.
+SQL: SELECT * FROM `erp_supplier_group`  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.077005s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.077005s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-04-05T19:24:35+08:00 ] 192.168.2.233 /php/erp/test/index.php/Admin/Goods/procurement.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+ERR: ------------------------------InitConfig-----start------------------------------------
+INFO: Run Common\Behavior\InitConfigBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+INFO: [ action_begin ] --START--
+ERR: ------------------------------LogBehavior-----start------------------------------------
+ERR: model_name: Admin
+ERR: controller_name: Goods
+ERR: action_name: procurement
+ERR: __action__: /php/erp/test/index.php/Admin/Goods/procurement
+ERR: get param: []
+INFO: Run Admin\Behavior\LogBehavior [ RunTime:0.002000s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `erp_goods` [ RunTime:0.0030s ]
+NOTIC: [2] Missing argument 1 for Common\Model\CommonModel::getDataList(), called in D:\xampp\htdocs\php\erp\test\Application\Admin\Controller\GoodsController.class.php on line 115 and defined D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 33 行.
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 34 行.
+SQL: SELECT * FROM `erp_goods`  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `erp_supplier` [ RunTime:0.0020s ]
+NOTIC: [2] Missing argument 1 for Common\Model\CommonModel::getDataList(), called in D:\xampp\htdocs\php\erp\test\Application\Admin\Controller\GoodsController.class.php on line 116 and defined D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 33 行.
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 34 行.
+SQL: SELECT * FROM `erp_supplier`  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `erp_partner` [ RunTime:0.0020s ]
+NOTIC: [2] Missing argument 1 for Common\Model\CommonModel::getDataList(), called in D:\xampp\htdocs\php\erp\test\Application\Admin\Controller\GoodsController.class.php on line 117 and defined D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 33 行.
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 34 行.
+SQL: SELECT * FROM `erp_partner`  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.002000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.056003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.056003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002001s ]
+
+[ 2016-04-05T19:24:36+08:00 ] 192.168.2.233 /php/erp/test/index.php/Admin/Goods/procurementList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+ERR: ------------------------------InitConfig-----start------------------------------------
+INFO: Run Common\Behavior\InitConfigBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+INFO: [ action_begin ] --START--
+ERR: ------------------------------LogBehavior-----start------------------------------------
+ERR: model_name: Admin
+ERR: controller_name: Goods
+ERR: action_name: procurementList
+ERR: __action__: /php/erp/test/index.php/Admin/Goods/procurementList
+ERR: get param: []
+INFO: Run Admin\Behavior\LogBehavior [ RunTime:0.002000s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `erp_procurement` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `erp_procurement` LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `erp_goods` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `erp_procurement` LIMIT 0,10   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `erp_partner` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `erp_partner` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_partner` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: num D:\xampp\htdocs\php\erp\test\Application\Runtime\Cache\Admin\8296c2c0faadc3fb25d2fe6a107f3c46.php 第 171 行.
+NOTIC: [8] Undefined index: num D:\xampp\htdocs\php\erp\test\Application\Runtime\Cache\Admin\8296c2c0faadc3fb25d2fe6a107f3c46.php 第 171 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.067004s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.067004s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-04-05T19:24:37+08:00 ] 192.168.2.233 /php/erp/test/index.php/Admin/Goods/procurementEdit.html?id=2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+ERR: ------------------------------InitConfig-----start------------------------------------
+INFO: Run Common\Behavior\InitConfigBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+INFO: [ action_begin ] --START--
+ERR: ------------------------------LogBehavior-----start------------------------------------
+ERR: model_name: Admin
+ERR: controller_name: Goods
+ERR: action_name: procurementEdit
+ERR: __action__: /php/erp/test/index.php/Admin/Goods/procurementEdit
+ERR: get param: {"id":"2"}
+INFO: Run Admin\Behavior\LogBehavior [ RunTime:0.001000s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.003001s ]
+SQL: SHOW COLUMNS FROM `erp_goods` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_procurement` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `erp_procurement` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `erp_procurement_detail` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `erp_procurement_detail` WHERE `procurement_id` = 2  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `erp_partner` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `erp_partner` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `erp_goods` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `erp_goods` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `erp_supplier` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `erp_supplier` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0010s ]
+NOTIC: [2] Missing argument 1 for Common\Model\CommonModel::getDataList(), called in D:\xampp\htdocs\php\erp\test\Application\Admin\Controller\GoodsController.class.php on line 50 and defined D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 33 行.
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 34 行.
+SQL: SELECT * FROM `erp_goods`  [ RunTime:0.0000s ]
+NOTIC: [2] Missing argument 1 for Common\Model\CommonModel::getDataList(), called in D:\xampp\htdocs\php\erp\test\Application\Admin\Controller\GoodsController.class.php on line 51 and defined D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 33 行.
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 34 行.
+SQL: SELECT * FROM `erp_supplier`  [ RunTime:0.0010s ]
+NOTIC: [2] Missing argument 1 for Common\Model\CommonModel::getDataList(), called in D:\xampp\htdocs\php\erp\test\Application\Admin\Controller\GoodsController.class.php on line 52 and defined D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 33 行.
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 34 行.
+SQL: SELECT * FROM `erp_partner`  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant num - assumed 'num' D:\xampp\htdocs\php\erp\test\Application\Runtime\Cache\Admin\95716ecd6af5bc518e9f20a1590ed50f.php 第 219 行.
+NOTIC: [8] Use of undefined constant per_price - assumed 'per_price' D:\xampp\htdocs\php\erp\test\Application\Runtime\Cache\Admin\95716ecd6af5bc518e9f20a1590ed50f.php 第 219 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.083005s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.085005s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-04-05T19:24:40+08:00 ] 192.168.2.233 /php/erp/test/index.php/Admin/Goods/procurementEdit.html?id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+ERR: ------------------------------InitConfig-----start------------------------------------
+INFO: Run Common\Behavior\InitConfigBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+INFO: [ action_begin ] --START--
+ERR: ------------------------------LogBehavior-----start------------------------------------
+ERR: model_name: Admin
+ERR: controller_name: Goods
+ERR: action_name: procurementEdit
+ERR: __action__: /php/erp/test/index.php/Admin/Goods/procurementEdit
+ERR: get param: {"id":"1"}
+INFO: Run Admin\Behavior\LogBehavior [ RunTime:0.002000s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `erp_goods` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `erp_procurement` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `erp_procurement` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `erp_procurement_detail` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `erp_procurement_detail` WHERE `procurement_id` = 1  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `erp_partner` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `erp_partner` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `erp_goods` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `erp_goods` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `erp_supplier` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `erp_supplier` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_goods` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `erp_supplier` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [2] Missing argument 1 for Common\Model\CommonModel::getDataList(), called in D:\xampp\htdocs\php\erp\test\Application\Admin\Controller\GoodsController.class.php on line 50 and defined D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 33 行.
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 34 行.
+SQL: SELECT * FROM `erp_goods`  [ RunTime:0.0000s ]
+NOTIC: [2] Missing argument 1 for Common\Model\CommonModel::getDataList(), called in D:\xampp\htdocs\php\erp\test\Application\Admin\Controller\GoodsController.class.php on line 51 and defined D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 33 行.
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 34 行.
+SQL: SELECT * FROM `erp_supplier`  [ RunTime:0.0000s ]
+NOTIC: [2] Missing argument 1 for Common\Model\CommonModel::getDataList(), called in D:\xampp\htdocs\php\erp\test\Application\Admin\Controller\GoodsController.class.php on line 52 and defined D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 33 行.
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\php\erp\test\Application\Common\Model\CommonModel.class.php 第 34 行.
+SQL: SELECT * FROM `erp_partner`  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant num - assumed 'num' D:\xampp\htdocs\php\erp\test\Application\Runtime\Cache\Admin\95716ecd6af5bc518e9f20a1590ed50f.php 第 219 行.
+NOTIC: [8] Use of undefined constant per_price - assumed 'per_price' D:\xampp\htdocs\php\erp\test\Application\Runtime\Cache\Admin\95716ecd6af5bc518e9f20a1590ed50f.php 第 219 行.
+NOTIC: [8] Use of undefined constant num - assumed 'num' D:\xampp\htdocs\php\erp\test\Application\Runtime\Cache\Admin\95716ecd6af5bc518e9f20a1590ed50f.php 第 219 行.
+NOTIC: [8] Use of undefined constant per_price - assumed 'per_price' D:\xampp\htdocs\php\erp\test\Application\Runtime\Cache\Admin\95716ecd6af5bc518e9f20a1590ed50f.php 第 219 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.086005s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.086005s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+

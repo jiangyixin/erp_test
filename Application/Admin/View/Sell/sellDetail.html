@@ -1,30 +1,7 @@
 <extend name="$_admin_public_layout"/>
 <block name="style">
     <style type="text/css">
-        .form-control[disabled], fieldset[disabled] .form-control {
-            cursor: auto;
-        }
-        td.operate {
-            text-align: center;
-        }
-        td .add-row {
-            color: #333;
-            margin-right: 10px;
-        }
-        td .del-row {
-            text-align: right;
-            color: #333;
-        }
-        .table td.td-select {
-            padding: 0;
-        }
-        td.td-select select {
-            border: none;
-            border-radius: 0;
-        }
-        .form-inline .form-group>label.label-left {
-            width: 5em;
-        }
+
     </style>
 </block>
 <block name="main">
@@ -32,7 +9,7 @@
         <!-- 面包屑导航 -->
         <ul class="breadcrumb">
             <li><i class="fa fa-map-marker"></i></li>
-            <li class="text-muted">采购管理</li><li class="text-muted">采购单列表</li><li class="text-muted">采购详情</li>
+            <li class="text-muted">销售管理</li><li class="text-muted">销售单列表</li><li class="text-muted">销售详情</li>
         </ul>
 
         <!-- 主体内容区域 -->
@@ -52,7 +29,7 @@
                                 </div>
                                 <div class="form-group col-xs-6">
                                     <label class="label-left">时间：</label>
-                                    <span class="form-control">{$sell.create_time}</span>
+                                    <span class="form-control">{$sell.update_time}</span>
                                 </div>
                             </div>
                         </div>
@@ -66,10 +43,7 @@
                                     <label class="label-left">状态：</label>
                                     <span class="form-control">
                                         <switch name="sell.status">
-                                            <case value="4">采购完成</case>
-                                            <case value="3">校验入库</case>
-                                            <case value="2">接收成功</case>
-                                            <case value="1">采购中</case>
+                                            <case value="1">交易完成</case>
                                             <case value="0">计划中</case>
                                             <case value="-1">已取消</case>
                                         </switch>
@@ -77,22 +51,38 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="row" style="margin-top: 10px;">
+                            <div class="col-xs-12">
+                                <div class="form-group col-xs-6">
+                                    <label class="label-left">仓库：</label>
+                                    <span class="form-control">{$sell.warehouse_out.name}</span>
+                                </div>
+                                <div class="form-group col-xs-6">
+                                    <label class="label-left">负责人：</label>
+                                    <span class="form-control">{$sell.partner.name}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" style="margin-top: 15px;">
+                            <div class="col-xs-12">
+                                <div class="form-group col-xs-6">
+                                    <label class="label-left">客户：</label>
+                                    <span class="form-control">{$sell.customer}</span>
+                                </div>
+                            </div>
+                        </div>
                     </form>
                     <div class="row" style="margin-top: 10px;">
                         <div class="col-xs-12 col-lg-12">
-                            <h4><switch name="stockLog.status">
-                                <case value="1">入库</case>
-                                <case value="-1">出库</case>
-                            </switch>商品列表：</h4>
+
                             <div class="builder-table">
                                 <div class="panel panel-default table-responsive">
                                     <table id="detailList" class="table table-bordered table-striped table-hover">
+                                        <caption>销售商品列表</caption>
                                         <thead>
                                         <tr>
                                             <th>商品</th><th>数量</th>
                                             <th>单价</th><th>小计</th>
-                                            <th>仓库</th>
-                                            <!--<th>备注</th>-->
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -102,8 +92,6 @@
                                                 <td>{$vo.num}</td>
                                                 <td>{$vo.per_price}</td>
                                                 <td>{$vo[num] * $vo[per_price]}</td>
-                                                <td>{$vo.warehouse.name}</td>
-                                                <!--<td>{$vo.note}</td>-->
                                             </tr>
                                         </foreach>
                                         <tr>
@@ -111,7 +99,6 @@
                                             <td>{$sell.count_num}</td>
                                             <td></td>
                                             <td>{$sell.count_price}</td>
-                                            <td></td>
                                         </tr>
                                         </tbody>
                                     </table>
@@ -127,10 +114,6 @@
                             <div class="form-group col-xs-6">
                                 <label class="label-left">总价：</label>
                                 <span class="form-control">{$sell.total_price}</span>
-                            </div>
-                            <div class="form-group col-xs-6">
-                                <label class="label-left">负责人：</label>
-                                <span class="form-control">{$sell.partner.name}</span>
                             </div>
                         </div>
                     </div>

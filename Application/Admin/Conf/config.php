@@ -33,6 +33,12 @@ return array(
             'icon'  => 'fa fa-shopping-cart',
             'url'   => 'Admin/Sell/sell'
         ),
+        '6' => array(
+            'name'  => 'Log',
+            'title' => '日志',
+            'icon'  => 'fa fa-file-text-o',
+            'url'   => 'Admin/Log/dbLogList'
+        ),
     ),
 
     'menu_list' => array(
@@ -71,7 +77,7 @@ return array(
             'icon'  => 'fa fa-list-alt',
             'url'   => 'Admin/Stock/stockList'
         ),
-        array(
+        /*array(
             'pid'   => '3',
             'name'  => 'purchaseList',
             'title' => '入库',
@@ -84,7 +90,7 @@ return array(
             'title' => '出库',
             'icon'  => 'fa fa-sign-out',
             'url'   => 'Admin/Stock/salesList'
-        ),
+        ),*/
         array(
             'pid'   => '3',
             'name'  => 'transferList',
@@ -92,13 +98,13 @@ return array(
             'icon'  => 'fa fa-refresh',
             'url'   => 'Admin/Stock/transferList'
         ),
-        array(
+        /*array(
             'pid'   => '3',
             'name'  => 'stockLogList',
             'title' => '库存操作记录',
             'icon'  => 'fa fa-file',
             'url'   => 'Admin/Stock/stockLogList'
-        ),
+        ),*/
         array(
             'pid'   => '4',
             'name'  => 'procurement',
@@ -147,6 +153,13 @@ return array(
             'title' => '销售统计',
             'icon'  => 'fa fa-list',
             'url'   => 'Admin/Sell/sellStatistical'
+        ),
+        array(
+            'pid'   => '6',
+            'name'  => 'dbLogList',
+            'title' => '系统操作日志',
+            'icon'  => 'fa fa-list',
+            'url'   => 'Admin/Log/dbLogList'
         ),
     ),
 

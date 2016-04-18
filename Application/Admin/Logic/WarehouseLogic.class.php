@@ -9,9 +9,30 @@
 namespace Admin\Logic;
 
 
-use Common\Model\CommonModel;
 use Think\Model;
 
-class WarehouseLogic extends CommonModel{
+class WarehouseLogic extends Model{
 
+    /**
+     * 删除仓库，只能删除库存为0的仓库
+     * @param $data
+     * @return array
+     */
+    public function warehouseDel($data) {
+        $num = $this->getDStock()->where(array('warehouse_id' => $data['id']))->Sum('num');
+        if ($num > 0){
+            $result = array('status'=>'0', 'msg'=>'库存不为空，不能删除');
+        } else {
+            $result['status'] = $this->getDWarehouse()->delData($data);
+        }
+        return $result;
+    }
+
+    public function getDWarehouse() {
+        return D('Admin/warehouse');
+    }
+
+    public function getDStock() {
+        return D('Admin/stock');
+    }
 }

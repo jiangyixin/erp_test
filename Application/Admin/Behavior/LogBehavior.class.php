@@ -22,10 +22,9 @@ class LogBehavior extends Behavior{
      */
     public function run(&$params) {
         Log::record('------------------------------LogBehavior-----start------------------------------------');
-        Log::record('model_name: ' . MODULE_NAME);
-        Log::record('controller_name: ' . CONTROLLER_NAME);
-        Log::record('action_name: ' . ACTION_NAME);
-        Log::record('__action__: ' . __ACTION__);
+        $action = MODULE_NAME . '/' . CONTROLLER_NAME . '/' . ACTION_NAME;
+        Log::record('ACTION: ' . $action);
+
         if (IS_POST) {
             Log::record('post param: ' . json_encode(I('post.')));
         } else {

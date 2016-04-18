@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Component</title>
+</head>
+<body>
+
+    <h1>表格：</h1>
+    <table class="table table-bordered table-striped table-hover">
+        <thead>
+        <tr>
+            <th>联系人</th><th>公司名</th>
+            <th>手机</th><th>电话</th>
+            <th>邮箱</th><th>QQ</th>
+            <th>备注</th>
+        </tr>
+        </thead>
+        <tbody>
+        <foreach name="supplier.linkman" item="vo">
+            <tr>
+                <td>{$vo.name}</td>
+                <td>{$supplier.name}</td>
+                <td>{$vo.mobile}</td>
+                <td>{$vo.tel}</td>
+                <td>{$vo.email}</td>
+                <td>{$vo.qq}</td>
+                <td>{$vo.note}</td>
+            </tr>
+        </foreach>
+        <empty name="supplier.linkman">
+            <tr>
+                <td class="text-center empty-info" colspan="9">
+                    <i class="fa fa-database"></i> 暂时没有数据<br>
+                </td>
+            </tr>
+        </empty>
+        </tbody>
+    </table>
+
+
+</body>
+</html>

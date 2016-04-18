@@ -52,11 +52,13 @@ class StockLogic extends Model{
     /**
      * 获取库存清单
      * @param $data
+     * @param $page
+     * @param $limit
      * @return mixed 库存列表
      */
-    public function getStockList($data) {
-        $stockList = $this->ds->getDataList($data);
-
+    public function getStockList($data, $page, $limit) {
+        // $stockList = $this->ds->getDataList($data);
+        $stockList = $this->ds->getPageList($data, $page, $limit);
         foreach ($stockList as $key=>$item) {
             $stockList[$key]['goods'] = $this->dg->checkData(array('id'=>$item['goods_id']));
             $stockList[$key]['warehouse'] = $this->dw->checkData(array('id' => $item['warehouse_id']));
@@ -91,30 +93,14 @@ class StockLogic extends Model{
         if (!$stockLog) {
             return false;
         }
-        switch ($stockLog['status']) {
-            case '1':
-                $table = $this->dsp;
-                break;
-            case '0':
-                $table = $this->dst;
-                break;
-            case '-1':
-                $table = $this->dss;
-                break;
-            default:
-                return;
-        }
         $stockLog['partner'] = D('Admin/Partner')->checkData(array('id'=>$stockLog['partner_id']));
-        $stockLog['detailList'] = $table->getDataList(array('stock_log_id'=>$stockLog['id']));
+        $stockLog['detailList'] = $this->dsld->getDataList(array('stock_log_id'=>$stockLog['id']));
         Log::record('--stockLog: ' . json_encode($stockLog));
+
+        $stockLog['warehouse_out'] = $this->dw->checkData(array('id'=>$stockLog['warehouse_id_out']));
+        $stockLog['warehouse_in'] = $this->dw->checkData(array('id'=>$stockLog['warehouse_id_in']));
         foreach ($stockLog['detailList'] as $key=>$item) {
             $stockLog['detailList'][$key]['goods'] = $this->dg->checkData(array('id'=>$item['goods_id']));
-            if ($stockLog['status'] == 0) {
-                $stockLog['detailList'][$key]['warehouse_out'] = $this->dw->checkData(array('id'=>$item['warehouse_id_out']));
-                $stockLog['detailList'][$key]['warehouse_in'] = $this->dw->checkData(array('id'=>$item['warehouse_id_in']));
-            } else {
-                $stockLog['detailList'][$key]['warehouse'] = $this->dw->checkData(array('id'=>$item['warehouse_id']));
-            }
         }
         return $stockLog;
     }
@@ -217,8 +203,8 @@ class StockLogic extends Model{
         }
         foreach ($detailList as $key => $item) {
             $dataIn['goods_id'] = $dataOut['goods_id'] = $item['goods_id'];
-            $dataIn['warehouse_id'] = $item['warehouse_id_in'];
-            $dataOut['warehouse_id'] = $item['warehouse_id_out'];
+            $dataIn['warehouse_id'] = $stockLog['warehouse_id_in'];
+            $dataOut['warehouse_id'] = $stockLog['warehouse_id_out'];
             $stockIn = $this->ds->checkData($dataIn);
             $stockOut = $this->ds->checkData($dataOut);
             // 增加库存检查是否存在该记录
@@ -226,7 +212,7 @@ class StockLogic extends Model{
                 $stockIn['num'] = $stockIn['num'] + $item['num'];
                 $result[] = $this->ds->editDataById($stockIn);
             } else {
-                $stockIn = array('goods_id'=>$item['goods_id'], 'warehouse_id'=>$item['warehouse_id_in'], 'num'=>$item['num']);
+                $stockIn = array('goods_id'=>$item['goods_id'], 'warehouse_id'=>$stockLog['warehouse_id_in'], 'num'=>$item['num']);
                 $result[] = $this->ds->addData($stockIn);
             }
             // 减少库存检查是否超出最大数目
@@ -240,7 +226,7 @@ class StockLogic extends Model{
             $detailList[$key]['stock_log_id'] = $stockLogId;
         }
         // 插入调拨详情
-        $result[] = $this->dst->addAllData($detailList);
+        $result[] = $this->dsld->addAllData($detailList);
         // 判断result，提交事务或回滚
         if (array_product($result) && $result) {
             M()->commit();
@@ -284,20 +270,6 @@ class StockLogic extends Model{
             }
             // 插入库存详情（stock_log_purchase）
             $detailList[$key]['stock_log_id'] = $stockLogId;
-
-            // 插入或更新商品编码（code）
-            /*$newCodeList = array_count_values($item['code_list']);
-            foreach ($newCodeList as $key=>$vo) {
-                $code = $this->dgc->checkData('code='.$key);
-                if ($code) {
-                    $code['num'] = $code['num'] + $vo;
-                    $result[] = $this->dgc->editDataById($code);
-                } else {
-                    $code = array('code'=>$key, 'goods_id'=>$item['goods_id'], 'supplier_id'=>$stockLog['in_transfer_out'], 'num'=>$vo);
-                    $result[] = $this->dgc->addData($code);
-                }
-            }*/
-
         }
         $result[] = $this->dsp->addAllData($detailList);
         // 判断result，提交事务或回滚
@@ -309,6 +281,53 @@ class StockLogic extends Model{
             return false;
         }
 
+    }
+
+    /**
+     * 更新库存数量
+     * @param $detailList
+     * @return bool
+     */
+    public function updateStockNum($detailList) {
+        Log::record('detailList--------' . json_encode($detailList));
+        // M()->startTrans();
+        foreach ($detailList as $key => $item) {
+            $dataIn['goods_id'] = $dataOut['goods_id'] = $item['goods_id'];
+            if ($item['warehouse_id_in']) {
+                $dataIn['warehouse_id'] = $item['warehouse_id_in'];
+            }
+            if ($item['warehouse_id_out']) {
+                $dataOut['warehouse_id'] = $item['warehouse_id_out'];
+            }
+
+            if ($dataIn['warehouse_id'] && $item['num'] > 0) {  // 增加库存
+                $stockIn = $this->ds->checkData($dataIn);
+                // 增加库存检查是否存在该记录
+                if ($stockIn) {
+                    $stockIn['num'] = $stockIn['num'] + $item['num'];
+                    $result[] = $this->ds->editDataById($stockIn);
+                } else {
+                    $stockIn = array('goods_id'=>$item['goods_id'], 'warehouse_id'=>$item['warehouse_id_in'], 'num'=>$item['num']);
+                    $result[] = $this->ds->addData($stockIn);
+                }
+            } else if ($dataOut['warehouse_id'] && $item['num'] > 0) {  // 减少库存
+                $stockOut = $this->ds->checkData($dataOut);
+                $stockOut['num'] = $stockOut['num'] - $item['num'];
+                if ($stockOut['num'] < 0) {
+                    // M()->rollback();
+                    return false;
+                }
+                $result[] = $this->ds->editDataById($stockOut);
+            }
+        }
+        // 判断result，提交事务或回滚
+        if (array_product($result) && $result) {
+            // M()->commit();
+            return true;
+        } else {
+            // M()->rollback();
+            return false;
+        }
     }
 
 }

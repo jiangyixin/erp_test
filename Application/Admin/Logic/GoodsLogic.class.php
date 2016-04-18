@@ -23,11 +23,11 @@ class GoodsLogic extends CommonModel{
         if ($procurement) {
             $procurement['detailList'] = $this->getDpd()->getDataList(array('procurement_id'=>$procurement['id']));
             $procurement['partner'] = D('Admin/Partner')->checkData(array('id'=>$procurement['partner_id']));
+            $procurement['supplier'] = $this->getDs()->checkData(array('id'=>$procurement['supplier_id']));
             $procurement['count_num'] = 0;
             $procurement['count_price'] = 0;
             foreach ($procurement['detailList'] as $key => $item) {
                 $procurement['detailList'][$key]['goods'] = $this->getDg()->checkData(array('id'=>$item['goods_id']));
-                $procurement['detailList'][$key]['supplier'] = $this->getDs()->checkData(array('id'=>$item['supplier_id']));
                 $procurement['count_num'] += $item['num'];
                 $procurement['count_price'] += $item['num'] * $item['per_price'];
             }
@@ -45,14 +45,14 @@ class GoodsLogic extends CommonModel{
         if ($sell) {
             $sell['detailList'] = $this->getDsellDetail()->getDataList(array('sell_id'=>$sell['id']));
             $sell['partner'] = D('Admin/Partner')->checkData(array('id'=>$sell['partner_id']));
+            $sell['warehouse_out'] = $this->getDw()->checkData(array('id'=>$sell['warehouse_id_out']));
             $sell['count_num'] = 0;
             $sell['count_price'] = 0;
             foreach ($sell['detailList'] as $key => $item) {
                 $sell['detailList'][$key]['goods'] = $this->getDg()->checkData(array('id'=>$item['goods_id']));
-                $sell['detailList'][$key]['warehouse'] = $this->getDw()->checkData(array('id'=>$item['warehouse_id']));
                 $sell['count_num'] += $item['num'];
                 $sell['count_price'] += $item['num'] * $item['per_price'];
-                $sell['detailList'][$key]['total'] = D('Admin/Stock')->where(array('goods_id'=>$sell['detailList'][$key]['goods_id'], 'warehouse_id'=>$sell['detailList'][$key]['warehouse_id']))->getField('num');
+                $sell['detailList'][$key]['total'] = D('Admin/Stock')->where(array('goods_id'=>$sell['detailList'][$key]['goods_id'], 'warehouse_id'=>$sell['warehouse_id_out']))->getField('num');
             }
         }
         return $sell;
@@ -66,7 +66,7 @@ class GoodsLogic extends CommonModel{
      * @return mixed
      */
     public function getProcurementList($data, $page, $limit) {
-        $procurementList = $this->getDp()->where($data)->page($page.", $limit")->select();
+        $procurementList = $this->getDp()->where($data)->order('id desc')->page($page.", $limit")->select();
         foreach ($procurementList as $key=>$item) {
             $procurementList[$key]['partner'] = D('Admin/Partner')->checkData(array('id'=>$item['partner_id']));
             $procurementList[$key]['num'] = $this->getDpd()->where(array('procurement_id'=>$item['id']))->count('id');
@@ -101,6 +101,7 @@ class GoodsLogic extends CommonModel{
         $procurement['no'] = time() . rand(100000,999999);
         // 状态码  -1：采购失败、 0：采购计划中、 1：采购执行中、 2：到货接收、 3：校验入库
         $procurement['status'] = 0;
+        $procurement['warehouse_id_in'] = 1;
         $procurement_id = $this->getDp()->addData($procurement);
         if (!$procurement_id) {
             M()->rollback();
@@ -109,7 +110,7 @@ class GoodsLogic extends CommonModel{
         foreach ($detailList as $key=>$item) {
             $detailList[$key]['procurement_id'] = $procurement_id;
         }
-        $result = $this->getDpd()->addAll($detailList);
+        $result = $this->getDpd()->addAllData($detailList);
         if ($result === false) {
             M()->rollback();
             return false;
@@ -181,7 +182,7 @@ class GoodsLogic extends CommonModel{
         foreach ($detailList as $key => $item) {
             $detailList[$key]['sell_id'] = $sell_id;
         }
-        $result = $this->getDsellDetail()->addAll($detailList);
+        $result = $this->getDsellDetail()->addAllData($detailList);
         if ($result) {
             M()->commit();
         } else {
@@ -231,25 +232,33 @@ class GoodsLogic extends CommonModel{
         }
     }
 
+
     /**
      * 修改采购单状态
      * @param $procurement
      * @return mixed
      */
-    public function updateStatus($procurement) {
+    public function updateProcurementStatus($procurement) {
         Log::record('log_procurement: ' . json_encode($procurement));
         $paramProcurement = $procurement;
-        if ($procurement['status'] == 3) {
+        if ($procurement['status'] == 3) {  // 修改库存
             $procurement = $this->getDp()->checkData(array('id'=>$procurement['id']));
-            $stockLog = array('title'=>$procurement['title'], 'partner_id'=>$procurement['partner_id'], 'note'=>$procurement['note']);
+            // $stockLog = array('no'=>$procurement['no'], 'title'=>$procurement['title'], 'partner_id'=>$procurement['partner_id'], 'note'=>$procurement['note']);
             $pDetailList = $this->getDpd()->getDataList(array('procurement_id'=>$procurement['id']));
             $detailList = array();
             foreach ($pDetailList as $key => $item) {
-                $detailList[] = array('goods_id' => $item['goods_id'], 'num' => $item['num'], 'warehouse_id' => 1, 'supplier_id' => $item['supplier_id'], 'note' => $item['note']);
+                $detailList[] = array('goods_id' => $item['goods_id'], 'num' => $item['num'], 'warehouse_id_in'=>$procurement['warehouse_id_in']);
             }
-            $result = $this->getDsLogic()->purchase($stockLog, $detailList);
+            // $result = $this->getDsLogic()->purchase($stockLog, $detailList);
+            M()-$this->startTrans();
+            $result = $this->getDsLogic()->updateStockNum($detailList);
             if ($result) {
                 $result = $this->getDp()->editDataById($paramProcurement);
+            }
+            if ($result) {
+                M()->commit();
+            } else {
+                M()->rollback();
             }
         } else {
             $result = $this->getDp()->editDataById($procurement);
@@ -264,17 +273,24 @@ class GoodsLogic extends CommonModel{
      */
     public function updateSellStatus($sell) {
         $paramSell = $sell;
-        if ($sell['status'] == 1) {
+        if ($sell['status'] == 1) { //修改库存
             $sell = $this->getDsell()->checkData(array('id' => $sell['id']));
-            $stockLog = array('title'=>$sell['title'], 'partner_id'=>$sell['partner_id'], 'note'=>$sell['note']);
+            // $stockLog = array('title'=>$sell['title'], 'partner_id'=>$sell['partner_id'], 'note'=>$sell['note']);
             $sDetailList = $this->getDsellDetail()->getDataList(array('sell_id'=>$sell['id']));
             $detailList = array();
             foreach ($sDetailList as $key => $item) {
-                $detailList[] = array('goods_id' => $item['goods_id'], 'num' => $item['num'], 'warehouse_id' => $item['warehouse_id'], 'note' => $item['note']);
+                $detailList[] = array('goods_id' => $item['goods_id'], 'num' => $item['num'], 'warehouse_id_out' => $sell['warehouse_id_out']);
             }
-            $result = $this->getDsLogic()->sales($stockLog, $detailList);
+            // $result = $this->getDsLogic()->sales($stockLog, $detailList);
+            M()-$this->startTrans();
+            $result = $this->getDsLogic()->updateStockNum($detailList);
             if ($result) {
                 $result = $this->getDsell()->editDataById($paramSell);
+            }
+            if ($result) {
+                M()->commit();
+            } else {
+                M()->rollback();
             }
         } else {
             $result = $this->getDsell()->editDataById($sell);

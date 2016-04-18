@@ -1,30 +1,7 @@
 <extend name="$_admin_public_layout"/>
 <block name="style">
     <style type="text/css">
-        .form-control[disabled], fieldset[disabled] .form-control {
-            cursor: auto;
-        }
-        td.operate {
-            text-align: center;
-        }
-        td .add-row {
-            color: #333;
-            margin-right: 10px;
-        }
-        td .del-row {
-            text-align: right;
-            color: #333;
-        }
-        .table td.td-select {
-            padding: 0;
-        }
-        td.td-select select {
-            border: none;
-            border-radius: 0;
-        }
-        .form-inline .form-group>label.label-left {
-            width: 6em;
-        }
+
     </style>
 </block>
 <block name="main">
@@ -38,7 +15,7 @@
         <!-- 主体内容区域 -->
         <div class="tab-content ct-tab-content">
 
-            <div class="builder listbuilder-box panel-body">
+            <div id="procurement" class="builder listbuilder-box panel-body">
                 <!-- Tab导航 -->
 
                 <!-- 数据列表 -->
@@ -52,21 +29,46 @@
                                 </div>
                                 <div class="form-group col-xs-6">
                                     <label class="label-left">时间：</label>
-                                    <input type="datetime-local" class="form-control" name="procurement.create_time" value="">
+                                    <input type="text" class="form-control dateTimePicker" readonly name="procurement.update_time" value="{$curTime}">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" style="margin-top: 15px;">
+                            <div class="col-xs-12">
+                                <div class="form-group col-xs-6">
+                                    <label class="label-left">供应商：</label>
+                                    <td class="td-select">
+                                        <select name="procurement.supplier_id" class="form-control">
+                                            <option value="">请选择：</option>
+                                            <foreach name="supplierList" item="vo">
+                                                <option value="{$vo.id}">{$vo.name}</option>
+                                            </foreach>
+                                        </select>
+                                    </td>
+                                </div>
+                                <div class="form-group col-xs-6">
+                                    <label class="label-left">负责人：</label>
+                                    <select class="form-control" name="procurement.partner_id">
+                                        <option value="">请选择：</option>
+                                        <foreach name="partnerList" item="vo">
+                                            <option value="{$vo.id}">{$vo.name}</option>
+                                        </foreach>
+                                    </select>
                                 </div>
                             </div>
                         </div>
                     </form>
-                    <div class="row">
+                    <div class="row" style="margin-top: 30px;">
                         <div class="col-xs-12 col-lg-12">
-                            <h4>商品列表：</h4>
                             <div class="builder-table">
                                 <div class="panel panel-default table-responsive">
-                                    <table id="purchaseList" class="table table-bordered table-striped table-hover">
+                                    <table id="procurementList" class="table table-bordered table-striped table-hover table-input">
+                                        <caption>采购商品表</caption>
                                         <thead>
                                         <tr>
-                                            <th>商品</th><th>供应商</th>
-                                            <th>数量</th><th>单价</th>
+                                            <th>商品</th>
+                                            <th>数量</th>
+                                            <th>单价</th>
                                             <th>小计</th>
                                             <th>操作</th>
                                         </tr>
@@ -76,7 +78,6 @@
                                         </tbody>
                                     </table>
                                 </div>
-
                             </div>
                         </div>
                     </div>
@@ -84,17 +85,8 @@
                         <div class="row" >
                             <div class="col-xs-12">
                                 <div class="form-group col-xs-6">
-                                    <label class="label-left">实际金额：</label>
+                                    <label class="label-left">付款金额：</label>
                                     <input type="number" class="form-control" name="procurement.total_price" value="">
-                                </div>
-                                <div class="form-group col-xs-6">
-                                    <label class="label-left">负责人：</label>
-                                    <select class="form-control" name="procurement.partner_id">
-                                        <option value="0">请选择：</option>
-                                        <foreach name="partnerList" item="vo">
-                                            <option value="{$vo.id}">{$vo.name}</option>
-                                        </foreach>
-                                    </select>
                                 </div>
                             </div>
                         </div>
@@ -106,29 +98,25 @@
                             <div class="form-group ">
                                 <label class="col-sm-1 control-label">备注：</label>
                                 <div class="col-sm-11 col-lg-9">
-                                    <input type="text" class="form-control" name="procurement.note" value="">
+                                    <textarea class="form-control" name="procurement.note" rows="3"></textarea>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
-
                 <!-- 顶部工具栏按钮 -->
                 <div class="builder-toolbar">
                     <div class="row">
                         <!-- 工具栏按钮 -->
                         <div class="col-xs-12 col-sm-9 button-list clearfix">
                             <div class="form-group">
-                                <div class="col-sm-offset-2 col-lg-offset-1 col-sm-10">
+                                <div class="col-sm-10">
                                     <button type="button" id="save" class="btn btn-primary">保存</button>
-                                    <button type="button" class="btn btn-danger" onclick="history.back();">返回</button>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
                 <!-- 额外功能代码 -->
             </div>
 
@@ -138,170 +126,85 @@
 </block>
 <block name="script">
     <script type="text/javascript">
-
-        var supplierList = {:json_encode($supplierList)};
-        var goodsList = {:json_encode($goodsList)};
-        // var partnerList = {:json_encode($partnerList)};
-
         $(window).ready(function (e) {
-            // 添加*行
-            function addRow(row) {
-                var html = '';
-                for (var j= 0; j<row; j++) {
-                    html += '<tr>' +
-                            '<td class="td-select">' +
-                            '<select name="goods_id" class="form-control">' +
-                            '<option value="">请选择：</option>';
-                    for (var i in goodsList) {
-                        html += '<option value="'+ goodsList[i].id +'">'+ goodsList[i].name + '·' + goodsList[i].norm +'</option>';
-                    }
-                    html += '</select></td>' +
-                            '<td class="td-select">' +
-                            '<select name="supplier_id" class="form-control">' +
-                            '<option value="">请选择：</option>';
-                    for (var i in supplierList) {
-                        html += '<option value="'+ supplierList[i].id +'">'+ supplierList[i].name +'</option>';
-                    }
-                    html += '</select></td>' +
-                            '<td contenteditable="true" data-count="num" name="num"></td>' +
-                            '<td contenteditable="true" data-count="per_price" name="per_price"></td>' +
-                            '<td name="sub_total"></td>' +
-                            '<td class="operate">' +
-                            '<a class="add-row" title="添加一行" href="javascript:;"><i class="fa fa-plus"></i></a>' +
-                            '<a title="删除一行" class="del-row" href="javascript:;"><i class="fa fa-trash-o"></i></a>' +
-                            '</td>' +
-                            '</tr>';
-                }
-                return html;
+            var goodsList = {:json_encode($goodsList)};
+            console.log(goodsList);
+            var myTable = $('#procurementList');
+            var trTemplate = '<tr>' +
+                    '<td class="td-select">' +
+                    '<select name="goods_id" class="form-control">' +
+                    '<option value="">请选择：</option>';
+            for (var i in goodsList) {
+                trTemplate += '<option value="'+ goodsList[i].id +'">'+ goodsList[i].name + '·' + goodsList[i].norm +'</option>';
             }
+            trTemplate += '</select></td>' +
+                    '<td><input type="number" name="num" data-count="num"></td>' +
+                    '<td><input type="number" name="per_price" data-count="per_price"></td>' +
+                    '<td><input type="text" name="sub_total" readonly></td>' +
+                    '<td class="operate">' +
+                    '<a class="add-row" title="添加一行" href="javascript:;"><i class="fa fa-plus"></i></a>' +
+                    '<a title="删除一行" class="del-row" href="javascript:;"><i class="fa fa-trash-o"></i></a>' +
+                    '</td>' +
+                    '</tr>';
+
             // 初始化表格
             function initTable() {
-                var html = addRow(5);
-                html += '<tr><td>总计</td><td></td><td class="countNum"></td><td></td><td class="countTotal"></td><td></td></tr>';
-                $('#purchaseList').find('tbody').html(html);
+                var html = trTemplate + trTemplate + trTemplate + trTemplate + trTemplate;
+                html += '<tr class="tr-default"><td>总计</td><td class="countNum"></td><td></td><td class="countTotal"></td><td></td></tr>';
+                myTable.find('tbody').html(html);
             }
 
             //  添加一行
-            $('#purchaseList').on('click', '.add-row', function() {
-                var html = addRow(1);
-                $(this).parents('tr').after(html);
-            })
+            myTable.on('click', '.add-row', function() {
+                broadin.addTableRow(this, trTemplate, 1);
+            });
 
             // 删除一行
-            $('#purchaseList').on('click', '.del-row', function() {
-                var num = $(this).parents('#purchaseList').find('tr').length;
-                if (num === 2) {
-                    alert('必须保留一行');
-                    return;
-                }
-                var tr = $(this).parents('tr');
-                var result = confirm('确定删除当前行？');
-                if (result) {
-                    tr.remove();
-                }
-            })
-
-            function checkForm() {
-                var checkStr = '';
-                $('body').find('[name*="procurement."]').each(function () {
-                    var key = $(this).attr('name');
-                    var value = $(this).val();
-                    if (key == 'procurement.title' && !value) {
-                        checkStr = '主题不能为空！';
-                        return false;
-                    }
-                    if (key == 'procurement.total_price' && !value) {
-                        checkStr = '请输入实收金额！';
-                        return false;
-                    }
-                    if (key == 'procurement.partner_id' && !value) {
-                        checkStr = '请选择负责人！';
-                        return false;
-                    }
-                });
-                return checkStr;
-            }
-
-            function getTableData() {
-                var detailList = new Array();
-                var detail = null;
-                $('#purchaseList').find('tbody tr').each(function() {
-                    detail = new Object();
-                    detail.goods_id = $(this).find('[name="goods_id"]').val();
-                    detail.supplier_id = $(this).find('[name="supplier_id"]').val();
-                    detail.num = $(this).find('[name="num"]').html();
-                    detail.per_price = $(this).find('[name="per_price"]').html();
-                    detail.sub_price = $(this).find('[name="sub_total"]').html();
-                    if (!detail.sub_price) {
-                        return;
-                    }
-                    /*if (!detail.goods_id || !detail.num || !detail.per_price || !detail.supplier_id) {
-                        $.alertMessager('商品、供应商、数量为必填参数', 'danger');
-                        return false;
-                    }*/
-                    detailList.push(detail);
-                });
-                if (detailList.length == 0) {
-                    $.alertMessager('请添加采购的商品', 'danger');
-                }
-                return detailList;
-            }
-
-            function getFormData() {
-                var procurement = new Object();
-                procurement.title = $('[name="procurement.title"]').val();
-                procurement.create_time = $('[name="procurement.create_time"]').val();
-                procurement.partner_id = $('[name="procurement.partner_id"]').val();
-                procurement.note = $('[name="procurement.note"]').val();
-                procurement.total_price = $('[name="procurement.total_price"]').val();
-                if (!procurement.create_time) {
-                    delete procurement.create_time;
-                }
-                return procurement;
-            }
+            myTable.on('click', '.del-row', function() {
+                broadin.delTableRow(this);
+            });
 
             // 保存数据
             $('#save').on('click', function() {
-                var checkStr = checkForm();
-                if (checkStr) {
-                    $.alertMessager(checkStr, 'danger');
-                    return;
-                }
-                var procurement  = getFormData();
-                var detailList = getTableData();
+                var procurement = {title: '', supplier_id: '', partner_id: '', update_time: '', total_price: '', note: ''};
+                var procurementCheck = {supplier_id: '请选择供应商', partner_id: '请选择负责人', total_price: '请输入付款金额'};
+                procurement = broadin.getFormData('#procurement', procurement, 'procurement', procurementCheck);
                 console.log(procurement);
-                console.log(detailList);
-                if (detailList.length == 0) {
+                if (!procurement) {
                     return;
                 }
-                $.post("{:U('Goods/procurement')}", {procurement: procurement, detailList: detailList}, function(data) {
-                    console.log(data);
-                    if (!data.status) {
-                        $.alertMessager('保存失败', 'danger');
-                    } else {
-                        $.alertMessager('保存成功', 'success');
-                        window.setTimeout(function() {
-                            window.location = "{:U('Goods/procurementList')}";
-                        }, 2000);
-                    }
-                });
-            })
+                var detail = {goods_id: '', num: '', per_price: ''};
+                var detailCheck = {goods_id: '', num: '', per_price: ''};
+                var detailList = broadin.getTableData('#procurementList', detail, null, detailCheck);
+                console.log(detailList);
+                if (!detailList) {
+                    return;
+                }
+                broadin.ajaxPost("{:U('Goods/procurement')}", {procurement: procurement, detailList: detailList});
+            });
 
             // 统计商品价格
-            $('#purchaseList').on('blur', '[data-count]', function() {
+            myTable.on('blur', '[data-count]', function() {
                 var tr = $(this).parents('tr');
                 setSubTotal(tr);
             });
-            $('#purchaseList').on('change', 'select', function() {
+            myTable.on('change', 'select', function() {
                 var tr = $(this).parents('tr');
+                var goods_id = tr.find('[name="goods_id"]').val();
+                var elementPrice = tr.find('[data-count="per_price"]');
+                for (var i in goodsList) {
+                    if (goods_id == goodsList[i].id) {
+                        elementPrice.val(goodsList[i].price);
+                        break;
+                    }
+                }
                 setSubTotal(tr);
             });
             // 获取当前行小计
             function getSubTotal(tr) {
-                var subTotal = tr.find('[data-count="num"]').html() * tr.find('[data-count="per_price"]').html();
+                var subTotal = tr.find('[data-count="num"]').val() * tr.find('[data-count="per_price"]').val();
                 var goods_id = tr.find('[name="goods_id"]').val();
-                var supplier_id = tr.find('[name="supplier_id"]').val();
-                if (goods_id && supplier_id && subTotal) {
+                if (goods_id && subTotal) {
                     return subTotal;
                 }
             }
@@ -309,24 +212,22 @@
             function setSubTotal(tr) {
                 var subTotal = getSubTotal(tr);
                 if (subTotal) {
-                    tr.find('[name="sub_total"]').html(subTotal.toFixed(2));
+                    tr.find('[name="sub_total"]').val(subTotal.toFixed(2));
                 } else {
-                    tr.find('[name="sub_total"]').html('');
+                    tr.find('[name="sub_total"]').val('');
                 }
                 setCountTotal();
             }
 
             // 获取商品价格合计与商品总数
             function getCountTotal() {
-                var countTotal = 0;
-                var countNum = 0;
                 var count = {
                     price: 0,
                     num: 0
                 }
-                $('#purchaseList').find('tbody tr').each(function() {
-                    var subTotal = $(this).find('[name="sub_total"]').html();
-                    var subNum = $(this).find('[name="num"]').html();
+                myTable.find('tbody tr').each(function() {
+                    var subTotal = $(this).find('[name="sub_total"]').val();
+                    var subNum = $(this).find('[name="num"]').val();
                     if (!subTotal) return;
                     count.price += parseFloat(subTotal);
                     count.num += parseInt(subNum);
@@ -339,16 +240,13 @@
                 if (count.price) {
                     $('.countTotal').html(count.price.toFixed(2));
                     $('.countNum').html(count.num);
+                    $('[name="procurement.total_price"]').val(count.price.toFixed(2));
                 }
             }
             // 初始化
             function init() {
                 initTable();
-                // $('[type="date"]').get(0).valueAsDate = new Date();
-                console.log(new Date());
-                $('[type="datetime-local"]').val(new Date('YYYY-MM-DDThh:mm:ss.ms'));
             }
-
             init();
         });
     </script>

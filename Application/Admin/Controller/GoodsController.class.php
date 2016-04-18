@@ -39,7 +39,7 @@ class GoodsController extends AdminController{
             $result = $this->getDgLogic()->procurementEdit($procurement, $detailList);
             Log::record('---------' . json_encode($result));
             if ($result) {
-                $this->success('操作成功！', '');
+                $this->success('操作成功！', 'procurementList');
             } else {
                 $this->error('操作失败！');
             }
@@ -99,8 +99,8 @@ class GoodsController extends AdminController{
      */
     public function updateStatus() {
         $procurement = I('post.procurement');
-        if ($procurement.id && $procurement.status) {
-            $result = $this->getDgLogic()->updateStatus($procurement);
+        if ($procurement['id'] && $procurement['status']) {
+            $result = $this->getDgLogic()->updateProcurementStatus($procurement);
             if ($result) {
                 $this->success('更新成功，页面即将自动刷新！', 'procurementList');
             } else {
@@ -121,7 +121,7 @@ class GoodsController extends AdminController{
             }
             $result = $this->getDgLogic()->procurement($procurement, $detailList);
             if ($result) {
-                $this->success('操作成功！', '');
+                $this->success('操作成功！', 'procurementList');
             } else {
                 $this->error('操作失败！');
             }

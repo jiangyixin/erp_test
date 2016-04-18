@@ -20,20 +20,9 @@
                         <div class="col-xs-12 col-sm-9 button-list clearfix">
                             <div class="form-group">
                                 <a title="新增" class="btn btn-primary" href="{:U('Supplier/groupInfo')}">新增</a>&nbsp;
-                                <a title="删除" target-form="ids" class="btn btn-danger ajax-post confirm" model="Link" href="{:U('Supplier/groupDel')}">删除</a>&nbsp;
                             </div>
                         </div>
-                        <!-- 搜索框 -->
-                        <div class="col-xs-12 col-sm-3 clearfix">
-                            <form class="form" method="get" action="">
-                                <div class="form-group">
-                                    <div class="input-group search-form">
-                                        <input type="text" name="keyword" class="search-input form-control" value="" placeholder="请输入ID/链接名称">
-                                        <span class="input-group-btn"><a class="btn btn-default search-btn"><i class="fa fa-search"></i></a></span>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
+
                     </div>
                 </div>
                 <!-- 数据列表 -->
@@ -43,19 +32,23 @@
                             <div class="builder-table">
                                 <div class="panel panel-default table-responsive">
                                     <table id="supplierGroup" class="table table-bordered table-striped table-hover">
+                                        <caption>供应商分组列表</caption>
                                         <thead>
                                         <tr>
-                                            <th><input class="check-all" type="checkbox"></th>
                                             <th>ID</th><th>分组</th><th>备注</th>
+                                            <th>操作</th>
                                         </tr>
                                         </thead>
                                         <tbody>
                                         <foreach name="supplierGroupList" item="vo">
                                             <tr data-id="{$vo.id}">
-                                                <td><input class="ids" type="checkbox" value="{$vo.id}" name="ids[]"></td>
                                                 <td>{$vo.id}</td>
                                                 <td>{$vo.name}</td>
                                                 <td>{$vo.note}</td>
+                                                <td>
+                                                    <a class="label label-warning btn-edit" title="编辑" href="{:U('Supplier/groupInfo')}?id={$vo.id}" >编辑</a>
+                                                    <a class="label label-danger btn-del" title="删除" href="{:U('Supplier/groupDel')}" >删除</a>
+                                                </td>
                                             </tr>
                                         </foreach>
                                         </tbody>
@@ -77,38 +70,7 @@
 <block name="script">
 <script type="text/javascript">
 
-    var tableMenuData = [
-        [{
-            text: "修改",
-            func: function() {
-                var id = $(this).attr('data-id');
-                window.location = "{:U('Supplier/groupInfo')}?id=" + id;
-            }
-        }, {
-            text: "删除",
-            func: function() {
-                var result = confirm('确定要执行该操作？');
-                if (!result) return;
-                var id = $(this).attr('data-id');
-                $.post("{:U('Supplier/groupDel')}", { id: id}, function(data) {
-                    if (data.status) {
-                        $.alertMessager(data.info, 'success');
-                        window.setTimeout(function() {
-                            window.location = data.url;
-                        }, 2000);
-                    } else {
-                        $.alertMessager(data.info, 'error');
-                    }
-                } );
-            }
-        }]
-    ];
-
     $(window).ready(function(e) {
-
-        $("#supplierGroup tr").smartMenu(tableMenuData, {
-            name: "table"
-        });
 
     });
 </script>

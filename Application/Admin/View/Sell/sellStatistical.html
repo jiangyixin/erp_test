@@ -1,0 +1,183 @@
+<extend name="$_admin_public_layout"/>
+<block name="style">
+    <style>
+
+    </style>
+</block>
+<block name="main">
+    <div id="main" class="col-xs-12 col-sm-10 main" style="overflow-y: scroll;">
+        <!-- 面包屑导航 -->
+        <ul class="breadcrumb">
+            <li><i class="fa fa-map-marker"></i></li>
+                <li class="text-muted">销售管理</li><li class="text-muted">销售统计</li>
+        </ul>
+        <!-- 主体内容区域 -->
+        <div class="tab-content ct-tab-content">
+            <div class="builder listbuilder-box panel-body">
+                <!-- Tab导航 -->
+                <!-- 顶部工具栏按钮 -->
+                <div class="builder-toolbar">
+                    <div class="row form-inline" style="margin-bottom: 20px;">
+                        <div class="form-group col-xs-12">
+                            <label class="label-left"  style="margin-left: 15px;">开始时间：</label>
+                            <input type="text" class="form-control" readonly="" name="startTime" value="" id="startTimePicker">
+                            <label class="label-left" style="margin-left: 15px;">结束时间：</label>
+                            <input type="text" class="form-control" readonly="" name="endTime" value="" id="endTimePicker">
+                            <button type="button" id="query" class="btn btn-primary"  style="margin-left: 15px;">查询</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- 数据列表 -->
+                <div class="builder-container">
+                    <div id="chart" style="width: 900px; height:500px; display: inline-block;"></div>
+                </div>
+                <!-- 额外功能代码 -->
+            </div>
+
+        </div>
+
+    </div>
+</block>
+<block name="script">
+<script src="__PUBLIC__/libs/echarts/js/echarts.js"></script>
+<script type="text/javascript">
+    var statisticalList = {:json_encode($statisticalList)};
+    var warehouseList = {:json_encode($warehouseList)};
+    var goodsList = {:json_encode($goodsList)};
+    console.log(statisticalList);
+    $(window).ready(function(e) {
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('chart'));
+
+        // 指定图表的配置项和数据
+        var option = {
+            title: {
+                text: '所有商品销售统计'
+            },
+            tooltip: {
+                trigger: 'axis'
+            },
+            toolbox: {
+                feature: {
+                    dataView: {show: true, readOnly: false},
+                    magicType: {show: true, type: ['line', 'bar']},
+                    restore: {show: true},
+                    saveAsImage: {show: true}
+                }
+            },
+            legend: {
+                data:['销售额']
+            },
+            xAxis: {
+                type: 'category',
+                data: []
+            },
+            yAxis: [{
+                name: '数目',
+                axisLabel: {
+                    formatter: '{value} 个'
+                }
+            },{
+                name: '金额',
+                axisLabel: {
+                    formatter: '{value} 元'
+                }
+            }],
+            series: []
+        }
+
+        function setOpt(statisticalList) {
+            option.xAxis.data = [];
+            option.series = [];
+            for (var i in goodsList) {
+                option.legend.data.push(goodsList[i].name + '·' + goodsList[i].norm);
+            }
+
+            for (var i in warehouseList) {
+                option.xAxis.data.push(warehouseList[i].name);
+            }
+
+            for (var i in goodsList) {
+                var goods = {
+                    name: goodsList[i].name + '·' + goodsList[i].norm,
+                    type: 'bar',
+                    data: new Array(warehouseList.length)
+                };
+                for (var j in warehouseList) {
+                    goods.data[j] = 0;
+                    for (var x in statisticalList) {
+                        if (goodsList[i].id == statisticalList[x].goods_id && warehouseList[j].id == statisticalList[x].warehouse_id_out) {
+                            goods.data[j] = statisticalList[x].num;
+                        }
+                    }
+                }
+                console.log(goods);
+                option.series.push(goods);
+            }
+
+            // 销售额
+            var arr = {
+                name: '销售额',
+                type: 'line',
+                yAxisIndex: 1,
+                data: []
+            };
+            for (var i in warehouseList) {
+                var count = 0;
+                for (var j in statisticalList) {
+                    if (warehouseList[i].id == statisticalList[j].warehouse_id_out) {
+                        count += parseFloat(statisticalList[j].count_price);
+                    }
+                }
+                arr.data[i] = count;
+            }
+            option.series.push(arr);
+        }
+
+        // 查询
+        $('#query').on('click', function() {
+            var time = {
+                start: $('#startTimePicker').val(),
+                end: $('#endTimePicker').val()
+            }
+
+            $.post("{:U('Sell/sellStatistical')}", {time: time}, function(data) {
+                console.log(data);
+                if (!data.status) {
+                    $.alertMessager('查询失败', 'danger');
+                } else {
+                    setOpt(data.list);
+                    myChart.setOption(option);
+                }
+            });
+
+        });
+
+        function init() {
+            setOpt(statisticalList);
+            console.log(option);
+            // 使用刚指定的配置项和数据显示图表。
+            myChart.setOption(option);
+
+            $('#startTimePicker').datetimepicker({
+                language: 'zh-CN',
+                format: 'yyyy-mm-dd',
+                autoclose: true,
+                todayBtn: true,
+                minView: 'month'
+            });
+
+            $('#endTimePicker').datetimepicker({
+                language: 'zh-CN',
+                format: 'yyyy-mm-dd',
+                autoclose: true,
+                todayBtn: true,
+                minView: 'month'
+            });
+        }
+
+        init();
+
+    });
+</script>
+</block>
