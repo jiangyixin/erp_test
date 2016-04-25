@@ -183,11 +183,8 @@ class StockController extends AdminController{
      * 调拨列表
      */
     public function transferList() {
-        $page = I('get.p');
-        if (!$page) {
-            $page = 1;
-        }
-        $limit = 10;
+        $page = I('get.p', 1);
+        $limit = 15;
         $data['status'] = 0;
         $count = $this->getDst()->where($data)->count();
         $Page = new \Think\Page($count, $limit);
