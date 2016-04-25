@@ -15,16 +15,14 @@
     <link rel="apple-touch-icon" type="image/x-icon" href="/php/erp/test/favicon.ico">
     <link rel="shortcut icon" type="image/x-icon" href="/php/erp/test/logo.png">
     <link rel="stylesheet" type="text/css" href="/php/erp/test/Public/libs/cui/css/cui.min.css">
-    <link rel="stylesheet" type="text/css" href="/php/erp/test/./Application/Admin/View/Public/css/admin.css">
-    <link rel="stylesheet" type="text/css" href="/php/erp/test/./Application/Admin/View/Public/css/theme/default.css"><!--<?php echo C('ADMIN_THEME');?>-->
+    <link rel="stylesheet" type="text/css" href="/php/erp/test/Public/libs/broadin/css/admin.css">
+    <link rel="stylesheet" type="text/css" href="/php/erp/test/Public/libs/broadin/css/theme/default.css"><!--<?php echo C('ADMIN_THEME');?>-->
     <link rel="stylesheet" type="text/css" href="/php/erp/test/Public/libs/animate/animate.min.css">
     <link rel="stylesheet" href="/php/erp/test/Public/libs/jquery_smartmenu/css/smartMenu.css">
     <link rel="stylesheet" href="/php/erp/test/Public/libs/bootstrap_datetimepicker/css/bootstrap-datetimepicker.min.css">
     
     <style type="text/css">
-        .form-control[disabled], fieldset[disabled] .form-control {
-            cursor: auto;
-        }
+
 
     </style>
 
@@ -80,21 +78,23 @@
                 <!-- 模块菜单 -->
                 <nav class="navside navside-default" role="navigation">
                     <ul class="nav navside-nav navside-first">
-                        <li>
-                            <a data-toggle="collapse" href="#navside-collapse--1">
-                                <i class="fa fa-folder-open-o"></i>
-                                <span class="nav-label"><?php echo ($menuList["label"]["title"]); ?>管理</span>
-                                <span class="fa arrow"></span>
-                            </a>
-                            <ul class="nav navside-nav navside-second collapse in" >
-                                <?php if(is_array($menuList["list"])): foreach($menuList["list"] as $key=>$vo): ?><li class="<?php if((ACTION_NAME) == $vo["name"]): ?>active<?php endif; ?>">
-                                        <a href="<?php echo U($vo['url']);?>">
-                                            <i class="<?php echo ($vo["icon"]); ?>"></i>
-                                            <span><?php echo ($vo["title"]); ?></span>
-                                        </a>
-                                    </li><?php endforeach; endif; ?>
-                            </ul>
-                        </li>
+                        <?php if(is_array($menuList)): foreach($menuList as $key=>$vo): ?><li>
+                                <a data-toggle="collapse" href="#navside-collapse--1">
+                                    <i class="<?php echo ($vo["icon"]); ?>"></i>
+                                    <span class="nav-label"><?php echo ($vo["label"]["title"]); ?></span>
+                                    <span class="fa arrow"></span>
+                                </a>
+                                <ul class="nav navside-nav navside-second collapse in" >
+                                    <?php if(is_array($vo["list"])): foreach($vo["list"] as $key=>$v): ?><li class="<?php if((ACTION_NAME) == $v["name"]): ?>active<?php endif; ?>">
+                                            <a href="<?php echo U($v['url']);?>">
+                                                <i class="<?php echo ($v["icon"]); ?>"></i>
+                                                <span><?php echo ($v["title"]); ?></span>
+                                            </a>
+                                        </li><?php endforeach; endif; ?>
+                                </ul>
+                            </li><?php endforeach; endif; ?>
+
+
                     </ul>
                 </nav>
             </div>
@@ -138,6 +138,12 @@
                                     <label class="col-sm-2 col-lg-1 control-label">规格</label>
                                     <div class="col-sm-8 col-lg-7">
                                         <input type="text" class="form-control" required="required" name="norm" value="<?php echo ($goods["norm"]); ?>">
+                                    </div>
+                                </div>
+                                <div class="form-group ">
+                                    <label class="col-sm-2 col-lg-1 control-label">采购价</label>
+                                    <div class="col-sm-8 col-lg-7">
+                                        <input type="number" class="form-control" required="required" name="price" value="<?php echo ($goods["price"]); ?>">
                                     </div>
                                 </div>
                                 <div class="form-group ">
@@ -218,12 +224,12 @@
     <div class="container-fluid">
         <!--<input type="hidden" id="corethink_home_img" value="/php/erp/test/./Application/Home/View/Public/img">-->
         <script type="text/javascript" src="/php/erp/test/Public/libs/cui/js/cui.min.js"></script>
-        <script type="text/javascript" src="/php/erp/test/./Application/Admin/View/Public/js/admin.js"></script>
-        <script type="text/javascript" src="/php/erp/test/Public/libs/jquery_smartmenu/js/jquery-smartMenu-min.js"></script>
         <script type="text/javascript" src="/php/erp/test/Public/libs/bootstrap_datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
         <script type="text/javascript" src="/php/erp/test/Public/libs/bootstrap_datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
+        <script type="text/javascript" src="/php/erp/test/Public/libs/broadin/js/admin.js"></script>
         <script type="text/javascript">
-
+            var menuList = <?php echo json_encode($menuList);?>;
+            console.log(menuList);
         </script>
         
     <script type="text/javascript">

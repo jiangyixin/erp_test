@@ -17,23 +17,21 @@ class StockLogic extends Model{
     private $ds = null;
     private $dg = null;
     private $dw = null;
-    private $dgc = null;
     private $dsl = null;
     private $dsld = null;
-    private $dsp = null;
+    /*private $dsp = null;
     private $dss = null;
-    private $dst = null;
+    private $dst = null;*/
 
     protected function _initialize() {
         $this->ds = D('Admin/Stock');
         $this->dg = D('Admin/Goods');
         $this->dw = D('Admin/Warehouse');
-        $this->dgc = D('Admin/GoodsCode');
         $this->dsl = D('Admin/StockLog');
         $this->dsld = D('Admin/StockLogDetail');
-        $this->dsp = D('Admin/StockPurchase');
+        /*$this->dsp = D('Admin/StockPurchase');
         $this->dss = D('Admin/StockSales');
-        $this->dst = D('Admin/StockTransfer');
+        $this->dst = D('Admin/StockTransfer');*/
     }
 
     /**
@@ -105,84 +103,6 @@ class StockLogic extends Model{
         return $stockLog;
     }
 
-    /**
-     * 按条件获取库存操作记录
-     * @return array stockLogList
-     */
-    public function purchaseRecords($str) {
-        /*
-        $time1 = date("Y-m-d", time());
-        $time2 = date("Y-m-d", (time() + 3600*24));
-        $str = $time1 ? "time > '$time1' AND " : "";
-        $str .= $time2 ? " time < '$time2' AND " : "";
-        $str .= ' status = 1 ';
-        */
-        \Think\Log::record('str: '.$str);
-        $stockLogList = $this->dsl->getDataList($str);
-        foreach ($stockLogList as $key=>$item) {
-            $stockLogList[$key]['detail'] = $this->dsld->getDataList('stock_log_id='.$item['id']);
-            $dSupplier = D('Admin/Supplier');
-            $stockLogList[$key]['supplier'] = $dSupplier->checkData('id='.$item['in_transfer_out']);
-        }
-        return $stockLogList;
-    }
-
-    /**
-     * 商品出库
-     * @param $stockLog array[warehouse_id、partner、in_transfer_out、status、note]
-     * @param $detailList array(二维数组) [goods_id、num、warehouse_id、code_list]
-     * @return bool 操作结果
-     */
-    public function sales($stockLog, $detailList) {
-        $result = array();
-        // 开启事务
-        M()->startTrans();
-        // 插入库存记录（stock_log）
-        $stockLog['no'] = time() . rand(100000,999999); // 生成随机订单编号
-        $stockLog['status'] = -1;    // -1表示出库
-        $result[] = $stockLogId = $this->dsl->addData($stockLog);
-        if (!$stockLogId) {
-            M()->rollback();
-            return false;
-        }
-        foreach ($detailList as $key=>$item) {
-            $data['goods_id'] = $item['goods_id'];
-            $data['warehouse_id'] = $item['warehouse_id'];
-            $stock = $this->ds->checkData($data);
-            // 更新库存（stock）记录
-            $stock['num'] = $stock['num'] - $item['num'];
-            if ($stock['num'] < 0) {
-                Log::record('-----------------库存不够！-----------------');
-                M()->rollback();
-                return false;
-            }
-            $result[] = $this->ds->editDataById($stock);
-
-            // 插入库存详情（stock_log_sales）
-            $detailList[$key]['stock_log_id'] = $stockLogId;
-
-            // 插入或更新商品编码（code）
-            /*$newCodeList = array_count_values($item['code_list']);
-            foreach ($newCodeList as $key=>$vo) {
-                $code = $this->dgc->checkData('code='.$key);
-                if ($code) {
-                    $code['num'] = $code['num'] - $vo;
-                    $result[] = $this->dgc->editDataById($code);
-                }
-            }*/
-
-        }
-        $result[] = $this->dss->addAllData($detailList);
-        // 判断result，提交事务或回滚
-        if (array_product($result) && $result) {
-            M()->commit();
-            return true;
-        } else {
-            M()->rollback();
-            return false;
-        }
-
-    }
 
     /**
      * 仓库调拨
@@ -237,52 +157,6 @@ class StockLogic extends Model{
         }
     }
 
-
-    /**
-     * 商品入库     status=1
-     * @param $stockLog array[warehouse_id、partner、in_transfer_out、status、note]
-     * @param $detailList array(二维数组) [goods_id、num、warehouse_id、code_list]
-     * @return array 操作结果
-     */
-    public function purchase($stockLog, $detailList) {
-        $result = array();
-        // 开启事务
-        M()->startTrans();
-        // 插入库存记录（stock_log）
-        $stockLog['no'] = time() . rand(100000,999999); // 生成随机订单编号
-        $stockLog['status'] = 1;    // 1表示入库
-        $result[] = $stockLogId = $this->dsl->addData($stockLog);
-        if (!$stockLogId) {
-            M()->rollback();
-            return false;
-        }
-        foreach ($detailList as $key=>$item) {
-            $data['goods_id'] = $item['goods_id'];
-            $data['warehouse_id'] = $item['warehouse_id'];
-            $stock = $this->ds->checkData($data);
-            // 更新或插入库存（stock）记录
-            if ($stock) {
-                $stock['num'] = $stock['num'] + $item['num'];
-                $result[] = $this->ds->editDataById($stock);
-            } else {
-                $stock = array('goods_id'=>$item['goods_id'], 'warehouse_id'=>$item['warehouse_id'], 'num'=>$item['num']);
-                $result[] = $this->ds->addData($stock);
-            }
-            // 插入库存详情（stock_log_purchase）
-            $detailList[$key]['stock_log_id'] = $stockLogId;
-        }
-        $result[] = $this->dsp->addAllData($detailList);
-        // 判断result，提交事务或回滚
-        if (array_product($result) && $result) {
-            M()->commit();
-            return true;
-        } else {
-            M()->rollback();
-            return false;
-        }
-
-    }
-
     /**
      * 更新库存数量
      * @param $detailList
@@ -329,5 +203,103 @@ class StockLogic extends Model{
             return false;
         }
     }
+
+
+
+    /**
+     * 商品出库
+     * @param $stockLog array[warehouse_id、partner、in_transfer_out、status、note]
+     * @param $detailList array(二维数组) [goods_id、num、warehouse_id、code_list]
+     * @return bool 操作结果
+     */
+    /*public function sales($stockLog, $detailList) {
+        $result = array();
+        // 开启事务
+        M()->startTrans();
+        // 插入库存记录（stock_log）
+        $stockLog['no'] = time() . rand(100000,999999); // 生成随机订单编号
+        $stockLog['status'] = -1;    // -1表示出库
+        $result[] = $stockLogId = $this->dsl->addData($stockLog);
+        if (!$stockLogId) {
+            M()->rollback();
+            return false;
+        }
+        foreach ($detailList as $key=>$item) {
+            $data['goods_id'] = $item['goods_id'];
+            $data['warehouse_id'] = $item['warehouse_id'];
+            $stock = $this->ds->checkData($data);
+            // 更新库存（stock）记录
+            $stock['num'] = $stock['num'] - $item['num'];
+            if ($stock['num'] < 0) {
+                Log::record('-----------------库存不够！-----------------');
+                M()->rollback();
+                return false;
+            }
+            $result[] = $this->ds->editDataById($stock);
+
+            // 插入库存详情（stock_log_sales）
+            $detailList[$key]['stock_log_id'] = $stockLogId;
+            // 插入或更新商品编码（code）
+
+        }
+        $result[] = $this->dss->addAllData($detailList);
+        // 判断result，提交事务或回滚
+        if (array_product($result) && $result) {
+            M()->commit();
+            return true;
+        } else {
+            M()->rollback();
+            return false;
+        }
+
+    }*/
+
+
+    /**
+     * 商品入库     status=1
+     * @param $stockLog array[warehouse_id、partner、in_transfer_out、status、note]
+     * @param $detailList array(二维数组) [goods_id、num、warehouse_id、code_list]
+     * @return array 操作结果
+     */
+    /*public function purchase($stockLog, $detailList) {
+        $result = array();
+        // 开启事务
+        M()->startTrans();
+        // 插入库存记录（stock_log）
+        $stockLog['no'] = time() . rand(100000,999999); // 生成随机订单编号
+        $stockLog['status'] = 1;    // 1表示入库
+        $result[] = $stockLogId = $this->dsl->addData($stockLog);
+        if (!$stockLogId) {
+            M()->rollback();
+            return false;
+        }
+        foreach ($detailList as $key=>$item) {
+            $data['goods_id'] = $item['goods_id'];
+            $data['warehouse_id'] = $item['warehouse_id'];
+            $stock = $this->ds->checkData($data);
+            // 更新或插入库存（stock）记录
+            if ($stock) {
+                $stock['num'] = $stock['num'] + $item['num'];
+                $result[] = $this->ds->editDataById($stock);
+            } else {
+                $stock = array('goods_id'=>$item['goods_id'], 'warehouse_id'=>$item['warehouse_id'], 'num'=>$item['num']);
+                $result[] = $this->ds->addData($stock);
+            }
+            // 插入库存详情（stock_log_purchase）
+            $detailList[$key]['stock_log_id'] = $stockLogId;
+        }
+        $result[] = $this->dsp->addAllData($detailList);
+        // 判断result，提交事务或回滚
+        if (array_product($result) && $result) {
+            M()->commit();
+            return true;
+        } else {
+            M()->rollback();
+            return false;
+        }
+
+    }*/
+
+
 
 }

@@ -40,17 +40,9 @@
     <!-- 顶部导航 -->
     <div class="navbar navbar-inverse navbar-fixed-top main-nav" role="navigation">
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse-top">
-                <span class="sr-only">切换导航</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-
             <a class="navbar-brand" target="_blank" href="/php/erp/test/">
                 <span><b><span class="open" style="color: #a5aeb4;">乐me</span><span class="cmf" style="color: #3fa9f5;">商城</span></b></span>
             </a>
-
         </div>
         <div class="collapse navbar-collapse navbar-collapse-top">
             <ul class="nav navbar-nav">
@@ -210,11 +202,122 @@
         <!--<input type="hidden" id="corethink_home_img" value="/php/erp/test/./Application/Home/View/Public/img">-->
         <script type="text/javascript" src="/php/erp/test/Public/libs/cui/js/cui.min.js"></script>
         <script type="text/javascript" src="/php/erp/test/./Application/Admin/View/Public/js/admin.js"></script>
-        <script type="text/javascript" src="/php/erp/test/Public/libs/jquery_smartmenu/js/jquery-smartMenu-min.js"></script>
         <script type="text/javascript" src="/php/erp/test/Public/libs/bootstrap_datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
         <script type="text/javascript" src="/php/erp/test/Public/libs/bootstrap_datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
         <script type="text/javascript">
-
+            var broadin = (function(broadin) {
+                function initEvent() {
+                    $('table').on('click', '.btn-del', function() {
+                        event.preventDefault();
+                        var result = confirm('确定要执行该操作？');
+                        if (!result) return;
+                        var id = $(this).parents('tr').attr('data-id');
+                        var url = $(this).attr('href');
+                        broadin.ajaxPost(url, {id: id});
+                    });
+                    $('.dateTimePicker').datetimepicker({
+                        language: 'zh-CN',
+                        format: 'yyyy-mm-dd hh:ii:ss',
+                        autoclose: true,
+                        todayBtn: true
+                    });
+                }
+                initEvent();
+                broadin.ajaxPost = function(url, data) {
+                    $.post(url, data, function(data) {
+                        if (data.status) {
+                            $.alertMessager(data.info, 'success');
+                            window.setTimeout(function() {
+                                window.location = data.url;
+                            }, 2000);
+                        } else {
+                            $.alertMessager(data.info, 'danger');
+                        }
+                    });
+                }
+                /**
+                 * 获取表单数据并校验进行不为空校验
+                 * @param selected 表单选择器
+                 * @param dataObj 需要获取的数据对象
+                 * @param prefix 前缀
+                 * @param dataCheck 校验字段
+                 * @returns {*}
+                 */
+                broadin.getFormData = function(selected, dataObj, prefix, dataCheck) {
+                    prefix = prefix ? (prefix + '.') : '';
+                    for (var key in dataObj) {
+                        dataObj[key] = $(selected).find('[name="' + prefix + key + '"]').val() || '';
+                        if (dataCheck[key] && !dataObj[key]) {
+                            console.log(key + '---' +dataObj[key]);
+                            $.alertMessager(dataCheck[key]);
+                            return false;
+                        }
+                    }
+                    dataObj['id'] = dataObj['id'] ? dataObj['id'] : $(selected).attr('data-id');
+                    return dataObj;
+                };
+                /**
+                 * 获取表格数据并校验是否为空
+                 * @param selected 表格选择器
+                 * @param dataObj 每列数据对象
+                 * @param prefix 前缀
+                 * @param dataCheck 不能为空的字段
+                 * @returns {*}
+                 */
+                broadin.getTableData = function(selected, dataObj, prefix, dataCheck) {
+                    var objList = new Array();
+                    prefix = prefix ? (prefix + '.') : '';
+                    $(selected).find('tbody tr').each(function() {
+                        var newObj = new Object();
+                        for (var key in dataObj) {
+                            newObj[key] = $(this).find('[name="' + prefix + key + '"]').val() || $(this).find('[name="' + prefix + key + '"]').html();
+                            if (dataCheck.hasOwnProperty(key) && !newObj[key]) {
+                                newObj = null;
+                                break;
+                            }
+                        }
+                        if (newObj) {
+                            newObj['id'] = $(this).attr('data-id') || '';
+                            objList.push(newObj);
+                        }
+                    });
+                    if (objList.length == 0) {
+                        $.alertMessager('表格数据不能为空', 'danger');
+                        return false;
+                    }
+                    return objList;
+                }
+                broadin.addTableRow = function(selected, template, rows) {
+                    for (var i=1; i<rows; i++) {
+                        template += template;
+                    }
+                    $(selected).parents('tr').after(template);
+                }
+                broadin.delTableRow = function(selected, url) {
+                    var rows = $(selected).parents('tbody').find('tr').length;
+                    if (rows === 1) {
+                        $.alertMessager('必须保留一行', 'danger');
+                        return;
+                    }
+                    var tr = $(selected).parents('tr');
+                    var id = tr.attr('data-id');
+                    if (!id || !url) {
+                        tr.remove();
+                    } else {
+                        var result = confirm('确定要删除当前联系人？');
+                        if (result) {
+                            $.post(url, { id: id }, function(data) {
+                                if (data.status) {
+                                    tr.remove();
+                                } else {
+                                    $.alertMessager('删除失败', 'danger');
+                                }
+                            });
+                        }
+                    }
+                }
+                return broadin;
+            }(broadin || {}))
         </script>
         
     <script type="text/javascript">

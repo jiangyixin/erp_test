@@ -30,7 +30,7 @@
                             <form class="form" method="get" action="">
                                 <div class="form-group">
                                     <div class="input-group search-form">
-                                        <input type="text" name="keyword" class="search-input form-control" value="" placeholder="请输入ID/链接名称">
+                                        <input type="text" name="keyword" class="search-input form-control" value="" placeholder="请输入ID/名称">
                                         <span class="input-group-btn"><a class="btn btn-default search-btn"><i class="fa fa-search"></i></a></span>
                                     </div>
                                 </div>
@@ -50,7 +50,7 @@
                                         <tr>
                                             <th>编号</th>
                                             <th>主题</th>
-                                            <th>商品种类</th>
+                                            <th>供应商</th>
                                             <th>金额</th>
                                             <th>时间</th>
                                             <th>负责人</th>
@@ -64,7 +64,7 @@
                                             <tr title="" data-id="{$vo.id}">
                                                 <td>{$vo.no}</td>
                                                 <td>{$vo.title}</td>
-                                                <td>{$vo.num}</td>
+                                                <td>{$vo.supplier.name}</td>
                                                 <td>{$vo.total_price}</td>
                                                 <td>{$vo.update_time}</td>
                                                 <td>{$vo.partner.name}</td>

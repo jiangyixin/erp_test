@@ -385,6 +385,7 @@
         $(window).ready(function (e) {
             var goodsList = <?php echo json_encode($goodsList);?>;
             console.log(goodsList);
+
             var myTable = $('table');
             var trTemplate = '<tr>' +
                     '<td class="td-select">' +
@@ -405,7 +406,7 @@
             // 初始化表格
             function initTable() {
                 var html = trTemplate + trTemplate + trTemplate + trTemplate + trTemplate;
-                myTable.find('tbody').html(html);
+                myTable.find('tbody').append(html);
             }
 
             //  添加一行

@@ -15,8 +15,8 @@
     <link rel="apple-touch-icon" type="image/x-icon" href="/php/erp/test/favicon.ico">
     <link rel="shortcut icon" type="image/x-icon" href="/php/erp/test/logo.png">
     <link rel="stylesheet" type="text/css" href="/php/erp/test/Public/libs/cui/css/cui.min.css">
-    <link rel="stylesheet" type="text/css" href="/php/erp/test/./Application/Admin/View/Public/css/admin.css">
-    <link rel="stylesheet" type="text/css" href="/php/erp/test/./Application/Admin/View/Public/css/theme/default.css"><!--<?php echo C('ADMIN_THEME');?>-->
+    <link rel="stylesheet" type="text/css" href="/php/erp/test/Public/libs/broadin/css/admin.css">
+    <link rel="stylesheet" type="text/css" href="/php/erp/test/Public/libs/broadin/css/theme/default.css"><!--<?php echo C('ADMIN_THEME');?>-->
     <link rel="stylesheet" type="text/css" href="/php/erp/test/Public/libs/animate/animate.min.css">
     <link rel="stylesheet" href="/php/erp/test/Public/libs/jquery_smartmenu/css/smartMenu.css">
     <link rel="stylesheet" href="/php/erp/test/Public/libs/bootstrap_datetimepicker/css/bootstrap-datetimepicker.min.css">
@@ -73,21 +73,23 @@
                 <!-- 模块菜单 -->
                 <nav class="navside navside-default" role="navigation">
                     <ul class="nav navside-nav navside-first">
-                        <li>
-                            <a data-toggle="collapse" href="#navside-collapse--1">
-                                <i class="fa fa-folder-open-o"></i>
-                                <span class="nav-label"><?php echo ($menuList["label"]["title"]); ?>管理</span>
-                                <span class="fa arrow"></span>
-                            </a>
-                            <ul class="nav navside-nav navside-second collapse in" >
-                                <?php if(is_array($menuList["list"])): foreach($menuList["list"] as $key=>$vo): ?><li class="<?php if((ACTION_NAME) == $vo["name"]): ?>active<?php endif; ?>">
-                                        <a href="<?php echo U($vo['url']);?>">
-                                            <i class="<?php echo ($vo["icon"]); ?>"></i>
-                                            <span><?php echo ($vo["title"]); ?></span>
-                                        </a>
-                                    </li><?php endforeach; endif; ?>
-                            </ul>
-                        </li>
+                        <?php if(is_array($menuList)): foreach($menuList as $key=>$vo): ?><li>
+                                <a data-toggle="collapse" href="#navside-collapse--1">
+                                    <i class="<?php echo ($vo["icon"]); ?>"></i>
+                                    <span class="nav-label"><?php echo ($vo["label"]["title"]); ?></span>
+                                    <span class="fa arrow"></span>
+                                </a>
+                                <ul class="nav navside-nav navside-second collapse in" >
+                                    <?php if(is_array($vo["list"])): foreach($vo["list"] as $key=>$v): ?><li class="<?php if((ACTION_NAME) == $v["name"]): ?>active<?php endif; ?>">
+                                            <a href="<?php echo U($v['url']);?>">
+                                                <i class="<?php echo ($v["icon"]); ?>"></i>
+                                                <span><?php echo ($v["title"]); ?></span>
+                                            </a>
+                                        </li><?php endforeach; endif; ?>
+                                </ul>
+                            </li><?php endforeach; endif; ?>
+
+
                     </ul>
                 </nav>
             </div>
@@ -122,20 +124,10 @@
                         <div class="col-xs-12 col-sm-9 button-list clearfix">
                             <div class="form-group">
                                 <a title="新增" class="btn btn-primary" href="<?php echo U('Goods/goodsGroupInfo');?>">新增</a>&nbsp;
-                                <a title="删除" target-form="ids" class="btn btn-danger ajax-post confirm" model="Link" href="<?php echo U('Goods/goodsGroupDel');?>">删除</a>&nbsp;
+                                <!--<a title="删除" target-form="ids" class="btn btn-danger ajax-post confirm" model="Link" href="<?php echo U('Goods/goodsGroupDel');?>">删除</a>&nbsp;-->
                             </div>
                         </div>
-                        <!-- 搜索框 -->
-                        <div class="col-xs-12 col-sm-3 clearfix">
-                            <form class="form" method="get" action="">
-                                <div class="form-group">
-                                    <div class="input-group search-form">
-                                        <input type="text" name="keyword" class="search-input form-control" value="" placeholder="请输入ID/链接名称">
-                                        <span class="input-group-btn"><a class="btn btn-default search-btn"><i class="fa fa-search"></i></a></span>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
+
                     </div>
                 </div>
                 <!-- 数据列表 -->
@@ -147,15 +139,23 @@
                                     <table id="goodsGroupList" class="table table-bordered table-striped table-hover">
                                         <thead>
                                         <tr>
-                                            <th><input class="check-all" type="checkbox"></th>
-                                            <th>分组</th><th>备注</th>
+                                            <!--<th><input class="check-all" type="checkbox"></th>-->
+                                            <th>ID</th>
+                                            <th>分组</th>
+                                            <th>备注</th>
+                                            <th>操作</th>
                                         </tr>
                                         </thead>
                                         <tbody>
                                         <?php if(is_array($goodsGroupList)): foreach($goodsGroupList as $key=>$vo): ?><tr data-id="<?php echo ($vo["id"]); ?>">
-                                                <td><input class="ids" type="checkbox" value="<?php echo ($vo["id"]); ?>" name="ids[]"></td>
+                                                <!--<td><input class="ids" type="checkbox" value="<?php echo ($vo["id"]); ?>" name="ids[]"></td>-->
+                                                <td><?php echo ($vo["id"]); ?></td>
                                                 <td><?php echo ($vo["name"]); ?></td>
                                                 <td><?php echo ($vo["note"]); ?></td>
+                                                <td class="operate">
+                                                    <a class="label label-warning btn-edit" title="编辑" href="<?php echo U('Goods/goodsGroupInfo');?>?id=<?php echo ($vo["id"]); ?>" >编辑</a>
+                                                    <a class="label label-danger btn-del" title="删除" href="<?php echo U('Goods/goodsGroupDel');?>" >删除</a>
+                                                </td>
                                             </tr><?php endforeach; endif; ?>
                                         </tbody>
                                     </table>
@@ -209,159 +209,17 @@
     <div class="container-fluid">
         <!--<input type="hidden" id="corethink_home_img" value="/php/erp/test/./Application/Home/View/Public/img">-->
         <script type="text/javascript" src="/php/erp/test/Public/libs/cui/js/cui.min.js"></script>
-        <script type="text/javascript" src="/php/erp/test/./Application/Admin/View/Public/js/admin.js"></script>
         <script type="text/javascript" src="/php/erp/test/Public/libs/bootstrap_datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
         <script type="text/javascript" src="/php/erp/test/Public/libs/bootstrap_datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
+        <script type="text/javascript" src="/php/erp/test/Public/libs/broadin/js/admin.js"></script>
         <script type="text/javascript">
-            var broadin = (function(broadin) {
-                function initEvent() {
-                    $('table').on('click', '.btn-del', function() {
-                        event.preventDefault();
-                        var result = confirm('确定要执行该操作？');
-                        if (!result) return;
-                        var id = $(this).parents('tr').attr('data-id');
-                        var url = $(this).attr('href');
-                        broadin.ajaxPost(url, {id: id});
-                    });
-                    $('.dateTimePicker').datetimepicker({
-                        language: 'zh-CN',
-                        format: 'yyyy-mm-dd hh:ii:ss',
-                        autoclose: true,
-                        todayBtn: true
-                    });
-                }
-                initEvent();
-                broadin.ajaxPost = function(url, data) {
-                    $.post(url, data, function(data) {
-                        if (data.status) {
-                            $.alertMessager(data.info, 'success');
-                            window.setTimeout(function() {
-                                window.location = data.url;
-                            }, 2000);
-                        } else {
-                            $.alertMessager(data.info, 'danger');
-                        }
-                    });
-                }
-                /**
-                 * 获取表单数据并校验进行不为空校验
-                 * @param selected 表单选择器
-                 * @param dataObj 需要获取的数据对象
-                 * @param prefix 前缀
-                 * @param dataCheck 校验字段
-                 * @returns {*}
-                 */
-                broadin.getFormData = function(selected, dataObj, prefix, dataCheck) {
-                    prefix = prefix ? (prefix + '.') : '';
-                    for (var key in dataObj) {
-                        dataObj[key] = $(selected).find('[name="' + prefix + key + '"]').val() || '';
-                        if (dataCheck[key] && !dataObj[key]) {
-                            console.log(key + '---' +dataObj[key]);
-                            $.alertMessager(dataCheck[key]);
-                            return false;
-                        }
-                    }
-                    dataObj['id'] = dataObj['id'] ? dataObj['id'] : $(selected).attr('data-id');
-                    return dataObj;
-                };
-                /**
-                 * 获取表格数据并校验是否为空
-                 * @param selected 表格选择器
-                 * @param dataObj 每列数据对象
-                 * @param prefix 前缀
-                 * @param dataCheck 不能为空的字段
-                 * @returns {*}
-                 */
-                broadin.getTableData = function(selected, dataObj, prefix, dataCheck) {
-                    var objList = new Array();
-                    prefix = prefix ? (prefix + '.') : '';
-                    $(selected).find('tbody tr').each(function() {
-                        var newObj = new Object();
-                        for (var key in dataObj) {
-                            newObj[key] = $(this).find('[name="' + prefix + key + '"]').val() || $(this).find('[name="' + prefix + key + '"]').html();
-                            if (dataCheck.hasOwnProperty(key) && !newObj[key]) {
-                                newObj = null;
-                                break;
-                            }
-                        }
-                        if (newObj) {
-                            newObj['id'] = $(this).attr('data-id') || '';
-                            objList.push(newObj);
-                        }
-                    });
-                    if (objList.length == 0) {
-                        $.alertMessager('表格数据不能为空', 'danger');
-                        return false;
-                    }
-                    return objList;
-                }
-                broadin.addTableRow = function(selected, template, rows) {
-                    for (var i=1; i<rows; i++) {
-                        template += template;
-                    }
-                    $(selected).parents('tr').after(template);
-                }
-                broadin.delTableRow = function(selected, url) {
-                    var rows = $(selected).parents('tbody').find('tr').length;
-                    if (rows === 1) {
-                        $.alertMessager('必须保留一行', 'danger');
-                        return;
-                    }
-                    var tr = $(selected).parents('tr');
-                    var id = tr.attr('data-id');
-                    if (!id || !url) {
-                        tr.remove();
-                    } else {
-                        var result = confirm('确定要删除当前联系人？');
-                        if (result) {
-                            $.post(url, { id: id }, function(data) {
-                                if (data.status) {
-                                    tr.remove();
-                                } else {
-                                    $.alertMessager('删除失败', 'danger');
-                                }
-                            });
-                        }
-                    }
-                }
-                return broadin;
-            }(broadin || {}))
+            var menuList = <?php echo json_encode($menuList);?>;
+            console.log(menuList);
         </script>
         
 <script type="text/javascript">
 
-    var tableMenuData = [
-        [{
-            text: "修改",
-            func: function() {
-                var id = $(this).attr('data-id');
-                window.location = "<?php echo U('Goods/goodsGroupInfo');?>?id=" + id;
-            }
-        }, {
-            text: "删除",
-            func: function() {
-                var result = confirm('确定要执行该操作？');
-                if (!result) return;
-                var id = $(this).attr('data-id');
-                $.post("<?php echo U('Goods/goodsGroupDel');?>", { id: id}, function(data) {
-                    if (data.status) {
-                        $.alertMessager(data.info, 'success');
-                        window.setTimeout(function() {
-                            window.location = data.url;
-                        }, 2000);
-                    } else {
-                        $.alertMessager(data.info, 'error');
-                    }
-                } );
-            }
-        }]
-    ];
-
     $(window).ready(function(e) {
-
-        $("#goodsGroupList tr").smartMenu(tableMenuData, {
-            name: "table"
-        });
 
     });
 </script>

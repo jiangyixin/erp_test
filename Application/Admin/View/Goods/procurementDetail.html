@@ -1,30 +1,7 @@
 <extend name="$_admin_public_layout"/>
 <block name="style">
     <style type="text/css">
-        .form-control[disabled], fieldset[disabled] .form-control {
-            cursor: auto;
-        }
-        td.operate {
-            text-align: center;
-        }
-        td .add-row {
-            color: #333;
-            margin-right: 10px;
-        }
-        td .del-row {
-            text-align: right;
-            color: #333;
-        }
-        .table td.td-select {
-            padding: 0;
-        }
-        td.td-select select {
-            border: none;
-            border-radius: 0;
-        }
-        .form-inline .form-group>label.label-left {
-            width: 5em;
-        }
+
     </style>
 </block>
 <block name="main">
@@ -66,9 +43,8 @@
                                     <label class="label-left">状态：</label>
                                     <span class="form-control">
                                         <switch name="procurement.status">
-                                            <case value="4">采购完成</case>
-                                            <case value="3">校验入库</case>
-                                            <case value="2">接收成功</case>
+                                            <case value="3">采购完成</case>
+                                            <case value="2">配送中</case>
                                             <case value="1">采购中</case>
                                             <case value="0">计划中</case>
                                             <case value="-1">已取消</case>

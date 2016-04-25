@@ -49,6 +49,7 @@
                                         <tr>
                                             <th>编号</th>
                                             <th>主题</th>
+                                            <th>仓库</th>
                                             <th>金额</th>
                                             <th>时间</th>
                                             <th>负责人</th>
@@ -62,6 +63,7 @@
                                             <tr title="" data-id="{$vo.id}">
                                                 <td>{$vo.no}</td>
                                                 <td>{$vo.title}</td>
+                                                <td>{$vo.warehouse.name}</td>
                                                 <td>{$vo.total_price}</td>
                                                 <td>{$vo.update_time}</td>
                                                 <td>{$vo.partner.name}</td>
@@ -113,38 +115,8 @@
 <script type="text/javascript">
     var sellList = {:json_encode($sellList)};
     console.log(sellList);
-    var tableMenuData = [
-        [{
-            text: "修改",
-            func: function() {
-                var id = $(this).attr('data-id');
-                window.location = "{:U('Stock/stockInfo')}?id=" + id;
-            }
-        }, {
-            text: "删除",
-            func: function() {
-                var result = confirm('确定要执行该操作？');
-                if (!result) return;
-                var id = $(this).attr('data-id');
-                $.post("{:U('Stock/stockDel')}", { id: id}, function(data) {
-                    if (data.status) {
-                        $.alertMessager(data.info, 'success');
-                        window.setTimeout(function() {
-                            window.location = data.url;
-                        }, 2000);
-                    } else {
-                        $.alertMessager(data.info, 'danger');
-                    }
-                } );
-            }
-        }]
-    ];
 
     $(window).ready(function(e) {
-
-        /*$("#stockList tbody tr").smartMenu(tableMenuData, {
-            name: "table"
-        });*/
 
         $('#sellList').on('click', 'a[data-status]', function() {
             var result = confirm('确定要执行该操作？');

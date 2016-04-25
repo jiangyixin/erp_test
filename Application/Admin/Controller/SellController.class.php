@@ -97,10 +97,7 @@ class SellController extends AdminController{
      * 销售单列表
      */
     public function sellList() {
-        $page = I('get.p');
-        if (!$page) {
-            $page = 1;
-        }
+        $page = I('get.p', 1);
         $limit = 10;
         $count = $this->getDsell()->count();
         $Page = new \Think\Page($count, $limit);
@@ -145,10 +142,6 @@ class SellController extends AdminController{
 
     public function getDg() {
         return D('Admin/Goods');
-    }
-
-    public function getDgc() {
-        return D('Admin/GoodsCode');
     }
 
     public function getDgg() {

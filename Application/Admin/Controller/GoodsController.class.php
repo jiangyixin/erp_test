@@ -272,10 +272,6 @@ class GoodsController extends AdminController{
         return D('Admin/Goods');
     }
 
-    public function getDgc() {
-        return D('Admin/GoodsCode');
-    }
-
     public function getDgg() {
         return D('Admin/GoodsGroup');
     }

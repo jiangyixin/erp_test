@@ -69,7 +69,7 @@ class GoodsLogic extends CommonModel{
         $procurementList = $this->getDp()->where($data)->order('id desc')->page($page.", $limit")->select();
         foreach ($procurementList as $key=>$item) {
             $procurementList[$key]['partner'] = D('Admin/Partner')->checkData(array('id'=>$item['partner_id']));
-            $procurementList[$key]['num'] = $this->getDpd()->where(array('procurement_id'=>$item['id']))->count('id');
+            $procurementList[$key]['supplier'] = $this->getDs()->checkData(array('id'=>$item['supplier_id']));
         }
         return $procurementList;
     }
@@ -85,6 +85,7 @@ class GoodsLogic extends CommonModel{
         $sellList = $this->getDsell()->where($data)->order('id desc')->page($page . ", $limit")->select();
         foreach ($sellList as $key => $item) {
             $sellList[$key]['partner'] = D('Admin/Partner')->checkData(array('id'=>$item['partner_id']));
+            $sellList[$key]['warehouse'] = D('Admin/Warehouse')->checkData(array('id'=>$item['warehouse_id_out']));
         }
         return $sellList;
     }
@@ -339,10 +340,6 @@ class GoodsLogic extends CommonModel{
 
     public function getDg() {
         return D('Admin/Goods');
-    }
-
-    public function getDgc() {
-        return D('Admin/GoodsCode');
     }
 
     public function getDgg() {

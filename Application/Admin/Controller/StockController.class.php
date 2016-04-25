@@ -13,6 +13,12 @@ use Think\Page;
 
 class StockController extends AdminController{
 
+    /**
+     * 库存盘点
+     */
+    public function stocktaking() {
+
+    }
 
     /**
      * 仓储首页，仓库列表

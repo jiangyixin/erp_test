@@ -258,7 +258,6 @@
         <!--<input type="hidden" id="corethink_home_img" value="/php/erp/test/./Application/Home/View/Public/img">-->
         <script type="text/javascript" src="/php/erp/test/Public/libs/cui/js/cui.min.js"></script>
         <script type="text/javascript" src="/php/erp/test/./Application/Admin/View/Public/js/admin.js"></script>
-        <script type="text/javascript" src="/php/erp/test/Public/libs/jquery_smartmenu/js/jquery-smartMenu-min.js"></script>
         <script type="text/javascript" src="/php/erp/test/Public/libs/bootstrap_datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
         <script type="text/javascript" src="/php/erp/test/Public/libs/bootstrap_datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
         <script type="text/javascript">
